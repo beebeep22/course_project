@@ -139,6 +139,7 @@ $RECYCLE.BIN/
 .idea/
 
 # Gitignore additional files
+.vs/*
 .vs/VSWorkspaceState.json
 .vs/slnx.sqlite
 WindowsFormsApp1/.vs/SocialHelpApp/

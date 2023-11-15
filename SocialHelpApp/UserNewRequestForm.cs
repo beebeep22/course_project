@@ -33,7 +33,7 @@ namespace SocialHelpApp
             UserRequest Request = new UserRequest(
                 Topic: inputTopic.Text,
                 Content: inputContent.Text,
-                AccountId: this.AccountObj._id
+                AccountObj: this.AccountObj
             );
             UserOperations.SendUserRequest(Request);
         }

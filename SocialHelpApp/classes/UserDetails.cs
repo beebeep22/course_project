@@ -18,6 +18,7 @@ namespace SocialHelpApp.classes
             string FirstName,
             string LastName,
             string MiddleName,
+            string Gender,
             int Age,
             string City,
             string Diseases = "",
@@ -28,6 +29,7 @@ namespace SocialHelpApp.classes
             this.FirstName = FirstName;
             this.LastName = LastName;       
             this.MiddleName = MiddleName;
+            this.Gender = Gender;
             this.Age = Age;
             this.City = City;
             this.Diseases = Diseases;

@@ -53,10 +53,11 @@ namespace SocialHelpApp
         {
             // create UserDetails instance from inputs 
             UserDetails newUserDetails = new UserDetails(
-                Age: 18, // mock data, replace with data from inputs like "Age: Int32.Parse(inputAge.Text)"
                 FirstName: "John",
                 LastName: "Doe",
                 MiddleName: "M",
+                Gender: "M",
+                Age: 18, // mock data, replace with data from inputs like "Age: Int32.Parse(inputAge.Text)"
                 City: "New York",
                 Diseases: "",
                 Allergies: "алергiя на курсач",

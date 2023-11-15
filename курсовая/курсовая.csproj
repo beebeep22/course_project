@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CB4E297-5DAC-4962-8FB3-76B9B495A679}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>курсовая</RootNamespace>
+    <AssemblyName>курсовая</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="forms\Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Account_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Account_admin.Designer.cs">
+      <DependentUpon>Account_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Createaccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Createaccount.Designer.cs">
+      <DependentUpon>Createaccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Golovna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Golovna_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Golovna_Admin.Designer.cs">
+      <DependentUpon>Golovna_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\log_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\log_in.Designer.cs">
+      <DependentUpon>log_in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Message_box.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Message_box.Designer.cs">
+      <DependentUpon>Message_box.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Podacha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Podacha.Designer.cs">
+      <DependentUpon>Podacha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\sign_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\sign_in.Designer.cs">
+      <DependentUpon>sign_in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Zayavki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Zayavki.Designer.cs">
+      <DependentUpon>Zayavki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Account_admin.resx">
+      <DependentUpon>Account_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Createaccount.resx">
+      <DependentUpon>Createaccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Golovna.resx">
+      <DependentUpon>Golovna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Golovna_Admin.resx">
+      <DependentUpon>Golovna_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\log_in.resx">
+      <DependentUpon>log_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Message_box.resx">
+      <DependentUpon>Message_box.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Podacha.resx">
+      <DependentUpon>Podacha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\sign_in.resx">
+      <DependentUpon>sign_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Zayavki.resx">
+      <DependentUpon>Zayavki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-user-profile-3364044.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-user-profile-33640441.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\заявка.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\повідомлення.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\во весь экран.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\дщпщ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\дщпщ1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

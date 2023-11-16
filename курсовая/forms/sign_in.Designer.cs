@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sign_in));
             this.title = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.Label();
             this.login = new System.Windows.Forms.TextBox();
@@ -195,6 +196,7 @@
             this.Controls.Add(this.title);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "sign_in";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -38,10 +38,11 @@ namespace курсовая.forms
             invalid.Items.Add("я інвалід у меня ножка боліт");
 
             //патологічні захворювання
-            pathdiseas.Items.Add("балею курсачом");
+            pathdiseas.Items.Add("-");
 
             //алергії
-            alergic.Items.Add("алергія на курсову");
+            alergic.Items.Add("-");
+            alergic.Items.Add("на математику");
 
             //регіон
             region.Items.Add("Запорізька область");

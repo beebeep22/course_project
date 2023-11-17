@@ -5,6 +5,8 @@ SocialHelpApp/bin/
 SocialHelpApp/obj/
 **/Debug/*
 **/bin/*
+**/bin/
+**/obj/
 
 # User-specific files
 *.rsuser

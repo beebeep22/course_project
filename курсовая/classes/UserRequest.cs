@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace SocialHelpApp.classes
+namespace курсовая.classes
 {
     class UserRequest
     {

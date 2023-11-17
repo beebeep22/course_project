@@ -3,7 +3,7 @@ using MongoDB.Bson;
 using System.Collections.Generic;
 
 
-namespace SocialHelpApp.classes
+namespace курсовая.classes
 {
     class DbUserOperations : DbOperations
     {

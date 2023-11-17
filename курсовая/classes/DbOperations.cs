@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using MongoDB.Driver;
 using System.Text;
 
-namespace SocialHelpApp.classes
+namespace курсовая.classes
 {
     abstract class DbOperations
     {

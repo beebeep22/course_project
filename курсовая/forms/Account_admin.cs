@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using курсовая.classes;                  
+
 
 namespace курсовая.forms
 {
@@ -19,6 +21,11 @@ namespace курсовая.forms
             name.Text = firstName;
             surname.Text = lastName;
             patronymic.Text = patronymicc;
+        }
+
+        private void surname_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

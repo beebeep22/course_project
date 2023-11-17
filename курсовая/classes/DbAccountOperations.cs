@@ -3,7 +3,7 @@ using MongoDB.Driver;
 using MongoDB.Bson;
 
 
-namespace SocialHelpApp.classes
+namespace курсовая.classes
 {
     class DbAccountOperations : DbOperations
     {

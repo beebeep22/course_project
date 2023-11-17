@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SocialHelpApp.classes
+namespace курсовая.classes
 {
     class Notification
     {

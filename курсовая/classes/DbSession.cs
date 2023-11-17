@@ -2,7 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace SocialHelpApp.classes
+namespace курсовая.classes
 {
     class DbSession
     {

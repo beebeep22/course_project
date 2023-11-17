@@ -3,6 +3,8 @@
 packages/
 SocialHelpApp/bin/
 SocialHelpApp/obj/
+**/Debug/*
+**/bin/*
 
 # User-specific files
 *.rsuser

@@ -51,6 +51,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions.cs" />
+    <Compile Include="classes\Account.cs" />
+    <Compile Include="classes\AdminDetails.cs" />
+    <Compile Include="classes\DbAccountOperations.cs" />
+    <Compile Include="classes\DbAdminOperations.cs" />
+    <Compile Include="classes\DbOperations.cs" />
+    <Compile Include="classes\DbSession.cs" />
+    <Compile Include="classes\DbUserOperations.cs" />
+    <Compile Include="classes\LoginInput.cs" />
+    <Compile Include="classes\Notification.cs" />
+    <Compile Include="classes\UserDetails.cs" />
+    <Compile Include="classes\UserRequest.cs" />
+    <Compile Include="classes\UserRequestResposne.cs" />
     <Compile Include="forms\Account.cs">
       <SubType>Form</SubType>
     </Compile>

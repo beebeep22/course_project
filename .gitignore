@@ -1,12 +1,10 @@
- .vscode/
- .vs/
+.vscode/
+.vs/
 packages/
 SocialHelpApp/bin/
 SocialHelpApp/obj/
 **/Debug/*
 **/bin/*
-**/bin/
-**/obj/
+**/obj/*
 *.exe
 *.pdb
-

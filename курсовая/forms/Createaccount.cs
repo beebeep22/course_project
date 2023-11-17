@@ -55,7 +55,7 @@ namespace курсовая.forms
                 string patronymicc = patronymic.Text;
                 string a = age.Text;
                 string gender = Men.Checked ? "М" : "Ж";
-                Account accountForm = new Account(firstName, lastName, patronymicc,a,gender);
+                AccountMenu accountForm = new AccountMenu(firstName, lastName, patronymicc,a,gender);
                 golovna.OpenChildForm(accountForm, sender);
                 golovna.labeltitle.Text = "Привіт, " + name.Text + "!";
                 this.Hide();

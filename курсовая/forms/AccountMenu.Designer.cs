@@ -1,6 +1,6 @@
 ﻿namespace курсовая.forms
 {
-    partial class Account
+    partial class AccountMenu
     {
         /// <summary>
         /// Required designer variable.

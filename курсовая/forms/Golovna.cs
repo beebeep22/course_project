@@ -267,7 +267,7 @@ namespace курсовая.forms
 
         private void Account_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new forms.Account("", "", "","",""), sender);
+            OpenChildForm(new forms.AccountMenu("", "", "","",""), sender);
             labeltitle.Text = "Акаунт";
         }
 

@@ -117,11 +117,11 @@
     <Compile Include="classes\UserDetails.cs" />
     <Compile Include="classes\UserRequest.cs" />
     <Compile Include="classes\UserRequestResposne.cs" />
-    <Compile Include="forms\Account.cs">
+    <Compile Include="forms\AccountMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Account.Designer.cs">
-      <DependentUpon>Account.cs</DependentUpon>
+    <Compile Include="forms\AccountMenu.Designer.cs">
+      <DependentUpon>AccountMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Account_admin.cs">
       <SubType>Form</SubType>
@@ -187,8 +187,8 @@
       <DependentUpon>Zayavki.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="forms\Account.resx">
-      <DependentUpon>Account.cs</DependentUpon>
+    <EmbeddedResource Include="forms\AccountMenu.resx">
+      <DependentUpon>AccountMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Account_admin.resx">
       <DependentUpon>Account_admin.cs</DependentUpon>

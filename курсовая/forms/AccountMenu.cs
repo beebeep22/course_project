@@ -11,9 +11,9 @@ using курсовая.classes;
 
 namespace курсовая.forms
 {
-    public partial class Account : Form
+    public partial class AccountMenu : Form
     {
-        public Account(string firstName, string lastName, string patronymic2,string age2,string gender)
+        public AccountMenu(string firstName, string lastName, string patronymic2,string age2,string gender)
         {
             InitializeComponent();
 

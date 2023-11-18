@@ -106,7 +106,7 @@
             this.Заявки.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.Заявки.Size = new System.Drawing.Size(220, 60);
             this.Заявки.TabIndex = 1;
-            this.Заявки.Text = "           Заявки";
+            this.Заявки.Text = "            Заявки";
             this.Заявки.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Заявки.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Заявки.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.Акаунт.Name = "Акаунт";
             this.Акаунт.Size = new System.Drawing.Size(220, 80);
             this.Акаунт.TabIndex = 0;
-            this.Акаунт.Text = "     Акаунт";
+            this.Акаунт.Text = "      Акаунт";
             this.Акаунт.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Акаунт.UseVisualStyleBackColor = false;
             this.Акаунт.Click += new System.EventHandler(this.Account_Click);

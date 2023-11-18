@@ -23,5 +23,10 @@ namespace курсовая.forms
 
             List<Notification> notifications = UserOperations.GetNotifications(this.AccountObj);
         }
+
+        private void notification_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

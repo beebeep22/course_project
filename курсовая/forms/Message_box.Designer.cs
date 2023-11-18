@@ -42,6 +42,7 @@
             this.notification.TabIndex = 0;
             this.notification.Text = "Вам повідомлення";
             this.notification.UseVisualStyleBackColor = true;
+            this.notification.Click += new System.EventHandler(this.notification_Click);
             // 
             // notification2
             // 

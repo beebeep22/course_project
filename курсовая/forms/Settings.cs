@@ -13,6 +13,7 @@ namespace курсовая.forms
 {
     public partial class Settings : Form
     {
+
         public Settings()
         {
             InitializeComponent();
@@ -30,9 +31,8 @@ namespace курсовая.forms
 
         private void Bigsize_Click(object sender, EventArgs e)
         {
-
+     
         }
-
 
     }
 }

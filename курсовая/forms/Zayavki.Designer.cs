@@ -45,7 +45,7 @@ namespace курсовая.forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(62, 37);
+            this.label1.Location = new System.Drawing.Point(124, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 0;
@@ -62,13 +62,13 @@ namespace курсовая.forms
             this.application,
             this.ResponseStatusColumn,
             this.applicantName});
-            this.userRequestsTable.Location = new System.Drawing.Point(65, 68);
+            this.userRequestsTable.Location = new System.Drawing.Point(127, 75);
             this.userRequestsTable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userRequestsTable.Name = "userRequestsTable";
             this.userRequestsTable.RowHeadersWidth = 51;
             this.userRequestsTable.RowTemplate.Height = 24;
             this.userRequestsTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.userRequestsTable.Size = new System.Drawing.Size(701, 277);
+            this.userRequestsTable.Size = new System.Drawing.Size(653, 277);
             this.userRequestsTable.TabIndex = 1;
             this.userRequestsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userRequestsTable_CellContentClick);
             // 
@@ -78,7 +78,7 @@ namespace курсовая.forms
             this.application.HeaderText = "Тема запиту";
             this.application.MinimumWidth = 6;
             this.application.Name = "application";
-            this.application.Width = 150;
+            this.application.Width = 160;
             // 
             // ResponseStatusColumn
             // 
@@ -99,6 +99,7 @@ namespace курсовая.forms
             // 
             // createnotif
             // 
+            this.createnotif.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.createnotif.Location = new System.Drawing.Point(597, 372);
             this.createnotif.Name = "createnotif";
             this.createnotif.Size = new System.Drawing.Size(169, 49);

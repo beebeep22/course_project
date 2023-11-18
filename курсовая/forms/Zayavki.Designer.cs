@@ -78,7 +78,7 @@ namespace курсовая.forms
             this.application.HeaderText = "Тема запиту";
             this.application.MinimumWidth = 6;
             this.application.Name = "application";
-            this.application.Width = 125;
+            this.application.Width = 150;
             // 
             // ResponseStatusColumn
             // 
@@ -95,13 +95,13 @@ namespace курсовая.forms
             this.applicantName.MinimumWidth = 6;
             this.applicantName.Name = "applicantName";
             this.applicantName.ReadOnly = true;
-            this.applicantName.Width = 125;
+            this.applicantName.Width = 150;
             // 
             // createnotif
             // 
             this.createnotif.Location = new System.Drawing.Point(597, 372);
             this.createnotif.Name = "createnotif";
-            this.createnotif.Size = new System.Drawing.Size(169, 45);
+            this.createnotif.Size = new System.Drawing.Size(169, 49);
             this.createnotif.TabIndex = 3;
             this.createnotif.Text = "Створення повідомлення";
             this.createnotif.UseVisualStyleBackColor = true;
@@ -113,7 +113,7 @@ namespace курсовая.forms
             this.button1.Location = new System.Drawing.Point(343, 372);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 45);
+            this.button1.Size = new System.Drawing.Size(173, 49);
             this.button1.TabIndex = 2;
             this.button1.Text = "Відповісти на запит";
             this.button1.UseVisualStyleBackColor = true;

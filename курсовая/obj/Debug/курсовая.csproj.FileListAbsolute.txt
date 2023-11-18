@@ -94,3 +94,4 @@ Z:\C#\Cursach\course_test\course_project\курсовая\bin\Debug\System.Threa
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.exe.config
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.csproj.CopyComplete
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.AccountMenu.resources
+Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.History.resources

@@ -202,6 +202,9 @@
     <EmbeddedResource Include="forms\Golovna_Admin.resx">
       <DependentUpon>Golovna_Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\History.resx">
+      <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\log_in.resx">
       <DependentUpon>log_in.cs</DependentUpon>
     </EmbeddedResource>

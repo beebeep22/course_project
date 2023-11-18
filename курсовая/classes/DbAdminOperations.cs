@@ -54,5 +54,10 @@ namespace курсовая.classes
             var allRequests = GetAllRequests();
             return FillRequestsWithApplicants(allRequests);
         }
+
+        public void CreateNotification(Notification notification)
+        {
+            
+        }
     }
 }

@@ -211,7 +211,7 @@ namespace курсовая.forms
             this.labeltitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labeltitle.Location = new System.Drawing.Point(297, 26);
             this.labeltitle.Name = "labeltitle";
-            this.labeltitle.Size = new System.Drawing.Size(110, 29);
+            this.labeltitle.Size = new System.Drawing.Size(89, 25);
             this.labeltitle.TabIndex = 0;
             this.labeltitle.Text = "Головна";
             // 
@@ -293,7 +293,7 @@ namespace курсовая.forms
 
         private void message_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new forms.Message_box(), sender);
+            OpenChildForm(new forms.Message_box(this.AccountObj), sender);
         }
 
         private void exit_Click(object sender, EventArgs e)

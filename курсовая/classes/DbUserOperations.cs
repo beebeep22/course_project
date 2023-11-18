@@ -30,8 +30,9 @@ namespace курсовая.classes
             _userRequestsCollection.InsertOne(Request);
         }
 
-        public List<UserRequest> GetUserRequests(ObjectId ApplicantId)
+        public List<UserRequest> GetUserRequests(Account AccountObj)
         {
+            ObjectId ApplicantId = AccountObj._id;
             var filter = Builders<UserRequest>.Filter.Eq("ApplicantId", ApplicantId);
             return _userRequestsCollection.Find(filter).ToList();
         }

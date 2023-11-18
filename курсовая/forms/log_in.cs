@@ -13,12 +13,14 @@ namespace курсовая.forms
 {
     public partial class log_in : Form
     {
-        private DbAccountOperations AccountOperations { get; set; }
+        private DbAccountOperations AccountOperations { get; set; }
+
 
         public log_in()
         {
             InitializeComponent();
-            AccountOperations = new DbAccountOperations();            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            AccountOperations = new DbAccountOperations();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.Size = new Size(391, 570);
 
         }    
@@ -48,29 +50,29 @@ namespace курсовая.forms
             LoginInput input = new LoginInput(login.Text, password.Text);
             if (!isInputValid(input)) return;
 
-            Account account = AccountOperations.CreateUserAccountByUsernameAndPassword(input);
-            if (account == null)
+            Account accountObj = AccountOperations.GetAccountByUsernameAndPassword(input);
+            if (accountObj == null)
             {
                 // incorrect username or password bla bla bla
+                return;
             }
-
-            if (account.Role == "user")
+            if (accountObj.Role == "user")
             {
-                Golovna golovna = new Golovna();
+                Golovna golovna = new Golovna(accountObj);
                 golovna.Show();
                 this.Hide();
 
-                // TODO: provide account instance to AccountMenu form and use it there
-                AccountMenu accountForm = new AccountMenu("", "", "", "", "");
+                //AccountMenu accountForm = new AccountMenu("", "", "", "", "");
+                AccountMenu accountForm = new AccountMenu(accountObj);
                 golovna.OpenChildForm(accountForm, sender);
                 golovna.labeltitle.Text = "З поверненням!";
-            } else if (account.Role == "admin")
+            } else if (accountObj.Role == "admin")
             {
-                Golovna_Admin golovna_Admin = new Golovna_Admin();
+                Golovna_Admin golovna_Admin = new Golovna_Admin(accountObj);
                 golovna_Admin.Show();
                 this.Hide();
-                // TODO: proivate account instance to Account_admin and use it there
-                Account_admin account_Admin = new Account_admin("Ксенія", "Гончаренко", "Сергіївна");
+                //Account_admin account_Admin = new Account_admin("Ксенія", "Гончаренко", "Сергіївна");
+                Account_admin account_Admin = new Account_admin(accountObj);
                 golovna_Admin.OpenChildForm(account_Admin, sender);
             }
 

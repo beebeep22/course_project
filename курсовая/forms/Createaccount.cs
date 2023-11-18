@@ -13,9 +13,13 @@ namespace курсовая.forms
 {
     public partial class Createaccount : Form
     {
-        public Createaccount()
+        private Account AccountObj { get; set; }
+        private DbUserOperations UserOperations { get; set; }
+        public Createaccount(Account AccountObj)
         {
             InitializeComponent();
+            this.AccountObj = AccountObj;
+            this.UserOperations = new DbUserOperations();
             this.Size = new Size(391, 570);
         }
 
@@ -25,41 +29,59 @@ namespace курсовая.forms
             Application.Exit();
         }
 
-        private void create_Click(object sender, EventArgs e)
+        private bool isInputValid()
         {
             if (name.Text == "")
             {
                 MessageBox.Show("Поле ім'я незаповнене");
+                return false;
             }
             else if (surname.Text == "")
             {
                 MessageBox.Show("Поле прізвища незаповнене");
+                return false;
             }
             else if (patronymic.Text == "")
             {
                 MessageBox.Show("Поле по-батькові незаповнене");
+                return false;
             }
             else if (age.Text == "")
             {
                 MessageBox.Show("Поле дати народження незаповнене");
+                return false;
             }
             else if (!women.Checked && !Men.Checked)
             {
                 MessageBox.Show("Стать не обрано");
+                return false;
             }
-            else {
-                Golovna golovna = new Golovna();
-                golovna.Show();
-                string firstName = name.Text;
-                string lastName = surname.Text;
-                string patronymicc = patronymic.Text;
-                string a = age.Text;
-                string gender = Men.Checked ? "М" : "Ж";
-                AccountMenu accountForm = new AccountMenu(firstName, lastName, patronymicc,a,gender);
-                golovna.OpenChildForm(accountForm, sender);
-                golovna.labeltitle.Text = "Привіт, " + name.Text + "!";
-                this.Hide();
-            }
+        return true;
+        }
+
+        private void create_Click(object sender, EventArgs e)
+        {
+            if (!isInputValid()) return;
+            UserDetails details = new UserDetails(
+                FirstName: name.Text,
+                LastName: surname.Text,
+                MiddleName: patronymic.Text,
+                Gender: Men.Checked ? "Male" : "Female",
+                Age: age.Text 
+            );
+            UserOperations.UpdateUserDetails(AccountObj, details);
+            Golovna golovna = new Golovna(AccountObj);
+            golovna.Show();
+            //string firstName = name.Text;
+            //string lastName = surname.Text;
+            //string patronymicc = patronymic.Text;
+            //string a = age.Text;
+            //string gender = Men.Checked ? "М" : "Ж";
+            //AccountMenu accountForm = new AccountMenu(firstName, lastName, patronymicc, a, gender);
+            AccountMenu accountForm = new AccountMenu(AccountObj);
+            golovna.OpenChildForm(accountForm, sender);
+            golovna.labeltitle.Text = "Привіт, " + name.Text + "!";
+            this.Hide();
         }
 
         private void Createaccount_Load(object sender, EventArgs e)

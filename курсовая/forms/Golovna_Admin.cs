@@ -16,9 +16,13 @@ namespace курсовая.forms
     {
 
         private Form activeForm;
-        public Golovna_Admin()
+        private Account AccountObj { get; set; }
+        private DbAdminOperations AdminOperations { get; set; }
+        public Golovna_Admin(Account AccountObj)
         {
             InitializeComponent();
+            this.AccountObj = AccountObj;
+            this.AdminOperations = new DbAdminOperations();
             this.Size = new Size(919, 514);
             panelmenu.Size = new System.Drawing.Size(200, 100);
             Акаунт.Size = new System.Drawing.Size(220, 80);
@@ -47,13 +51,13 @@ namespace курсовая.forms
 
         private void Account_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new forms.Account_admin("", "", ""), sender);
+            OpenChildForm(new forms.Account_admin(this.AccountObj), sender);
             labeltitle.Text = "Акаунт";
         }
 
         private void Zayavki_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new forms.Zayavki(), sender);
+            OpenChildForm(new forms.Zayavki(this.AccountObj), sender);
             labeltitle.Text = "Заявки";
         }
 

@@ -11,13 +11,19 @@ namespace курсовая.classes
         public string Topic { get; set; }
         public string Content { get; set; }
         public ObjectId ApplicantId { get; set; }
+        public UserRequestResponse Response { get; set; }
 
-        public UserRequest(string Topic, string Content, ObjectId AccountId)
+        public UserRequest(string Topic, string Content, Account AccountObj)
         {
             this._id = ObjectId.GenerateNewId();
             this.Topic = Topic;
             this.Content = Content;
-            this.ApplicantId = AccountId;
+            this.ApplicantId = AccountObj._id;
+        }
+
+        public void SetResponse(UserRequestResponse Response)
+        {
+            this.Response = Response;
         }
     }
 }

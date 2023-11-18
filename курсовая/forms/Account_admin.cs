@@ -14,13 +14,12 @@ namespace курсовая.forms
 {
     public partial class Account_admin : Form
     {
-        public Account_admin(string firstName, string lastName, string patronymicc)
+        private Account AccountObj { get; set; }
+        public Account_admin(Account AccountObj)
         {
             InitializeComponent();
+            this.AccountObj = AccountObj;
 
-            name.Text = firstName;
-            surname.Text = lastName;
-            patronymic.Text = patronymicc;
         }
 
         private void surname_TextChanged(object sender, EventArgs e)

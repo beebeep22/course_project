@@ -13,9 +13,13 @@ namespace курсовая.forms
 {
     public partial class Zayavki : Form
     {
-        public Zayavki()
+        private Account AccountObj { get; set; }
+        private DbAdminOperations UserOperations { get; set; }
+        public Zayavki(Account AccountObj)
         {
             InitializeComponent();
+            this.AccountObj = AccountObj;
+            this.UserOperations = new DbAdminOperations();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

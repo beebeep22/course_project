@@ -42,7 +42,6 @@ Z:\C#\Cursach\course_test\course_project\курсовая\bin\Debug\курсов
 Z:\C#\Cursach\course_test\course_project\курсовая\bin\Debug\курсовая.exe
 Z:\C#\Cursach\course_test\course_project\курсовая\bin\Debug\курсовая.pdb
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.csprojAssemblyReference.cache
-Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.Account.resources
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.Account_admin.resources
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.Createaccount.resources
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.Golovna.resources
@@ -94,3 +93,4 @@ Z:\C#\Cursach\course_test\course_project\курсовая\bin\Debug\System.Text.
 Z:\C#\Cursach\course_test\course_project\курсовая\bin\Debug\System.Threading.Tasks.Extensions.xml
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.exe.config
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.csproj.CopyComplete
+Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.AccountMenu.resources

@@ -20,7 +20,8 @@ namespace курсовая.forms
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.Size = new Size(391, 570);
-            AccountOperations = new DbAccountOperations();        }
+            AccountOperations = new DbAccountOperations();
+        }
 
         private bool isInputValid()
         {
@@ -61,9 +62,8 @@ namespace курсовая.forms
         {
             if (!isInputValid()) return;
             LoginInput input = new LoginInput(login.Text, password.Text); 
-            Account account = AccountOperations.CreateUserAccountByUsernameAndPassword(input);
-            // TODO: provide account instance to CreateAccount
-            Createaccount createaccount = new Createaccount();
+            Account accountObj = AccountOperations.CreateUserAccountByUsernameAndPassword(input);
+            Createaccount createaccount = new Createaccount(accountObj);
             createaccount.Show();
             this.Hide();
         }

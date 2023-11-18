@@ -13,22 +13,29 @@ namespace курсовая.forms
 {
     public partial class AccountMenu : Form
     {
-        public AccountMenu(string firstName, string lastName, string patronymic2,string age2,string gender)
+        private Account AccountObj { get; set; }
+        private DbUserOperations UserOperations { get; set; }
+        public AccountMenu(Account AccountObj)
         {
             InitializeComponent();
-
+            this.AccountObj = AccountObj;
+            this.UserOperations = new DbUserOperations();
             // Присвоення значень полям акаунту з Createaccount
-            name.Text = firstName;
-            surname.Text = lastName;
-            patronymic.Text = patronymic2;
-            age.Text = age2;
-            sex.Text = gender;
+            name.Text = AccountObj?.UserDetails?.FirstName ?? "";
+            surname.Text = AccountObj?.UserDetails?.LastName ?? "";
+            patronymic.Text = AccountObj?.UserDetails?.MiddleName ?? "";
+            age.Text = AccountObj?.UserDetails?.Age ?? "";
+            sex.Text = AccountObj?.UserDetails?.Gender ?? "";
+            pathdiseas.Text = AccountObj?.UserDetails?.Diseases ?? "";
+            alergic.Text = AccountObj?.UserDetails?.Allergies ?? "";
+            invalid.Text = AccountObj?.UserDetails?.DisabilityLevel ?? "";
+            region.Text = AccountObj?.UserDetails?.Region ?? "";
         }
 
         private void Account_Load(object sender, EventArgs e)
         {
             //дані,які не змінюємо
-            age.ReadOnly = true; //можно ли менять возраст?
+            //age.ReadOnly = true; //можно ли менять возраст?
             sex.ReadOnly = true;
 
             //інвалідність
@@ -58,10 +65,15 @@ namespace курсовая.forms
         //збереження змін
         private void save_Click(object sender, EventArgs e)
         {
-           
+            this.AccountObj.UserDetails.FirstName = name.Text;
+            this.AccountObj.UserDetails.LastName = surname.Text;
+            this.AccountObj.UserDetails.MiddleName = patronymic.Text;
+            this.AccountObj.UserDetails.Age = age.Text;
+            this.AccountObj.UserDetails.Region = region.Text;
+            this.AccountObj.UserDetails.DisabilityLevel = invalid.Text;
+            this.AccountObj.UserDetails.Diseases = pathdiseas.Text;
+            this.AccountObj.UserDetails.Allergies = alergic.Text;
+            this.UserOperations.UpdateUserDetails(this.AccountObj, this.AccountObj.UserDetails);
         }
-
-        //
-
     }
 }

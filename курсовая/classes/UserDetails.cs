@@ -8,8 +8,8 @@ namespace курсовая.classes
         public string LastName { get; set; }
         public string MiddleName { get; set; }
         public string Gender { get; set; }
-        public int Age { get; set; }
-        public string City { get; set; }
+        public string Age { get; set; }
+        public string Region { get; set; }
         public string Diseases { get; set; }
         public string Allergies { get; set;  }
         public string DisabilityLevel { get; set; }
@@ -18,8 +18,9 @@ namespace курсовая.classes
             string FirstName,
             string LastName,
             string MiddleName,
-            int Age,
-            string City,
+            string Gender,
+            string Age,
+            string Region = "",
             string Diseases = "",
             string Allergies = "",
             string DisabilityLevel = ""
@@ -28,8 +29,9 @@ namespace курсовая.classes
             this.FirstName = FirstName;
             this.LastName = LastName;       
             this.MiddleName = MiddleName;
+            this.Gender = Gender;
             this.Age = Age;
-            this.City = City;
+            this.Region = Region;
             this.Diseases = Diseases;
             this.Allergies = Allergies;
             this.DisabilityLevel = DisabilityLevel;

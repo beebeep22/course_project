@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using курсовая.forms;
+using курсовая.classes;
 
 namespace курсовая.forms
 {
@@ -21,12 +21,13 @@ namespace курсовая.forms
         private Button message;
         private Form activeForm;
         private Panel panelDesktop;
-        //
+        private Account AccountObj;
 
 
-        public Golovna()
+        public Golovna(Account AccountObj)
         {
             InitializeComponent();
+            this.AccountObj = AccountObj;
             this.Text = string.Empty;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.Sizable;
@@ -267,19 +268,20 @@ namespace курсовая.forms
 
         private void Account_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new forms.AccountMenu("", "", "","",""), sender);
+            //OpenChildForm(new forms.AccountMenu("", "", "","",""), sender);
+            OpenChildForm(new AccountMenu(this.AccountObj), sender);
             labeltitle.Text = "Акаунт";
         }
 
         private void Podacha_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new forms.Podacha(), sender);
+            OpenChildForm(new forms.Podacha(this.AccountObj), sender);
             labeltitle.Text = "Подача заявок";
         }
 
         private void History_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new forms.History(), sender);
+            OpenChildForm(new forms.History(this.AccountObj), sender);
             labeltitle.Text = "Історія";
         }
 

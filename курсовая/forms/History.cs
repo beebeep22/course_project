@@ -14,9 +14,18 @@ namespace курсовая.forms
 {
     public partial class History : Form
     {
-        public History()
+        private Account AccountObj { get; set; }
+        private DbUserOperations UserOperations { get; set; }
+        public History(Account AccountObj)
         {
             InitializeComponent();
+            this.AccountObj = AccountObj;
+            this.UserOperations = new DbUserOperations();
+        }
+
+        private List<UserRequest> getUserRequests()
+        {
+            return this.UserOperations.GetUserRequests(this.AccountObj);
         }
     }
 }

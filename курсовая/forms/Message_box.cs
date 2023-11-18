@@ -13,10 +13,15 @@ namespace курсовая.forms
 {
     public partial class Message_box : Form
     {
-        public Message_box()
+        private Account AccountObj { get; set; }
+        private DbUserOperations UserOperations { get; set; }
+        public Message_box(Account AccountObj)
         {
+            this.AccountObj = AccountObj;
+            this.UserOperations = new DbUserOperations();
             InitializeComponent();
 
+            List<Notification> notifications = UserOperations.GetNotifications(this.AccountObj);
         }
     }
 }

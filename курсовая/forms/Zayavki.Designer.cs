@@ -32,72 +32,87 @@ namespace курсовая.forms
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.tableapplication = new System.Windows.Forms.DataGridView();
+            this.userRequestsTable = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.application = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.tableapplication)).BeginInit();
+            this.ResponseStatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.userRequestsTable)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(62, 45);
+            this.label1.Location = new System.Drawing.Point(46, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 18);
+            this.label1.Size = new System.Drawing.Size(90, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Статус заявок";
             // 
-            // tableapplication
+            // userRequestsTable
             // 
-            this.tableapplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.userRequestsTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tableapplication.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableapplication.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.userRequestsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userRequestsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.application,
-            this.status,
-            this.status2});
-            this.tableapplication.Location = new System.Drawing.Point(65, 101);
-            this.tableapplication.Name = "tableapplication";
-            this.tableapplication.RowHeadersWidth = 51;
-            this.tableapplication.RowTemplate.Height = 24;
-            this.tableapplication.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tableapplication.Size = new System.Drawing.Size(421, 244);
-            this.tableapplication.TabIndex = 1;
-            this.tableapplication.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.ResponseStatusColumn,
+            this.applicantName});
+            this.userRequestsTable.Location = new System.Drawing.Point(49, 81);
+            this.userRequestsTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userRequestsTable.Name = "userRequestsTable";
+            this.userRequestsTable.RowHeadersWidth = 51;
+            this.userRequestsTable.RowTemplate.Height = 24;
+            this.userRequestsTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.userRequestsTable.Size = new System.Drawing.Size(504, 198);
+            this.userRequestsTable.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(232, 322);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Respond on selected";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // application
             // 
-            this.application.HeaderText = "Заявка";
+            this.application.DataPropertyName = "Topic";
+            this.application.HeaderText = "Request topic";
             this.application.MinimumWidth = 6;
             this.application.Name = "application";
             this.application.Width = 125;
             // 
-            // status
+            // ResponseStatusColumn
             // 
-            this.status.HeaderText = "Статус";
-            this.status.MinimumWidth = 6;
-            this.status.Name = "status";
-            this.status.Width = 125;
+            this.ResponseStatusColumn.DataPropertyName = "Response";
+            this.ResponseStatusColumn.HeaderText = "Status";
+            this.ResponseStatusColumn.MinimumWidth = 6;
+            this.ResponseStatusColumn.Name = "ResponseStatusColumn";
+            this.ResponseStatusColumn.Width = 125;
             // 
-            // status2
+            // applicantName
             // 
-            this.status2.HeaderText = "";
-            this.status2.MinimumWidth = 6;
-            this.status2.Name = "status2";
-            this.status2.Width = 125;
+            this.applicantName.DataPropertyName = "ApplicantObj";
+            this.applicantName.HeaderText = "Applicant Name";
+            this.applicantName.Name = "applicantName";
+            this.applicantName.ReadOnly = true;
             // 
             // Zayavki
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tableapplication);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.userRequestsTable);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Zayavki";
             this.Text = "Zayavki";
-            ((System.ComponentModel.ISupportInitialize)(this.tableapplication)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userRequestsTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,9 +121,10 @@ namespace курсовая.forms
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView tableapplication;
-        private System.Windows.Forms.DataGridViewTextBoxColumn application;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status2;
+        private System.Windows.Forms.DataGridView userRequestsTable;
+        private Button button1;
+        private DataGridViewTextBoxColumn application;
+        private DataGridViewTextBoxColumn ResponseStatusColumn;
+        private DataGridViewTextBoxColumn applicantName;
     }
 }

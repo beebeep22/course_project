@@ -25,23 +25,14 @@ namespace курсовая.forms
 
         private void InitializeDataGridView()
         {
-            var userRequests = getUserRequests();
+            List<UserRequest> userRequests = getUserRequests();
 
             listOfRequests.DataSource = userRequests;
 
             listOfRequests.Columns["_id"].Visible = false;
-            listOfRequests.Columns["ApplicantId"].Visible = false; 
-            listOfRequests.Columns["Content"].Visible = false; 
-
-            // Add a custom column for the Response Status
-            DataGridViewTextBoxColumn responseStatusColumn = new DataGridViewTextBoxColumn();
-            responseStatusColumn.Name = "ResponseStatusColumn";
-            responseStatusColumn.HeaderText = "Response"; 
-            responseStatusColumn.DataPropertyName = "Response"; 
-            listOfRequests.Columns.Add(responseStatusColumn);
-
-            // Hide the original "Response" column
-            listOfRequests.Columns["Response"].Visible = false;
+            listOfRequests.Columns["ApplicantId"].Visible = false;
+            listOfRequests.Columns["ApplicantObj"].Visible = false;
+            listOfRequests.Columns["Content"].Visible = false;
 
             listOfRequests.SelectionChanged += listOfRequests_SelectionChanged;
             listOfRequests.CellFormatting += listOfRequests_CellFormatting;
@@ -72,17 +63,8 @@ namespace курсовая.forms
             // Format the "ResponseStatusColumn" to display "No response" if Response is null
             if (e.ColumnIndex == listOfRequests.Columns["ResponseStatusColumn"].Index)
             {
-                var responseValue = e.Value as UserRequestResponse;
-                if (responseValue == null)
-                {
-                    e.Value = "No response";
-                    e.FormattingApplied = true;
-                }
-                else
-                {
-                    e.Value = responseValue.Status;
-                    e.FormattingApplied = true;
-                }
+                e.Value = (e.Value as UserRequestResponse)?.Status ?? "No response";
+                e.FormattingApplied = true;
             }
         }
     }

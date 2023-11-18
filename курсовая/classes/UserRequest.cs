@@ -12,6 +12,7 @@ namespace курсовая.classes
         public string Content { get; set; }
         public ObjectId ApplicantId { get; set; }
         public UserRequestResponse Response { get; set; }
+        public Account ApplicantObj { get; set; }
 
         public UserRequest(string Topic, string Content, Account AccountObj)
         {
@@ -24,6 +25,11 @@ namespace курсовая.classes
         public void SetResponse(UserRequestResponse Response)
         {
             this.Response = Response;
+        }
+
+        public void SetApplicantObj(Account AccountObj)
+        {
+            this.ApplicantObj = AccountObj;
         }
     }
 }

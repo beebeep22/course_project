@@ -35,7 +35,6 @@ namespace курсовая.forms
         private void Account_Load(object sender, EventArgs e)
         {
             //дані,які не змінюємо
-            //age.ReadOnly = true; //можно ли менять возраст?
             sex.ReadOnly = true;
 
             //інвалідність

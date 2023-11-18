@@ -15,6 +15,7 @@ namespace курсовая.forms
     {
         private Account AccountObj { get; set; }
         private DbAdminOperations AdminOperations { get; set; }
+
         public Zayavki(Account AccountObj)
         {
             InitializeComponent();
@@ -66,6 +67,17 @@ namespace курсовая.forms
                 e.Value = (e.Value as Account)?.Username;
             }
             e.FormattingApplied = true;
+        }
+
+        private void userRequestsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void createnotif_Click(object sender, EventArgs e)
+        {
+            create_notification create_Notification = new create_notification();
+            create_Notification.Show();
         }
     }
 }

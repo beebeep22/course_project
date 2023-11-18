@@ -18,6 +18,7 @@ namespace курсовая.forms
         private Form activeForm;
         private Account AccountObj { get; set; }
         private DbAdminOperations AdminOperations { get; set; }
+
         public Golovna_Admin(Account AccountObj)
         {
             InitializeComponent();

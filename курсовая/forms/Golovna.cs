@@ -198,7 +198,7 @@ namespace курсовая.forms
             this.message.Name = "message";
             this.message.Size = new System.Drawing.Size(216, 70);
             this.message.TabIndex = 1;
-            this.message.Text = "     Повідомлення";
+            this.message.Text = "        Повідомлення";
             this.message.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.message.UseVisualStyleBackColor = true;
             this.message.Click += new System.EventHandler(this.message_Click);

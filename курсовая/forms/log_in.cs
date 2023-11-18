@@ -53,7 +53,7 @@ namespace курсовая.forms
             Account accountObj = AccountOperations.GetAccountByUsernameAndPassword(input);
             if (accountObj == null)
             {
-                // incorrect username or password bla bla bla
+                MessageBox.Show("Поле логіна чи пароля неправильне!");
                 return;
             }
             if (accountObj.Role == "user")
@@ -62,40 +62,20 @@ namespace курсовая.forms
                 golovna.Show();
                 this.Hide();
 
-                //AccountMenu accountForm = new AccountMenu("", "", "", "", "");
                 AccountMenu accountForm = new AccountMenu(accountObj);
                 golovna.OpenChildForm(accountForm, sender);
                 golovna.labeltitle.Text = "З поверненням!";
-            } else if (accountObj.Role == "admin")
+            } 
+            else if (accountObj.Role == "admin")
             {
                 Golovna_Admin golovna_Admin = new Golovna_Admin(accountObj);
                 golovna_Admin.Show();
                 this.Hide();
-                //Account_admin account_Admin = new Account_admin("Ксенія", "Гончаренко", "Сергіївна");
+
                 Account_admin account_Admin = new Account_admin(accountObj);
                 golovna_Admin.OpenChildForm(account_Admin, sender);
             }
 
-            //else if (login.Text == "zireael" && password.Text == "123456789ksg")
-            //{
-            //    Golovna_Admin golovna_Admin = new Golovna_Admin();
-            //    golovna_Admin.Show();
-            //    this.Hide();
-
-            //    Account_admin account_Admin = new Account_admin("Ксенія", "Гончаренко", "Сергіївна");
-            //    golovna_Admin.OpenChildForm(account_Admin, sender);
-
-            //}
-            //else
-            //{
-            //    Golovna golovna = new Golovna();
-            //    golovna.Show();
-            //    this.Hide();
-
-            //    Account accountForm = new Account("", "", "", "", "");
-            //    golovna.OpenChildForm(accountForm, sender);
-            //    golovna.labeltitle.Text = "З поверненням!";
-            //}
         }
 
         private void showpassword_CheckedChanged_1(object sender, EventArgs e)

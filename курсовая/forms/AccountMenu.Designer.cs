@@ -111,9 +111,9 @@
             this.personal.AutoSize = true;
             this.personal.Location = new System.Drawing.Point(3, 3);
             this.personal.Name = "personal";
-            this.personal.Size = new System.Drawing.Size(61, 16);
+            this.personal.Size = new System.Drawing.Size(95, 16);
             this.personal.TabIndex = 0;
-            this.personal.Text = "Personal";
+            this.personal.Text = "Персональне";
             // 
             // pathdiseas
             // 
@@ -210,7 +210,7 @@
             this.age.Size = new System.Drawing.Size(46, 22);
             this.age.TabIndex = 44;
             // 
-            // Account
+            // AccountMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,7 +233,7 @@
             this.Controls.Add(this.patronymic);
             this.Controls.Add(this.name);
             this.Controls.Add(this.surname);
-            this.Name = "Account";
+            this.Name = "AccountMenu";
             this.Text = "Account";
             this.Load += new System.EventHandler(this.Account_Load);
             this.pers.ResumeLayout(false);

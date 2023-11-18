@@ -36,6 +36,7 @@ namespace курсовая.forms
 
             listOfRequests.SelectionChanged += listOfRequests_SelectionChanged;
             listOfRequests.CellFormatting += listOfRequests_CellFormatting;
+            listOfRequests.ScrollBars = ScrollBars.None;
         }
 
         private void listOfRequests_SelectionChanged(object sender, EventArgs e)

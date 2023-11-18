@@ -22,10 +22,6 @@ namespace курсовая.forms
             InitializeComponent();
 
             List<Notification> notifications = UserOperations.GetNotifications(this.AccountObj);
-            foreach (var notification in notifications)
-            {
-                Console.WriteLine(notification.Topic);
-            }
         }
     }
 }

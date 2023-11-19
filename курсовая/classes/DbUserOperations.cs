@@ -92,8 +92,8 @@ namespace курсовая.classes
             TargetFilters filters = notification.Filters;
 
             if (filters == null || filters.GetType().GetProperties().Length == 0 ||
-                ((filters.AgeFrom.HasValue && filters.AgeFrom.Value > Convert.ToInt32(userDetails.Age)) ||
-                 (filters.AgeTo.HasValue && filters.AgeTo.Value < Convert.ToInt32(userDetails.Age))) ||
+                (!string.IsNullOrEmpty(filters.AgeFrom) && Convert.ToInt32(filters.AgeFrom) > Convert.ToInt32(userDetails.Age)) ||
+                (!string.IsNullOrEmpty(filters.AgeTo) && Convert.ToInt32(filters.AgeTo) < Convert.ToInt32(userDetails.Age)) ||
                 (!string.IsNullOrEmpty(filters.Gender) && !filters.Gender.Equals(userDetails.Gender, StringComparison.OrdinalIgnoreCase)) ||
                 (!string.IsNullOrEmpty(filters.Region) && !filters.Region.Equals(userDetails.Region, StringComparison.OrdinalIgnoreCase)) ||
                 (!string.IsNullOrEmpty(filters.Diseases) && !filters.Diseases.Equals(userDetails.Diseases, StringComparison.OrdinalIgnoreCase)) ||

@@ -5,13 +5,24 @@ namespace курсовая.classes
 {
     public class TargetFilters
     {
-        public int? AgeTo { get; set; }
-        public int? AgeFrom { get; set; }
+        public string AgeTo { get; set; }
+        public string AgeFrom { get; set; }
         public string Gender { get; set; }
         public string Region { get; set; }
         public string Diseases { get; set; }
         public string DisabilityLevel { get; set; }
         public string Allergies { get; set; }
+
+        public TargetFilters(string AgeTo, string AgeFrom, string Gender, string Region, string Diseases, string DisabilityLevel, string Allergies)
+        {
+            this.AgeTo = AgeTo;
+            this.AgeFrom = AgeFrom;
+            this.Gender = Gender;
+            this.Region = Region;
+            this.Diseases = Diseases;
+            this.DisabilityLevel = DisabilityLevel;
+            this.Allergies = Allergies;
+        }
     }
 
     class Notification

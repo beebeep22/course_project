@@ -9,6 +9,7 @@ namespace курсовая.classes
         private readonly IMongoCollection<Account> _accountsCollection;
         private readonly IMongoCollection<UserRequest> _userRequestsCollection;
         private readonly IMongoCollection<UserRequestResponse> _userRequestsResponseCollection;
+        private readonly IMongoCollection<Notification> _notificationsCollection;
         
         public DbAdminOperations() : base()
         {
@@ -16,6 +17,7 @@ namespace курсовая.classes
             _accountsCollection = Database.GetCollection<Account>("account");
             _userRequestsCollection = Database.GetCollection<UserRequest>("user_request");
             _userRequestsResponseCollection = Database.GetCollection<UserRequestResponse>("user_request_response");
+            _notificationsCollection = Database.GetCollection<Notification>("notification");
         }
 
         public Account GetApplicantById(ObjectId ApplicantId)
@@ -57,7 +59,7 @@ namespace курсовая.classes
 
         public void CreateNotification(Notification notification)
         {
-            
+            _notificationsCollection.InsertOne(notification);        
         }
     }
 }

@@ -79,5 +79,10 @@ namespace курсовая.forms
             create_notification create_Notification = new create_notification();
             create_Notification.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,6 +38,8 @@ namespace курсовая.forms
             this.applicantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createnotif = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.filterByRegion = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.userRequestsTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +104,7 @@ namespace курсовая.forms
             // 
             this.createnotif.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.createnotif.Location = new System.Drawing.Point(448, 302);
-            this.createnotif.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createnotif.Margin = new System.Windows.Forms.Padding(2);
             this.createnotif.Name = "createnotif";
             this.createnotif.Size = new System.Drawing.Size(127, 40);
             this.createnotif.TabIndex = 3;
@@ -121,11 +123,31 @@ namespace курсовая.forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // filterByRegion
+            // 
+            this.filterByRegion.FormattingEnabled = true;
+            this.filterByRegion.Location = new System.Drawing.Point(464, 27);
+            this.filterByRegion.Name = "filterByRegion";
+            this.filterByRegion.Size = new System.Drawing.Size(121, 21);
+            this.filterByRegion.TabIndex = 4;
+            this.filterByRegion.SelectedIndexChanged += new System.EventHandler(this.filterByRegion_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(464, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Filter by region";
+            // 
             // Zayavki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.filterByRegion);
             this.Controls.Add(this.createnotif);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.userRequestsTable);
@@ -133,6 +155,7 @@ namespace курсовая.forms
             this.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Name = "Zayavki";
             this.Text = "Zayavki";
+            this.Load += new System.EventHandler(this.Zayavki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.userRequestsTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,5 +171,7 @@ namespace курсовая.forms
         private DataGridViewTextBoxColumn applicantName;
         private Button createnotif;
         private Button button1;
+        private ComboBox filterByRegion;
+        private Label label2;
     }
 }

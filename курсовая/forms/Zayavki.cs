@@ -15,21 +15,33 @@ namespace курсовая.forms
     {
         private Account AccountObj { get; set; }
         private DbAdminOperations AdminOperations { get; set; }
+        private List<UserRequest> AllUserRequests { get; set; }
 
         public Zayavki(Account AccountObj)
         {
             InitializeComponent();
             this.AccountObj = AccountObj;
             this.AdminOperations = new DbAdminOperations();
+            this.AllUserRequests = AdminOperations.GetUserRequests();
             InitializeDataGridView();
+        }
+
+        private void Zayavki_Load(object sender, EventArgs e)
+        {
+            filterByRegion.Items.Add("Запорізька область");
+            filterByRegion.Items.Add("Харьківська область");
+            filterByRegion.Items.Add("Дніпропетровська область");
+            filterByRegion.Items.Add("Київська область");
+            filterByRegion.Items.Add("Винницька область");
+            filterByRegion.Items.Add("Житомирьська область");
+            filterByRegion.Items.Add("Львівська область");
         }
 
 
         private void InitializeDataGridView()
         {
-            var userRequests = AdminOperations.GetUserRequests();
 
-            userRequestsTable.DataSource = userRequests;
+            userRequestsTable.DataSource = this.AllUserRequests;
             
             userRequestsTable.Columns["_id"].Visible = false;
             userRequestsTable.Columns["ApplicantId"].Visible = false;
@@ -93,6 +105,26 @@ namespace курсовая.forms
                 return;
             }
 
+        }
+        private void FilterDataGridViewByRegion(string region)
+        {
+            Console.WriteLine($"Filtering by Region: {region}");
+
+            var filteredUserRequests = this.AllUserRequests 
+                .Where(request =>
+                {
+                    string rowRegion = request.ApplicantObj?.UserDetails?.Region ?? "";
+                    return rowRegion == region;
+                })
+                .ToList();
+            userRequestsTable.DataSource = filteredUserRequests;
+        }
+
+
+        private void filterByRegion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedRegion = filterByRegion.SelectedItem.ToString();
+            FilterDataGridViewByRegion(selectedRegion);
         }
     }
 }

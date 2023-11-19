@@ -47,6 +47,11 @@ namespace курсовая.forms
             userRequestsTable.Columns["ApplicantId"].Visible = false;
             userRequestsTable.Columns["Content"].Visible = false;
 
+            userRequestsTable.Columns["requestTopic"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            userRequestsTable.Columns["requestTopic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopLeft;
+            userRequestsTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+
             userRequestsTable.CellFormatting += userRequestsTable_CellFormatting;
             userRequestsTable.SelectionChanged += listOfRequests_SelectionChanged;
         }
@@ -74,9 +79,13 @@ namespace курсовая.forms
                 // Format the "ResponseStatusColumn" to display "No response" if Response is null
                 e.Value = (e.Value as UserRequestResponse)?.Status ?? "No response";
             }
-            else if (e.ColumnIndex == userRequestsTable.Columns["applicantName"].Index)
+            else if (e.ColumnIndex == userRequestsTable.Columns["applicantUsername"].Index)
             {
                 e.Value = (e.Value as Account)?.Username;
+            }
+            else if (e.ColumnIndex == userRequestsTable.Columns["applicantRegion"].Index)
+            {
+                e.Value = (e.Value as Account)?.UserDetails?.Region;
             }
             e.FormattingApplied = true;
         }
@@ -108,8 +117,6 @@ namespace курсовая.forms
         }
         private void FilterDataGridViewByRegion(string region)
         {
-            Console.WriteLine($"Filtering by Region: {region}");
-
             var filteredUserRequests = this.AllUserRequests 
                 .Where(request =>
                 {

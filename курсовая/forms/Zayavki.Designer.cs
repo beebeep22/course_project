@@ -33,13 +33,14 @@ namespace курсовая.forms
         {
             this.label1 = new System.Windows.Forms.Label();
             this.userRequestsTable = new System.Windows.Forms.DataGridView();
-            this.application = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ResponseStatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applicantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createnotif = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.filterByRegion = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.requestTopic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResponseStatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicantUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicantRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.userRequestsTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,43 +63,19 @@ namespace курсовая.forms
             this.userRequestsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userRequestsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userRequestsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.application,
+            this.requestTopic,
             this.ResponseStatusColumn,
-            this.applicantName});
-            this.userRequestsTable.Location = new System.Drawing.Point(95, 61);
+            this.applicantUsername,
+            this.applicantRegion});
+            this.userRequestsTable.Location = new System.Drawing.Point(22, 61);
             this.userRequestsTable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userRequestsTable.Name = "userRequestsTable";
             this.userRequestsTable.RowHeadersWidth = 51;
             this.userRequestsTable.RowTemplate.Height = 24;
             this.userRequestsTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.userRequestsTable.Size = new System.Drawing.Size(490, 225);
+            this.userRequestsTable.Size = new System.Drawing.Size(567, 225);
             this.userRequestsTable.TabIndex = 1;
             this.userRequestsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userRequestsTable_CellContentClick);
-            // 
-            // application
-            // 
-            this.application.DataPropertyName = "Topic";
-            this.application.HeaderText = "Тема запиту";
-            this.application.MinimumWidth = 6;
-            this.application.Name = "application";
-            this.application.Width = 160;
-            // 
-            // ResponseStatusColumn
-            // 
-            this.ResponseStatusColumn.DataPropertyName = "Response";
-            this.ResponseStatusColumn.HeaderText = "Статус";
-            this.ResponseStatusColumn.MinimumWidth = 6;
-            this.ResponseStatusColumn.Name = "ResponseStatusColumn";
-            this.ResponseStatusColumn.Width = 125;
-            // 
-            // applicantName
-            // 
-            this.applicantName.DataPropertyName = "ApplicantObj";
-            this.applicantName.HeaderText = "Ім\'я заявника";
-            this.applicantName.MinimumWidth = 6;
-            this.applicantName.Name = "applicantName";
-            this.applicantName.ReadOnly = true;
-            this.applicantName.Width = 150;
             // 
             // createnotif
             // 
@@ -141,6 +118,41 @@ namespace курсовая.forms
             this.label2.TabIndex = 5;
             this.label2.Text = "Filter by region";
             // 
+            // requestTopic
+            // 
+            this.requestTopic.DataPropertyName = "Topic";
+            this.requestTopic.HeaderText = "Тема запиту";
+            this.requestTopic.MinimumWidth = 6;
+            this.requestTopic.Name = "requestTopic";
+            this.requestTopic.ReadOnly = true;
+            this.requestTopic.Width = 160;
+            // 
+            // ResponseStatusColumn
+            // 
+            this.ResponseStatusColumn.DataPropertyName = "Response";
+            this.ResponseStatusColumn.HeaderText = "Статус";
+            this.ResponseStatusColumn.MinimumWidth = 6;
+            this.ResponseStatusColumn.Name = "ResponseStatusColumn";
+            this.ResponseStatusColumn.ReadOnly = true;
+            this.ResponseStatusColumn.Width = 125;
+            // 
+            // applicantUsername
+            // 
+            this.applicantUsername.DataPropertyName = "ApplicantObj";
+            this.applicantUsername.HeaderText = "Юзернейм заявника";
+            this.applicantUsername.MinimumWidth = 6;
+            this.applicantUsername.Name = "applicantUsername";
+            this.applicantUsername.ReadOnly = true;
+            this.applicantUsername.Width = 75;
+            // 
+            // applicantRegion
+            // 
+            this.applicantRegion.DataPropertyName = "ApplicantObj";
+            this.applicantRegion.HeaderText = "Регіон заявника";
+            this.applicantRegion.Name = "applicantRegion";
+            this.applicantRegion.ReadOnly = true;
+            this.applicantRegion.Width = 175;
+            // 
             // Zayavki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,12 +178,13 @@ namespace курсовая.forms
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView userRequestsTable;
-        private DataGridViewTextBoxColumn application;
-        private DataGridViewTextBoxColumn ResponseStatusColumn;
-        private DataGridViewTextBoxColumn applicantName;
         private Button createnotif;
         private Button button1;
         private ComboBox filterByRegion;
         private Label label2;
+        private DataGridViewTextBoxColumn requestTopic;
+        private DataGridViewTextBoxColumn ResponseStatusColumn;
+        private DataGridViewTextBoxColumn applicantUsername;
+        private DataGridViewTextBoxColumn applicantRegion;
     }
 }

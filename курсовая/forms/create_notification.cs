@@ -54,16 +54,7 @@ namespace курсовая.forms
             }
             else if (agefrom.Text != "" || ageupto.Text != "" || region.Text != "" || pathdiseas.Text != "" || invalid.Text != "" || alergic.Text != "")
             {
-                if (themenotification.Text == "")
-                {
-                    MessageBox.Show("Тема повідомлення не введена.");
-                }
-                else if (content_notification.Text == "")
-                {
-                    MessageBox.Show("Опис повідомлення не введен.");
-                }
-                else
-                    this.Hide();
+                this.Hide();
             }
         }
 

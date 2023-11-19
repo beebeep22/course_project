@@ -47,6 +47,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.men = new System.Windows.Forms.CheckBox();
+            this.women = new System.Windows.Forms.CheckBox();
+            this.tltsex = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // content_notification
@@ -102,7 +105,7 @@
             // 
             this.region.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.region.FormattingEnabled = true;
-            this.region.Location = new System.Drawing.Point(44, 130);
+            this.region.Location = new System.Drawing.Point(44, 101);
             this.region.Name = "region";
             this.region.Size = new System.Drawing.Size(151, 24);
             this.region.TabIndex = 10;
@@ -111,7 +114,7 @@
             // 
             this.pathdiseas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.pathdiseas.FormattingEnabled = true;
-            this.pathdiseas.Location = new System.Drawing.Point(44, 191);
+            this.pathdiseas.Location = new System.Drawing.Point(44, 162);
             this.pathdiseas.Name = "pathdiseas";
             this.pathdiseas.Size = new System.Drawing.Size(151, 24);
             this.pathdiseas.TabIndex = 12;
@@ -120,7 +123,7 @@
             // 
             this.invalid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.invalid.FormattingEnabled = true;
-            this.invalid.Location = new System.Drawing.Point(44, 265);
+            this.invalid.Location = new System.Drawing.Point(44, 223);
             this.invalid.Name = "invalid";
             this.invalid.Size = new System.Drawing.Size(151, 24);
             this.invalid.TabIndex = 14;
@@ -129,7 +132,7 @@
             // 
             this.alergic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.alergic.FormattingEnabled = true;
-            this.alergic.Location = new System.Drawing.Point(44, 334);
+            this.alergic.Location = new System.Drawing.Point(44, 292);
             this.alergic.Name = "alergic";
             this.alergic.Size = new System.Drawing.Size(151, 24);
             this.alergic.TabIndex = 15;
@@ -138,7 +141,7 @@
             // 
             this.agefrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.agefrom.FormattingEnabled = true;
-            this.agefrom.Location = new System.Drawing.Point(44, 63);
+            this.agefrom.Location = new System.Drawing.Point(44, 41);
             this.agefrom.Name = "agefrom";
             this.agefrom.Size = new System.Drawing.Size(55, 24);
             this.agefrom.TabIndex = 16;
@@ -147,7 +150,7 @@
             // 
             this.ageupto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ageupto.FormattingEnabled = true;
-            this.ageupto.Location = new System.Drawing.Point(138, 63);
+            this.ageupto.Location = new System.Drawing.Point(138, 41);
             this.ageupto.Name = "ageupto";
             this.ageupto.Size = new System.Drawing.Size(57, 24);
             this.ageupto.TabIndex = 17;
@@ -156,7 +159,7 @@
             // 
             this.tltage.AutoSize = true;
             this.tltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tltage.Location = new System.Drawing.Point(41, 39);
+            this.tltage.Location = new System.Drawing.Point(44, 17);
             this.tltage.Name = "tltage";
             this.tltage.Size = new System.Drawing.Size(29, 18);
             this.tltage.TabIndex = 18;
@@ -166,7 +169,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(8, 64);
+            this.label1.Location = new System.Drawing.Point(8, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 18);
             this.label1.TabIndex = 19;
@@ -176,7 +179,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(106, 64);
+            this.label2.Location = new System.Drawing.Point(106, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 18);
             this.label2.TabIndex = 20;
@@ -186,7 +189,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(41, 109);
+            this.label3.Location = new System.Drawing.Point(41, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 18);
             this.label3.TabIndex = 21;
@@ -196,7 +199,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(24, 170);
+            this.label4.Location = new System.Drawing.Point(24, 141);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(192, 18);
             this.label4.TabIndex = 22;
@@ -206,7 +209,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(41, 244);
+            this.label5.Location = new System.Drawing.Point(41, 202);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 18);
             this.label5.TabIndex = 23;
@@ -216,17 +219,51 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(44, 312);
+            this.label6.Location = new System.Drawing.Point(44, 270);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 18);
             this.label6.TabIndex = 24;
             this.label6.Text = "Алергії";
+            // 
+            // men
+            // 
+            this.men.AutoSize = true;
+            this.men.Location = new System.Drawing.Point(44, 354);
+            this.men.Name = "men";
+            this.men.Size = new System.Drawing.Size(40, 20);
+            this.men.TabIndex = 25;
+            this.men.Text = "М";
+            this.men.UseVisualStyleBackColor = true;
+            this.men.CheckedChanged += new System.EventHandler(this.men_CheckedChanged);
+            // 
+            // women
+            // 
+            this.women.AutoSize = true;
+            this.women.Location = new System.Drawing.Point(109, 354);
+            this.women.Name = "women";
+            this.women.Size = new System.Drawing.Size(42, 20);
+            this.women.TabIndex = 26;
+            this.women.Text = "Ж";
+            this.women.UseVisualStyleBackColor = true;
+            this.women.CheckedChanged += new System.EventHandler(this.women_CheckedChanged);
+            // 
+            // tltsex
+            // 
+            this.tltsex.AutoSize = true;
+            this.tltsex.Location = new System.Drawing.Point(41, 334);
+            this.tltsex.Name = "tltsex";
+            this.tltsex.Size = new System.Drawing.Size(45, 16);
+            this.tltsex.TabIndex = 27;
+            this.tltsex.Text = "Стать";
             // 
             // create_notification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tltsex);
+            this.Controls.Add(this.women);
+            this.Controls.Add(this.men);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -275,5 +312,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox men;
+        private System.Windows.Forms.CheckBox women;
+        private System.Windows.Forms.Label tltsex;
     }
 }

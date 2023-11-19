@@ -47,12 +47,12 @@ namespace курсовая.forms
             {
                 MessageBox.Show("Оберіть оба значення.");
             }
-            else if (agefrom.Text == "" && ageupto.Text == "" && region.Text == "" && pathdiseas.Text == "" && invalid.Text == "" && alergic.Text == "")
+            else if (agefrom.Text == "" && ageupto.Text == "" && region.Text == "" && pathdiseas.Text == "" && invalid.Text == "" && alergic.Text == "" && men.Checked == false && women.Checked == false)
             {
                 //не знаю нужно ли
                 MessageBox.Show("Ви не обрали жодного фільтра.");
             }
-            else if (agefrom.Text != "" || ageupto.Text != "" || region.Text != "" || pathdiseas.Text != "" || invalid.Text != "" || alergic.Text != "")
+            else if (agefrom.Text != "" || ageupto.Text != "" || region.Text != "" || pathdiseas.Text != "" || invalid.Text != "" || alergic.Text != "" || men.Checked != false || women.Checked != false)
             {
                 this.Hide();
             }
@@ -86,6 +86,22 @@ namespace курсовая.forms
             region.Items.Add("Житомирьська область");
             region.Items.Add("Львівська область");
 
+        }
+
+        private void men_CheckedChanged(object sender, EventArgs e)
+        {
+            if (men.Checked)
+            {
+                women.Checked = false;
+            }
+        }
+
+        private void women_CheckedChanged(object sender, EventArgs e)
+        {
+            if (women.Checked)
+            {
+                men.Checked = false;
+            }
         }
     }
 }

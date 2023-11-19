@@ -66,7 +66,8 @@ namespace курсовая.forms
                 FirstName: name.Text,
                 LastName: surname.Text,
                 MiddleName: patronymic.Text,
-                Gender: Men.Checked ? "Male" : "Female",
+                //Gender: Men.Checked ? "Male" : "Female", сразу на украинсоком может?
+                Gender: Men.Checked ? "M" : "Ж",
                 Age: age.Text 
             );
             UserOperations.UpdateUserDetails(AccountObj, details);

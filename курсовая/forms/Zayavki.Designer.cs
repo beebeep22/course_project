@@ -104,7 +104,7 @@ namespace курсовая.forms
             this.createnotif.Name = "createnotif";
             this.createnotif.Size = new System.Drawing.Size(169, 49);
             this.createnotif.TabIndex = 3;
-            this.createnotif.Text = "Створення повідомлення";
+            this.createnotif.Text = "Створити повідомлення";
             this.createnotif.UseVisualStyleBackColor = true;
             this.createnotif.Click += new System.EventHandler(this.createnotif_Click);
             // 

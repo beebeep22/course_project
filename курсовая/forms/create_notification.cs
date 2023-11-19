@@ -1,31 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using курсовая.classes;
 
 namespace курсовая.forms
 {
     public partial class create_notification : Form
     {
+        private Account AccountObj { get; set; }
+        private DbAdminOperations AdminOperations { get; set; }
         public create_notification()
         {
+            this.AccountObj = AccountObj;
+            this.AdminOperations = new DbAdminOperations();
             InitializeComponent();
         }
-        private void send_Click(object sender, EventArgs e)
+
+        private bool isNotificationInputValid()
         {
             //перепроверить в какой момент это должно проверятся
             if (themenotification.Text == "")
             {
                 MessageBox.Show("Тема повідомлення не введена.");
+                return false;
             }
             else if (content_notification.Text == "")
             {
                 MessageBox.Show("Опис повідомлення не введен.");
+                return false;
             }
             else if (agefrom.SelectedItem != null && ageupto.SelectedItem != null)
             {
@@ -35,27 +36,40 @@ namespace курсовая.forms
                 if (selectedValue1 == selectedValue2)
                 {
                     MessageBox.Show("Некорректно обраний вік.");
+                    return false;
                 }
                 else if (selectedValue1 > selectedValue2)
                 {
                     MessageBox.Show("Некорректно обраний вік.");
+                    return false;
                 }
-                else
-                    this.Hide();
             }
-            else if (agefrom.SelectedItem != null || ageupto.SelectedItem != null)
-            {
-                MessageBox.Show("Оберіть оба значення.");
-            }
-            else if (agefrom.Text == "" && ageupto.Text == "" && region.Text == "" && pathdiseas.Text == "" && invalid.Text == "" && alergic.Text == "" && men.Checked == false && women.Checked == false)
-            {
-                //не знаю нужно ли
-                MessageBox.Show("Ви не обрали жодного фільтра.");
-            }
-            else if (agefrom.Text != "" || ageupto.Text != "" || region.Text != "" || pathdiseas.Text != "" || invalid.Text != "" || alergic.Text != "" || men.Checked != false || women.Checked != false)
-            {
-                this.Hide();
-            }
+            return true;
+        }
+
+        private void send_Click(object sender, EventArgs e)
+        {
+            if (!isNotificationInputValid()) return;
+
+            TargetFilters filters = new TargetFilters(
+                AgeTo: ageupto.SelectedItem?.ToString() ?? "",
+                AgeFrom: agefrom.SelectedItem?.ToString() ?? "",
+                Gender: null, // TODO: add gender selection in form
+                Region: region.Text,
+                Diseases: pathdiseas.Text,
+                DisabilityLevel: invalid.Text,
+                Allergies: alergic.Text
+            );
+
+            Notification notification = new Notification(
+                Topic: themenotification.Text,
+                Content: content_notification.Text,
+                Filters: filters
+            );
+
+            AdminOperations.CreateNotification(notification); 
+
+            this.Hide();
         }
 
         private void create_notification_Load(object sender, EventArgs e)

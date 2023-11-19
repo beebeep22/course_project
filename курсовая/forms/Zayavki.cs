@@ -76,8 +76,23 @@ namespace курсовая.forms
 
         private void createnotif_Click(object sender, EventArgs e)
         {
+            if (this.AccountObj?.AdminDetails?.CanCreateNotifications != true)
+            {
+                MessageBox.Show("У вас нема права на створення повiдомлення");
+                return;
+            }
             create_notification create_Notification = new create_notification();
             create_Notification.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.AccountObj?.AdminDetails?.CanRespondOnRequests != true)
+            {
+                MessageBox.Show("У вас нема права відповідати на повідомлення");
+                return;
+            }
+
         }
     }
 }

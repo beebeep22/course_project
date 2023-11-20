@@ -24,7 +24,7 @@ namespace курсовая.forms
 
         private void inform_Load(object sender, EventArgs e)
         {
-            this.ControlBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void OK_Click(object sender, EventArgs e)

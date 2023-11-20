@@ -156,6 +156,12 @@
     <Compile Include="forms\History.Designer.cs">
       <DependentUpon>History.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\inform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\inform.Designer.cs">
+      <DependentUpon>inform.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\log_in.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\History.resx">
       <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\inform.resx">
+      <DependentUpon>inform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\log_in.resx">
       <DependentUpon>log_in.cs</DependentUpon>
@@ -308,6 +317,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\повідомлення2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

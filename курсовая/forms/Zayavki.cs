@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using курсовая.classes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace курсовая.forms
 {
@@ -54,22 +55,13 @@ namespace курсовая.forms
 
             userRequestsTable.CellFormatting += userRequestsTable_CellFormatting;
             userRequestsTable.SelectionChanged += listOfRequests_SelectionChanged;
+
+            userRequestsTable.ClearSelection();
         }
 
         private void listOfRequests_SelectionChanged(object sender, EventArgs e)
         {
-            UserRequest selectedRequest = (UserRequest)userRequestsTable.CurrentRow?.DataBoundItem;
 
-            if (selectedRequest != null)
-            {
-                /* 
-                 * TODO: show info about request and applicant in UI
-                 * Examples:
-                 * selectedRequest.AccountObj.Username - username of applicant
-                 * selectedRequest.AccountObj?.UserDetails?.GetFullName() ?? "No data about user" - full name if present
-                 * selectedRequest.AccountObj?.UserDetails?.Region ?? "No data about user" - region
-                */ 
-            }
         }
 
         private void userRequestsTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -92,7 +84,34 @@ namespace курсовая.forms
 
         private void userRequestsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            UserRequest selectedRequest = (UserRequest)userRequestsTable.CurrentRow?.DataBoundItem;
+            string username;
+            string Fullname;
+            string region;
+            string age;
+            string sex;
 
+            if (selectedRequest != null)
+            {
+                /* 
+                 * TODO: show info about request and applicant in UI
+                 * Examples:
+                 * selectedRequest.AccountObj.Username - username of applicant
+                 * selectedRequest.AccountObj?.UserDetails?.GetFullName() ?? "No data about user" - full name if present
+                 * selectedRequest.AccountObj?.UserDetails?.Region ?? "No data about user" - region
+                */
+
+                //про алергии,заболевания и инвалидность тоже сделать?
+                username = selectedRequest.ApplicantObj.Username ?? "Немає інформації про заявника";
+                Fullname = selectedRequest.ApplicantObj?.UserDetails?.GetFullName() ?? "Немає інформації про заявника";
+                region = selectedRequest.ApplicantObj?.UserDetails?.Region ?? "Немає інформації про заявника";
+                age = selectedRequest.ApplicantObj?.UserDetails?.Age ?? "Немає інформації про заявника";
+                sex = selectedRequest.ApplicantObj?.UserDetails ?.Gender ?? "Немає інформації про заявника";
+                
+                inform Inform = new inform(Fullname,username,region,age,sex);
+                Inform.Show();
+            }
+            
         }
 
         private void createnotif_Click(object sender, EventArgs e)

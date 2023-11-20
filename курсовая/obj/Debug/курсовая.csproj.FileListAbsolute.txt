@@ -135,3 +135,4 @@ C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая
 C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.csproj.CopyComplete
 C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.create_notification.resources
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.create_notification.resources
+C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.inform.resources

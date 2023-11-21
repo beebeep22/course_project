@@ -74,7 +74,6 @@ namespace курсовая.forms
             this.userRequestsTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.userRequestsTable.Size = new System.Drawing.Size(865, 277);
             this.userRequestsTable.TabIndex = 1;
-            this.userRequestsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userRequestsTable_CellContentClick);
             // 
             // requestTopic
             // 

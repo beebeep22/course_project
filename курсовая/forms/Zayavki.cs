@@ -55,6 +55,7 @@ namespace курсовая.forms
 
             userRequestsTable.CellFormatting += userRequestsTable_CellFormatting;
             userRequestsTable.SelectionChanged += listOfRequests_SelectionChanged;
+            userRequestsTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userRequestsTable_CellClick);
 
             userRequestsTable.ClearSelection();
         }
@@ -82,9 +83,11 @@ namespace курсовая.forms
             e.FormattingApplied = true;
         }
 
-        private void userRequestsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void userRequestsTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            UserRequest selectedRequest = (UserRequest)userRequestsTable.CurrentRow?.DataBoundItem;
+            DataGridViewRow clickedRow = userRequestsTable.Rows[e.RowIndex];
+            UserRequest selectedRequest = (UserRequest)clickedRow?.DataBoundItem;
+
             string topic;
             string content;
             string username;
@@ -104,6 +107,7 @@ namespace курсовая.forms
                 */
 
                 //про алергии,заболевания и инвалидность тоже сделать?
+                // yes
                 topic = selectedRequest.Topic ?? "Немає інформації про заявника"; 
                 content = selectedRequest.Content ?? "Немає інформації про заявника";
                 username = selectedRequest.ApplicantObj.Username ?? "Немає інформації про заявника";

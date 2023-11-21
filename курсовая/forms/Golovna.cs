@@ -50,15 +50,15 @@ namespace курсовая.forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Golovna));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.Title = new System.Windows.Forms.Panel();
-            this.labeltitle = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.message = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.Settings = new System.Windows.Forms.Button();
             this.History = new System.Windows.Forms.Button();
             this.Podacha = new System.Windows.Forms.Button();
             this.Account = new System.Windows.Forms.Button();
+            this.Title = new System.Windows.Forms.Panel();
+            this.message = new System.Windows.Forms.Button();
+            this.labeltitle = new System.Windows.Forms.Label();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.Title.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,103 @@ namespace курсовая.forms
             this.panelMenu.Size = new System.Drawing.Size(220, 467);
             this.panelMenu.TabIndex = 0;
             // 
+            // exit
+            // 
+            this.exit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.exit.FlatAppearance.BorderSize = 0;
+            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.exit.Image = global::курсовая.Properties.Resources.exit;
+            this.exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exit.Location = new System.Drawing.Point(0, 260);
+            this.exit.Name = "exit";
+            this.exit.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.exit.Size = new System.Drawing.Size(220, 60);
+            this.exit.TabIndex = 6;
+            this.exit.Text = "              Вихід";
+            this.exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
+            // Settings
+            // 
+            this.Settings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Settings.FlatAppearance.BorderSize = 0;
+            this.Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Settings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Settings.Image = global::курсовая.Properties.Resources.settings;
+            this.Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings.Location = new System.Drawing.Point(0, 200);
+            this.Settings.Name = "Settings";
+            this.Settings.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.Settings.Size = new System.Drawing.Size(220, 60);
+            this.Settings.TabIndex = 4;
+            this.Settings.Text = " Налаштування";
+            this.Settings.UseVisualStyleBackColor = true;
+            this.Settings.Click += new System.EventHandler(this.Settings_Click);
+            // 
+            // History
+            // 
+            this.History.Dock = System.Windows.Forms.DockStyle.Top;
+            this.History.FlatAppearance.BorderSize = 0;
+            this.History.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.History.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.History.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.History.Image = global::курсовая.Properties.Resources.status1;
+            this.History.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.History.Location = new System.Drawing.Point(0, 140);
+            this.History.Name = "History";
+            this.History.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.History.Size = new System.Drawing.Size(220, 60);
+            this.History.TabIndex = 3;
+            this.History.Text = "        Історія заявок";
+            this.History.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.History.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.History.UseVisualStyleBackColor = true;
+            this.History.Click += new System.EventHandler(this.History_Click);
+            // 
+            // Podacha
+            // 
+            this.Podacha.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Podacha.FlatAppearance.BorderSize = 0;
+            this.Podacha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Podacha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Podacha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Podacha.Image = global::курсовая.Properties.Resources.заявка;
+            this.Podacha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Podacha.Location = new System.Drawing.Point(0, 80);
+            this.Podacha.Name = "Podacha";
+            this.Podacha.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.Podacha.Size = new System.Drawing.Size(220, 60);
+            this.Podacha.TabIndex = 2;
+            this.Podacha.Text = "       Подача заявок";
+            this.Podacha.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Podacha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Podacha.UseVisualStyleBackColor = true;
+            this.Podacha.Click += new System.EventHandler(this.Podacha_Click);
+            // 
+            // Account
+            // 
+            this.Account.BackColor = System.Drawing.Color.SlateGray;
+            this.Account.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Account.FlatAppearance.BorderSize = 0;
+            this.Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Account.Image = global::курсовая.Properties.Resources.free_icon_user_profile_33640441;
+            this.Account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Account.Location = new System.Drawing.Point(0, 0);
+            this.Account.Name = "Account";
+            this.Account.Size = new System.Drawing.Size(220, 80);
+            this.Account.TabIndex = 1;
+            this.Account.Text = "        Акаунт";
+            this.Account.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Account.UseVisualStyleBackColor = false;
+            this.Account.Click += new System.EventHandler(this.Account_Click);
+            // 
             // Title
             // 
             this.Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -87,6 +184,22 @@ namespace курсовая.forms
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(681, 80);
             this.Title.TabIndex = 1;
+            // 
+            // message
+            // 
+            this.message.FlatAppearance.BorderSize = 0;
+            this.message.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.message.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.message.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.message.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.message.Location = new System.Drawing.Point(0, 4);
+            this.message.Name = "message";
+            this.message.Size = new System.Drawing.Size(216, 70);
+            this.message.TabIndex = 1;
+            this.message.Text = "     Повідомлення";
+            this.message.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.message.UseVisualStyleBackColor = true;
+            this.message.Click += new System.EventHandler(this.message_Click);
             // 
             // labeltitle
             // 
@@ -108,114 +221,6 @@ namespace курсовая.forms
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(681, 387);
             this.panelDesktop.TabIndex = 2;
-            // 
-            // message
-            // 
-            this.message.FlatAppearance.BorderSize = 0;
-            this.message.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.message.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.message.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.message.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.message.Location = new System.Drawing.Point(0, 4);
-            this.message.Name = "message";
-            this.message.Size = new System.Drawing.Size(216, 70);
-            this.message.TabIndex = 1;
-            this.message.Text = "     Повідомлення";
-            this.message.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.message.UseVisualStyleBackColor = true;
-            this.message.Click += new System.EventHandler(this.message_Click);
-            // 
-            // exit
-            // 
-            this.exit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.exit.FlatAppearance.BorderSize = 0;
-            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exit.Location = new System.Drawing.Point(0, 260);
-            this.exit.Name = "exit";
-            this.exit.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.exit.Size = new System.Drawing.Size(220, 60);
-            this.exit.TabIndex = 6;
-            this.exit.Text = "              Вихід";
-            this.exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.exit.UseVisualStyleBackColor = true;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
-            // 
-            // Settings
-            // 
-            this.Settings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Settings.FlatAppearance.BorderSize = 0;
-            this.Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Settings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings.Location = new System.Drawing.Point(0, 200);
-            this.Settings.Name = "Settings";
-            this.Settings.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.Settings.Size = new System.Drawing.Size(220, 60);
-            this.Settings.TabIndex = 4;
-            this.Settings.Text = " Налаштування";
-            this.Settings.UseVisualStyleBackColor = true;
-            this.Settings.Click += new System.EventHandler(this.Settings_Click);
-            // 
-            // History
-            // 
-            this.History.Dock = System.Windows.Forms.DockStyle.Top;
-            this.History.FlatAppearance.BorderSize = 0;
-            this.History.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.History.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.History.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.History.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.History.Location = new System.Drawing.Point(0, 140);
-            this.History.Name = "History";
-            this.History.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.History.Size = new System.Drawing.Size(220, 60);
-            this.History.TabIndex = 3;
-            this.History.Text = "        Історія заявок";
-            this.History.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.History.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.History.UseVisualStyleBackColor = true;
-            this.History.Click += new System.EventHandler(this.History_Click);
-            // 
-            // Podacha
-            // 
-            this.Podacha.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Podacha.FlatAppearance.BorderSize = 0;
-            this.Podacha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Podacha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Podacha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Podacha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Podacha.Location = new System.Drawing.Point(0, 80);
-            this.Podacha.Name = "Podacha";
-            this.Podacha.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.Podacha.Size = new System.Drawing.Size(220, 60);
-            this.Podacha.TabIndex = 2;
-            this.Podacha.Text = "       Подача заявок";
-            this.Podacha.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Podacha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Podacha.UseVisualStyleBackColor = true;
-            this.Podacha.Click += new System.EventHandler(this.Podacha_Click);
-            // 
-            // Account
-            // 
-            this.Account.BackColor = System.Drawing.Color.SlateGray;
-            this.Account.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Account.FlatAppearance.BorderSize = 0;
-            this.Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Account.Location = new System.Drawing.Point(0, 0);
-            this.Account.Name = "Account";
-            this.Account.Size = new System.Drawing.Size(220, 80);
-            this.Account.TabIndex = 1;
-            this.Account.Text = "        Акаунт";
-            this.Account.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Account.UseVisualStyleBackColor = false;
-            this.Account.Click += new System.EventHandler(this.Account_Click);
             // 
             // Golovna
             // 

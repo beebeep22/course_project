@@ -85,6 +85,8 @@ namespace курсовая.forms
         private void userRequestsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             UserRequest selectedRequest = (UserRequest)userRequestsTable.CurrentRow?.DataBoundItem;
+            string topic;
+            string content;
             string username;
             string Fullname;
             string region;
@@ -102,13 +104,15 @@ namespace курсовая.forms
                 */
 
                 //про алергии,заболевания и инвалидность тоже сделать?
+                topic = selectedRequest.Topic ?? "Немає інформації про заявника"; 
+                content = selectedRequest.Content ?? "Немає інформації про заявника";
                 username = selectedRequest.ApplicantObj.Username ?? "Немає інформації про заявника";
                 Fullname = selectedRequest.ApplicantObj?.UserDetails?.GetFullName() ?? "Немає інформації про заявника";
                 region = selectedRequest.ApplicantObj?.UserDetails?.Region ?? "Немає інформації про заявника";
                 age = selectedRequest.ApplicantObj?.UserDetails?.Age ?? "Немає інформації про заявника";
                 sex = selectedRequest.ApplicantObj?.UserDetails ?.Gender ?? "Немає інформації про заявника";
                 
-                inform Inform = new inform(Fullname,username,region,age,sex);
+                inform Inform = new inform(topic,content,Fullname,username,region,age,sex);
                 Inform.Show();
             }
             

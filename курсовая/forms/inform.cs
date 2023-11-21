@@ -12,9 +12,11 @@ namespace курсовая.forms
 {
     public partial class inform : Form
     {
-        public inform(string PIB,string login,string obl,string vik,string gender)
+        public inform(string theme, string description,string PIB,string login,string obl,string vik,string gender)
         {
             InitializeComponent();
+            topic.Text = theme;
+            content.Text = description;
             fullname.Text = PIB;
             username.Text = login;
             region.Text = obl;

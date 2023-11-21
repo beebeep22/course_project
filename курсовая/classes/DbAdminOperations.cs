@@ -57,9 +57,14 @@ namespace курсовая.classes
             return FillRequestsWithApplicants(allRequests);
         }
 
-        public void CreateNotification(Notification notification)
+        public void CreateNotification(Notification Notification)
         {
-            _notificationsCollection.InsertOne(notification);        
+            _notificationsCollection.InsertOne(Notification);        
+        }
+
+        public void CreateUserRequestResponse(UserRequestResponse Response)
+        {
+            _userRequestsResponseCollection.InsertOne(Response)
         }
     }
 }

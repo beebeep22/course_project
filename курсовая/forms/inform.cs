@@ -12,7 +12,7 @@ namespace курсовая.forms
 {
     public partial class inform : Form
     {
-        public inform(string theme, string description,string PIB,string login,string obl,string vik,string gender)
+        public inform(string theme, string description,string PIB,string login,string obl,string vik,string gender,string alerg, string inval, string diseases)
         {
             InitializeComponent();
             topic.Text = theme;
@@ -22,6 +22,9 @@ namespace курсовая.forms
             region.Text = obl;
             age.Text = vik;
             sex.Text = gender;
+            alergic.Text = alerg;
+            invalid.Text = inval;
+            pathologicaldiseases.Text = diseases;
         }
 
         private void inform_Load(object sender, EventArgs e)

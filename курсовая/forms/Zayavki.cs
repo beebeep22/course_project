@@ -95,6 +95,9 @@ namespace курсовая.forms
             string region;
             string age;
             string sex;
+            string alergic;
+            string pathol_diseases;
+            string invalid;
 
             if (selectedRequest != null)
             {
@@ -114,9 +117,12 @@ namespace курсовая.forms
                 Fullname = selectedRequest.ApplicantObj?.UserDetails?.GetFullName() ?? "Немає інформації про заявника";
                 region = selectedRequest.ApplicantObj?.UserDetails?.Region ?? "Немає інформації про заявника";
                 age = selectedRequest.ApplicantObj?.UserDetails?.Age ?? "Немає інформації про заявника";
-                sex = selectedRequest.ApplicantObj?.UserDetails ?.Gender ?? "Немає інформації про заявника";
-                
-                inform Inform = new inform(topic,content,Fullname,username,region,age,sex);
+                sex = selectedRequest.ApplicantObj?.UserDetails?.Gender ?? "Немає інформації про заявника";
+                alergic = selectedRequest.ApplicantObj?.UserDetails?.Allergies ?? "Немає інформації про заявника"; 
+                pathol_diseases = selectedRequest.ApplicantObj?.UserDetails?.Diseases ?? "Немає інформації про заявника";
+                invalid = selectedRequest.ApplicantObj?.UserDetails?.DisabilityLevel ?? "Немає інформації про заявника";
+
+                inform Inform = new inform(topic,content,Fullname,username,region,age,sex,alergic,invalid,pathol_diseases);
                 Inform.Show();
             }
             
@@ -139,6 +145,14 @@ namespace курсовая.forms
             {
                 MessageBox.Show("У вас нема права відповідати на повідомлення");
                 return;
+            }
+            else
+            {
+                /*Golovna_Admin golovna_Admin = new Golovna_Admin(AccountObj);
+                AdminResponseCreation adminResponseCreation = new AdminResponseCreation();
+                golovna_Admin.OpenChildForm(adminResponseCreation, sender);*/
+                AdminResponseCreation adminResponseCreation = new AdminResponseCreation();
+                adminResponseCreation.Show();
             }
 
         }

@@ -138,3 +138,4 @@ Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсов
 C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.inform.resources
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.inform.resources
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.AdminResponseCreation.resources
+C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.AdminResponseCreation.resources

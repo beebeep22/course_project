@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.createResponse = new System.Windows.Forms.Button();
             this.statusAccepted = new System.Windows.Forms.RadioButton();
             this.statusOnReview = new System.Windows.Forms.RadioButton();
             this.statusRejected = new System.Windows.Forms.RadioButton();
@@ -83,15 +83,15 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Статус заявки";
             // 
-            // button1
+            // createResponse
             // 
-            this.button1.Location = new System.Drawing.Point(246, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Створити відповідь";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.createResponse_Click);
+            this.createResponse.Location = new System.Drawing.Point(246, 386);
+            this.createResponse.Name = "createResponse";
+            this.createResponse.Size = new System.Drawing.Size(128, 23);
+            this.createResponse.TabIndex = 6;
+            this.createResponse.Text = "Створити відповідь";
+            this.createResponse.UseVisualStyleBackColor = true;
+            this.createResponse.Click += new System.EventHandler(this.createResponse_Click);
             // 
             // statusAccepted
             // 
@@ -144,7 +144,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.createResponse);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -166,7 +166,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button createResponse;
         private System.Windows.Forms.RadioButton statusAccepted;
         private System.Windows.Forms.RadioButton statusOnReview;
         private System.Windows.Forms.RadioButton statusRejected;

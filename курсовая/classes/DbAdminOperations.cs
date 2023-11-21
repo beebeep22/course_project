@@ -64,7 +64,7 @@ namespace курсовая.classes
 
         public void CreateUserRequestResponse(UserRequestResponse Response)
         {
-            _userRequestsResponseCollection.InsertOne(Response)
+            _userRequestsResponseCollection.InsertOne(Response);
         }
     }
 }

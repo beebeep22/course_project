@@ -31,7 +31,7 @@ namespace курсовая.forms
             Заявки.Size = new System.Drawing.Size(220, 60);
             Налаштування.Size = new System.Drawing.Size(220, 60);
             exit.Size = new System.Drawing.Size(220, 60);
-
+            this.IsMdiContainer = true;
         }
 
         public void OpenChildForm(Form childform, object Sender)
@@ -60,6 +60,7 @@ namespace курсовая.forms
         {
             OpenChildForm(new forms.Zayavki(this.AccountObj), sender);
             labeltitle.Text = "Заявки";
+           
         }
 
         private void Settings_Click(object sender, EventArgs e)

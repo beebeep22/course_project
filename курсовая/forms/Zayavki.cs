@@ -101,16 +101,6 @@ namespace курсовая.forms
 
             if (selectedRequest != null)
             {
-                /* 
-                 * TODO: show info about request and applicant in UI
-                 * Examples:
-                 * selectedRequest.AccountObj.Username - username of applicant
-                 * selectedRequest.AccountObj?.UserDetails?.GetFullName() ?? "No data about user" - full name if present
-                 * selectedRequest.AccountObj?.UserDetails?.Region ?? "No data about user" - region
-                */
-
-                //про алергии,заболевания и инвалидность тоже сделать?
-                // yes
                 topic = selectedRequest.Topic ?? "Немає інформації про заявника"; 
                 content = selectedRequest.Content ?? "Немає інформації про заявника";
                 username = selectedRequest.ApplicantObj.Username ?? "Немає інформації про заявника";
@@ -139,22 +129,24 @@ namespace курсовая.forms
             create_Notification.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void reply_request_Click(object sender, EventArgs e)
         {
             if (this.AccountObj?.AdminDetails?.CanRespondOnRequests != true)
             {
                 MessageBox.Show("У вас нема права відповідати на повідомлення");
                 return;
             }
-            else
-            {
-                /*Golovna_Admin golovna_Admin = new Golovna_Admin(AccountObj);
-                AdminResponseCreation adminResponseCreation = new AdminResponseCreation();
-                golovna_Admin.OpenChildForm(adminResponseCreation, sender);*/
-                AdminResponseCreation adminResponseCreation = new AdminResponseCreation();
-                adminResponseCreation.Show();
-            }
+            AdminResponseCreation adminResponseCreation = new AdminResponseCreation();
+            adminResponseCreation.Location = new Point(520, 262);
+            adminResponseCreation.Show();
 
+            //я пыталась открыть внутри Golovna_Admin,но не вышло
+            /*this.Close();
+            (this.MdiParent as Golovna_Admin)?.OpenChildForm(new forms.AdminResponseCreation(), sender);*/
+            /*this.Close();
+            AdminResponseCreation adminResponseCreation = new AdminResponseCreation();
+            adminResponseCreation.MdiParent = this.MdiParent;
+            adminResponseCreation.Show();*/
         }
         private void FilterDataGridViewByRegion(string region)
         {

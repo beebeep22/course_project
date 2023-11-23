@@ -231,11 +231,12 @@ namespace курсовая.forms
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Name = "Golovna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Облік та розподіл державних та соціальних допомог";
-            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Golovna_FormClosing);
+            this.Load += new System.EventHandler(this.Golovna_Load);
             this.panelMenu.ResumeLayout(false);
             this.Title.ResumeLayout(false);
             this.Title.PerformLayout();
@@ -300,6 +301,11 @@ namespace курсовая.forms
         private void Golovna_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Golovna_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

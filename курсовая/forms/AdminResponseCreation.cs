@@ -19,7 +19,13 @@ namespace курсовая.forms
 
         private void createResponse_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+        }
+
+        private void AdminResponseCreation_Load(object sender, EventArgs e)
+        {
+            this.ControlBox = false;
+            this.FormBorderStyle = FormBorderStyle.None;
         }
     }
 }

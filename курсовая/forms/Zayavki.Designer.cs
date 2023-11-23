@@ -38,7 +38,7 @@ namespace курсовая.forms
             this.applicantUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.applicantRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createnotif = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.reply_request = new System.Windows.Forms.Button();
             this.filterByRegion = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.userRequestsTable)).BeginInit();
@@ -123,17 +123,17 @@ namespace курсовая.forms
             this.createnotif.UseVisualStyleBackColor = true;
             this.createnotif.Click += new System.EventHandler(this.createnotif_Click);
             // 
-            // button1
+            // reply_request
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(190, 379);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 49);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Відповісти на запит";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.reply_request.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.reply_request.Location = new System.Drawing.Point(190, 379);
+            this.reply_request.Margin = new System.Windows.Forms.Padding(4);
+            this.reply_request.Name = "reply_request";
+            this.reply_request.Size = new System.Drawing.Size(173, 49);
+            this.reply_request.TabIndex = 2;
+            this.reply_request.Text = "Відповісти на запит";
+            this.reply_request.UseVisualStyleBackColor = true;
+            this.reply_request.Click += new System.EventHandler(this.reply_request_Click);
             // 
             // filterByRegion
             // 
@@ -163,7 +163,7 @@ namespace курсовая.forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.filterByRegion);
             this.Controls.Add(this.createnotif);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.reply_request);
             this.Controls.Add(this.userRequestsTable);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -181,7 +181,7 @@ namespace курсовая.forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView userRequestsTable;
         private Button createnotif;
-        private Button button1;
+        private Button reply_request;
         private ComboBox filterByRegion;
         private Label label2;
         private DataGridViewTextBoxColumn requestTopic;

@@ -170,6 +170,7 @@
             this.Controls.Add(this.paneltitle);
             this.Controls.Add(this.panelmenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Name = "Golovna_Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Облік та розподіл державних та соціальних допомог";
@@ -189,7 +190,7 @@
         private System.Windows.Forms.Button Налаштування;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Panel paneltitle;
-        private System.Windows.Forms.Label labeltitle;
         private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.Label labeltitle;
     }
 }

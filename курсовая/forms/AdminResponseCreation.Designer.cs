@@ -44,7 +44,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(310, 193);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(373, 175);
             this.richTextBox1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(305, 58);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(378, 35);
@@ -96,7 +96,7 @@
             // 
             this.createResponse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.createResponse.Location = new System.Drawing.Point(403, 421);
-            this.createResponse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.createResponse.Margin = new System.Windows.Forms.Padding(4);
             this.createResponse.Name = "createResponse";
             this.createResponse.Size = new System.Drawing.Size(182, 45);
             this.createResponse.TabIndex = 6;
@@ -109,7 +109,7 @@
             this.statusAccepted.AutoSize = true;
             this.statusAccepted.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.statusAccepted.Location = new System.Drawing.Point(8, 23);
-            this.statusAccepted.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statusAccepted.Margin = new System.Windows.Forms.Padding(4);
             this.statusAccepted.Name = "statusAccepted";
             this.statusAccepted.Size = new System.Drawing.Size(96, 22);
             this.statusAccepted.TabIndex = 7;
@@ -122,7 +122,7 @@
             this.statusOnReview.AutoSize = true;
             this.statusOnReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.statusOnReview.Location = new System.Drawing.Point(127, 23);
-            this.statusOnReview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statusOnReview.Margin = new System.Windows.Forms.Padding(4);
             this.statusOnReview.Name = "statusOnReview";
             this.statusOnReview.Size = new System.Drawing.Size(112, 22);
             this.statusOnReview.TabIndex = 8;
@@ -135,7 +135,7 @@
             this.statusRejected.AutoSize = true;
             this.statusRejected.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.statusRejected.Location = new System.Drawing.Point(265, 23);
-            this.statusRejected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statusRejected.Margin = new System.Windows.Forms.Padding(4);
             this.statusRejected.Name = "statusRejected";
             this.statusRejected.Size = new System.Drawing.Size(100, 22);
             this.statusRejected.TabIndex = 9;
@@ -150,9 +150,9 @@
             this.groupBox1.Controls.Add(this.statusOnReview);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(310, 112);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(373, 62);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
@@ -161,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 506);
+            this.ClientSize = new System.Drawing.Size(931, 485);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.createResponse);
             this.Controls.Add(this.label3);
@@ -169,9 +169,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.richTextBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminResponseCreation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AdminResponseCreation";
+            this.Load += new System.EventHandler(this.AdminResponseCreation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -17,7 +17,6 @@ namespace курсовая.forms
 
         private bool isNotificationInputValid()
         {
-            //перепроверить в какой момент это должно проверятся
             if (themenotification.Text == "")
             {
                 MessageBox.Show("Тема повідомлення не введена.");

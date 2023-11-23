@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.richcontentBox = new System.Windows.Forms.RichTextBox();
+            this.themeresponse = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,23 +41,23 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // richcontentBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(310, 193);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(373, 175);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.richcontentBox.Location = new System.Drawing.Point(310, 193);
+            this.richcontentBox.Margin = new System.Windows.Forms.Padding(4);
+            this.richcontentBox.Name = "richcontentBox";
+            this.richcontentBox.Size = new System.Drawing.Size(373, 175);
+            this.richcontentBox.TabIndex = 0;
+            this.richcontentBox.Text = "";
             // 
-            // textBox1
+            // themeresponse
             // 
-            this.textBox1.Location = new System.Drawing.Point(305, 58);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(378, 35);
-            this.textBox1.TabIndex = 1;
+            this.themeresponse.Location = new System.Drawing.Point(305, 58);
+            this.themeresponse.Margin = new System.Windows.Forms.Padding(4);
+            this.themeresponse.Multiline = true;
+            this.themeresponse.Name = "themeresponse";
+            this.themeresponse.Size = new System.Drawing.Size(378, 35);
+            this.themeresponse.TabIndex = 1;
             // 
             // label1
             // 
@@ -167,8 +167,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.themeresponse);
+            this.Controls.Add(this.richcontentBox);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminResponseCreation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -183,8 +183,8 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RichTextBox richcontentBox;
+        private System.Windows.Forms.TextBox themeresponse;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

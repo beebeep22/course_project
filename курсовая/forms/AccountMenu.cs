@@ -46,8 +46,18 @@ namespace курсовая.forms
 
             //патологічні захворювання
             pathdiseas.Items.Add("-");
+            pathdiseas.Items.Add("Гострі лейкемії");
+            pathdiseas.Items.Add("Аутоімунний тиреоїдит ");
+            pathdiseas.Items.Add("Цукровий діабет");
+            pathdiseas.Items.Add("Фіброз та цироз печінки");
+            pathdiseas.Items.Add("Печінкова недостатність");
+            pathdiseas.Items.Add("Природжений іхтіоз");
+            pathdiseas.Items.Add("Природжена алопеція");
+            pathdiseas.Items.Add("Хронічна ниркова недостатність");
+            pathdiseas.Items.Add("Хронічний тубулоінтерстиціальний нефрит ");
 
             //алергії
+            //алергии будут на что-то или виды?
             alergic.Items.Add("-");
             alergic.Items.Add("на математику");
 

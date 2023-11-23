@@ -34,5 +34,9 @@ namespace курсовая.forms
      
         }
 
+        private void deleteaccount_Click(object sender, EventArgs e)
+        {
+            //можно сделать удаление аккаута,как еще один интерактивный объект
+        }
     }
 }

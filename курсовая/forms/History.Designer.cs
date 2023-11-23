@@ -95,11 +95,11 @@
             // txtRequestContent
             // 
             this.txtRequestContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtRequestContent.Location = new System.Drawing.Point(595, 99);
+            this.txtRequestContent.Location = new System.Drawing.Point(595, 87);
             this.txtRequestContent.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequestContent.Multiline = true;
             this.txtRequestContent.Name = "txtRequestContent";
-            this.txtRequestContent.Size = new System.Drawing.Size(196, 24);
+            this.txtRequestContent.Size = new System.Drawing.Size(196, 39);
             this.txtRequestContent.TabIndex = 4;
             // 
             // txtResponseContent
@@ -107,8 +107,9 @@
             this.txtResponseContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtResponseContent.Location = new System.Drawing.Point(595, 253);
             this.txtResponseContent.Margin = new System.Windows.Forms.Padding(4);
+            this.txtResponseContent.Multiline = true;
             this.txtResponseContent.Name = "txtResponseContent";
-            this.txtResponseContent.Size = new System.Drawing.Size(196, 24);
+            this.txtResponseContent.Size = new System.Drawing.Size(196, 41);
             this.txtResponseContent.TabIndex = 6;
             // 
             // History
@@ -124,6 +125,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "History";
             this.Text = "History";
+            this.Load += new System.EventHandler(this.History_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listOfRequests)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

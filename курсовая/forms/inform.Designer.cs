@@ -263,7 +263,7 @@ namespace курсовая.forms
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(276, 251);
+            this.label10.Location = new System.Drawing.Point(276, 252);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(94, 18);
             this.label10.TabIndex = 17;
@@ -274,7 +274,7 @@ namespace курсовая.forms
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(46, 377);
+            this.label11.Location = new System.Drawing.Point(46, 375);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(196, 18);
             this.label11.TabIndex = 18;
@@ -285,7 +285,7 @@ namespace курсовая.forms
             this.pathologicaldiseases.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pathologicaldiseases.AutoSize = true;
             this.pathologicaldiseases.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pathologicaldiseases.Location = new System.Drawing.Point(240, 377);
+            this.pathologicaldiseases.Location = new System.Drawing.Point(260, 375);
             this.pathologicaldiseases.Name = "pathologicaldiseases";
             this.pathologicaldiseases.Size = new System.Drawing.Size(0, 18);
             this.pathologicaldiseases.TabIndex = 19;
@@ -295,7 +295,7 @@ namespace курсовая.forms
             this.invalid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.invalid.AutoSize = true;
             this.invalid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.invalid.Location = new System.Drawing.Point(376, 250);
+            this.invalid.Location = new System.Drawing.Point(386, 252);
             this.invalid.Name = "invalid";
             this.invalid.Size = new System.Drawing.Size(0, 18);
             this.invalid.TabIndex = 20;
@@ -305,7 +305,7 @@ namespace курсовая.forms
             this.alergic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.alergic.AutoSize = true;
             this.alergic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.alergic.Location = new System.Drawing.Point(376, 283);
+            this.alergic.Location = new System.Drawing.Point(350, 283);
             this.alergic.Name = "alergic";
             this.alergic.Size = new System.Drawing.Size(0, 18);
             this.alergic.TabIndex = 21;

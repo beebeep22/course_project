@@ -68,5 +68,10 @@ namespace курсовая.forms
                 e.FormattingApplied = true;
             }
         }
+
+        private void History_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

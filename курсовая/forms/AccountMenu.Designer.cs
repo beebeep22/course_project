@@ -47,17 +47,24 @@
             this.sex = new System.Windows.Forms.TextBox();
             this.tltsex = new System.Windows.Forms.Label();
             this.age = new System.Windows.Forms.TextBox();
+            this.avatar = new System.Windows.Forms.PictureBox();
             this.pers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.SuspendLayout();
             // 
             // avatarka
             // 
-            this.avatarka.Image = global::курсовая.Properties.Resources.user3;
-            this.avatarka.Location = new System.Drawing.Point(61, 26);
+            this.avatarka.FlatAppearance.BorderSize = 0;
+            this.avatarka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.avatarka.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.avatarka.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.avatarka.Location = new System.Drawing.Point(64, 170);
             this.avatarka.Name = "avatarka";
-            this.avatarka.Size = new System.Drawing.Size(150, 149);
+            this.avatarka.Size = new System.Drawing.Size(136, 28);
             this.avatarka.TabIndex = 0;
+            this.avatarka.Text = "Змінити фото";
             this.avatarka.UseVisualStyleBackColor = true;
+            this.avatarka.Click += new System.EventHandler(this.avatarka_Click);
             // 
             // surname
             // 
@@ -83,7 +90,7 @@
             // data
             // 
             this.data.AutoSize = true;
-            this.data.Location = new System.Drawing.Point(61, 192);
+            this.data.Location = new System.Drawing.Point(61, 211);
             this.data.Name = "data";
             this.data.Size = new System.Drawing.Size(29, 16);
             this.data.TabIndex = 7;
@@ -92,7 +99,7 @@
             // region
             // 
             this.region.FormattingEnabled = true;
-            this.region.Location = new System.Drawing.Point(64, 338);
+            this.region.Location = new System.Drawing.Point(64, 357);
             this.region.Name = "region";
             this.region.Size = new System.Drawing.Size(151, 24);
             this.region.TabIndex = 9;
@@ -101,7 +108,7 @@
             // 
             this.pers.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.pers.Controls.Add(this.personal);
-            this.pers.Location = new System.Drawing.Point(291, 214);
+            this.pers.Location = new System.Drawing.Point(291, 233);
             this.pers.Name = "pers";
             this.pers.Size = new System.Drawing.Size(466, 22);
             this.pers.TabIndex = 10;
@@ -118,7 +125,7 @@
             // pathdiseas
             // 
             this.pathdiseas.FormattingEnabled = true;
-            this.pathdiseas.Location = new System.Drawing.Point(291, 269);
+            this.pathdiseas.Location = new System.Drawing.Point(291, 288);
             this.pathdiseas.Name = "pathdiseas";
             this.pathdiseas.Size = new System.Drawing.Size(182, 24);
             this.pathdiseas.TabIndex = 11;
@@ -126,7 +133,7 @@
             // alergic
             // 
             this.alergic.FormattingEnabled = true;
-            this.alergic.Location = new System.Drawing.Point(532, 269);
+            this.alergic.Location = new System.Drawing.Point(532, 288);
             this.alergic.Name = "alergic";
             this.alergic.Size = new System.Drawing.Size(151, 24);
             this.alergic.TabIndex = 12;
@@ -134,7 +141,7 @@
             // invalid
             // 
             this.invalid.FormattingEnabled = true;
-            this.invalid.Location = new System.Drawing.Point(291, 338);
+            this.invalid.Location = new System.Drawing.Point(291, 357);
             this.invalid.Name = "invalid";
             this.invalid.Size = new System.Drawing.Size(151, 24);
             this.invalid.TabIndex = 13;
@@ -142,7 +149,7 @@
             // regiontitle
             // 
             this.regiontitle.AutoSize = true;
-            this.regiontitle.Location = new System.Drawing.Point(62, 319);
+            this.regiontitle.Location = new System.Drawing.Point(62, 338);
             this.regiontitle.Name = "regiontitle";
             this.regiontitle.Size = new System.Drawing.Size(52, 16);
             this.regiontitle.TabIndex = 16;
@@ -151,7 +158,7 @@
             // diseasestitle
             // 
             this.diseasestitle.AutoSize = true;
-            this.diseasestitle.Location = new System.Drawing.Point(288, 250);
+            this.diseasestitle.Location = new System.Drawing.Point(288, 269);
             this.diseasestitle.Name = "diseasestitle";
             this.diseasestitle.Size = new System.Drawing.Size(185, 16);
             this.diseasestitle.TabIndex = 17;
@@ -160,7 +167,7 @@
             // alergtitle
             // 
             this.alergtitle.AutoSize = true;
-            this.alergtitle.Location = new System.Drawing.Point(529, 250);
+            this.alergtitle.Location = new System.Drawing.Point(529, 269);
             this.alergtitle.Name = "alergtitle";
             this.alergtitle.Size = new System.Drawing.Size(55, 16);
             this.alergtitle.TabIndex = 18;
@@ -169,7 +176,7 @@
             // inval
             // 
             this.inval.AutoSize = true;
-            this.inval.Location = new System.Drawing.Point(294, 319);
+            this.inval.Location = new System.Drawing.Point(294, 338);
             this.inval.Name = "inval";
             this.inval.Size = new System.Drawing.Size(88, 16);
             this.inval.TabIndex = 19;
@@ -179,7 +186,7 @@
             // 
             this.save.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.save.FlatAppearance.BorderSize = 0;
-            this.save.Location = new System.Drawing.Point(291, 392);
+            this.save.Location = new System.Drawing.Point(297, 403);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(120, 35);
             this.save.TabIndex = 20;
@@ -189,7 +196,7 @@
             // 
             // sex
             // 
-            this.sex.Location = new System.Drawing.Point(64, 280);
+            this.sex.Location = new System.Drawing.Point(64, 299);
             this.sex.Name = "sex";
             this.sex.Size = new System.Drawing.Size(50, 22);
             this.sex.TabIndex = 42;
@@ -197,7 +204,7 @@
             // tltsex
             // 
             this.tltsex.AutoSize = true;
-            this.tltsex.Location = new System.Drawing.Point(61, 261);
+            this.tltsex.Location = new System.Drawing.Point(61, 280);
             this.tltsex.Name = "tltsex";
             this.tltsex.Size = new System.Drawing.Size(48, 16);
             this.tltsex.TabIndex = 43;
@@ -205,16 +212,26 @@
             // 
             // age
             // 
-            this.age.Location = new System.Drawing.Point(64, 214);
+            this.age.Location = new System.Drawing.Point(64, 233);
             this.age.Name = "age";
             this.age.Size = new System.Drawing.Size(46, 22);
             this.age.TabIndex = 44;
+            // 
+            // avatar
+            // 
+            this.avatar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.avatar.Location = new System.Drawing.Point(64, 26);
+            this.avatar.Name = "avatar";
+            this.avatar.Size = new System.Drawing.Size(136, 145);
+            this.avatar.TabIndex = 45;
+            this.avatar.TabStop = false;
             // 
             // AccountMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.avatar);
             this.Controls.Add(this.age);
             this.Controls.Add(this.tltsex);
             this.Controls.Add(this.sex);
@@ -238,6 +255,7 @@
             this.Load += new System.EventHandler(this.Account_Load);
             this.pers.ResumeLayout(false);
             this.pers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +281,6 @@
         private System.Windows.Forms.TextBox sex;
         private System.Windows.Forms.Label tltsex;
         private System.Windows.Forms.TextBox age;
+        private System.Windows.Forms.PictureBox avatar;
     }
 }

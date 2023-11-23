@@ -32,10 +32,10 @@
             this.theme = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.description = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.picture = new System.Windows.Forms.PictureBox();
+            this.proof = new System.Windows.Forms.PictureBox();
             this.podatu = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
+            this.addproof = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.proof)).BeginInit();
             this.SuspendLayout();
             // 
             // themetitle
@@ -74,24 +74,14 @@
             this.description.Size = new System.Drawing.Size(327, 142);
             this.description.TabIndex = 0;
             // 
-            // label2
+            // proof
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(400, 334);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Додати докази";
-            // 
-            // picture
-            // 
-            this.picture.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.picture.Location = new System.Drawing.Point(281, 304);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(81, 77);
-            this.picture.TabIndex = 0;
-            this.picture.TabStop = false;
+            this.proof.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.proof.Location = new System.Drawing.Point(281, 303);
+            this.proof.Name = "proof";
+            this.proof.Size = new System.Drawing.Size(81, 81);
+            this.proof.TabIndex = 0;
+            this.proof.TabStop = false;
             // 
             // podatu
             // 
@@ -103,21 +93,34 @@
             this.podatu.UseVisualStyleBackColor = true;
             this.podatu.Click += new System.EventHandler(this.podatu_Click);
             // 
+            // addproof
+            // 
+            this.addproof.FlatAppearance.BorderSize = 0;
+            this.addproof.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addproof.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addproof.Location = new System.Drawing.Point(369, 320);
+            this.addproof.Name = "addproof";
+            this.addproof.Size = new System.Drawing.Size(157, 44);
+            this.addproof.TabIndex = 2;
+            this.addproof.Text = "Додати доказ";
+            this.addproof.UseVisualStyleBackColor = true;
+            this.addproof.Click += new System.EventHandler(this.addproof_Click);
+            // 
             // Podacha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 516);
+            this.Controls.Add(this.addproof);
             this.Controls.Add(this.themetitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.theme);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.description);
             this.Controls.Add(this.podatu);
-            this.Controls.Add(this.picture);
+            this.Controls.Add(this.proof);
             this.Name = "Podacha";
             this.Text = "Podacha";
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proof)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,8 +131,8 @@
         private System.Windows.Forms.Label themetitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox description;
-        private System.Windows.Forms.PictureBox picture;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox proof;
         private System.Windows.Forms.Button podatu;
+        private System.Windows.Forms.Button addproof;
     }
 }

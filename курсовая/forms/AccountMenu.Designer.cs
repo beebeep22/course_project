@@ -68,23 +68,26 @@
             // 
             // surname
             // 
+            this.surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.surname.Location = new System.Drawing.Point(291, 26);
             this.surname.Name = "surname";
-            this.surname.Size = new System.Drawing.Size(151, 22);
+            this.surname.Size = new System.Drawing.Size(151, 24);
             this.surname.TabIndex = 1;
             // 
             // name
             // 
+            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.name.Location = new System.Drawing.Point(291, 78);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(151, 22);
+            this.name.Size = new System.Drawing.Size(151, 24);
             this.name.TabIndex = 2;
             // 
             // patronymic
             // 
+            this.patronymic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.patronymic.Location = new System.Drawing.Point(291, 133);
             this.patronymic.Name = "patronymic";
-            this.patronymic.Size = new System.Drawing.Size(151, 22);
+            this.patronymic.Size = new System.Drawing.Size(151, 24);
             this.patronymic.TabIndex = 3;
             // 
             // data
@@ -98,52 +101,57 @@
             // 
             // region
             // 
+            this.region.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.region.FormattingEnabled = true;
             this.region.Location = new System.Drawing.Point(64, 357);
             this.region.Name = "region";
-            this.region.Size = new System.Drawing.Size(151, 24);
+            this.region.Size = new System.Drawing.Size(151, 26);
             this.region.TabIndex = 9;
             // 
             // pers
             // 
             this.pers.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.pers.Controls.Add(this.personal);
-            this.pers.Location = new System.Drawing.Point(291, 233);
+            this.pers.Location = new System.Drawing.Point(291, 228);
             this.pers.Name = "pers";
-            this.pers.Size = new System.Drawing.Size(466, 22);
+            this.pers.Size = new System.Drawing.Size(466, 27);
             this.pers.TabIndex = 10;
             // 
             // personal
             // 
             this.personal.AutoSize = true;
+            this.personal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.personal.Location = new System.Drawing.Point(3, 3);
             this.personal.Name = "personal";
-            this.personal.Size = new System.Drawing.Size(95, 16);
+            this.personal.Size = new System.Drawing.Size(101, 18);
             this.personal.TabIndex = 0;
             this.personal.Text = "Персональне";
             // 
             // pathdiseas
             // 
+            this.pathdiseas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.pathdiseas.FormattingEnabled = true;
             this.pathdiseas.Location = new System.Drawing.Point(291, 288);
             this.pathdiseas.Name = "pathdiseas";
-            this.pathdiseas.Size = new System.Drawing.Size(182, 24);
+            this.pathdiseas.Size = new System.Drawing.Size(182, 26);
             this.pathdiseas.TabIndex = 11;
             // 
             // alergic
             // 
+            this.alergic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.alergic.FormattingEnabled = true;
             this.alergic.Location = new System.Drawing.Point(532, 288);
             this.alergic.Name = "alergic";
-            this.alergic.Size = new System.Drawing.Size(151, 24);
+            this.alergic.Size = new System.Drawing.Size(151, 26);
             this.alergic.TabIndex = 12;
             // 
             // invalid
             // 
+            this.invalid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.invalid.FormattingEnabled = true;
             this.invalid.Location = new System.Drawing.Point(291, 357);
             this.invalid.Name = "invalid";
-            this.invalid.Size = new System.Drawing.Size(151, 24);
+            this.invalid.Size = new System.Drawing.Size(151, 26);
             this.invalid.TabIndex = 13;
             // 
             // regiontitle
@@ -186,6 +194,7 @@
             // 
             this.save.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.save.FlatAppearance.BorderSize = 0;
+            this.save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.save.Location = new System.Drawing.Point(297, 403);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(120, 35);
@@ -196,9 +205,10 @@
             // 
             // sex
             // 
+            this.sex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sex.Location = new System.Drawing.Point(64, 299);
             this.sex.Name = "sex";
-            this.sex.Size = new System.Drawing.Size(50, 22);
+            this.sex.Size = new System.Drawing.Size(59, 24);
             this.sex.TabIndex = 42;
             // 
             // tltsex
@@ -212,17 +222,20 @@
             // 
             // age
             // 
+            this.age.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.age.Location = new System.Drawing.Point(64, 233);
             this.age.Name = "age";
-            this.age.Size = new System.Drawing.Size(46, 22);
+            this.age.Size = new System.Drawing.Size(46, 24);
             this.age.TabIndex = 44;
             // 
             // avatar
             // 
             this.avatar.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.avatar.Location = new System.Drawing.Point(64, 26);
+            this.avatar.Image = global::курсовая.Properties.Resources.user64;
+            this.avatar.Location = new System.Drawing.Point(65, 26);
             this.avatar.Name = "avatar";
             this.avatar.Size = new System.Drawing.Size(136, 145);
+            this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.avatar.TabIndex = 45;
             this.avatar.TabStop = false;
             // 

@@ -50,15 +50,15 @@ namespace курсовая.forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Golovna));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.Title = new System.Windows.Forms.Panel();
+            this.message = new System.Windows.Forms.Button();
+            this.labeltitle = new System.Windows.Forms.Label();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.exit = new System.Windows.Forms.Button();
             this.Settings = new System.Windows.Forms.Button();
             this.History = new System.Windows.Forms.Button();
             this.Podacha = new System.Windows.Forms.Button();
             this.Account = new System.Windows.Forms.Button();
-            this.Title = new System.Windows.Forms.Panel();
-            this.message = new System.Windows.Forms.Button();
-            this.labeltitle = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.Title.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,55 @@ namespace курсовая.forms
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 467);
             this.panelMenu.TabIndex = 0;
+            // 
+            // Title
+            // 
+            this.Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Title.Controls.Add(this.message);
+            this.Title.Controls.Add(this.labeltitle);
+            this.Title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Title.Location = new System.Drawing.Point(220, 0);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(681, 80);
+            this.Title.TabIndex = 1;
+            // 
+            // message
+            // 
+            this.message.FlatAppearance.BorderSize = 0;
+            this.message.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.message.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.message.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.message.Image = global::курсовая.Properties.Resources.повідомлення;
+            this.message.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.message.Location = new System.Drawing.Point(0, 4);
+            this.message.Name = "message";
+            this.message.Size = new System.Drawing.Size(216, 70);
+            this.message.TabIndex = 1;
+            this.message.Text = "     Повідомлення";
+            this.message.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.message.UseVisualStyleBackColor = true;
+            this.message.Click += new System.EventHandler(this.message_Click);
+            // 
+            // labeltitle
+            // 
+            this.labeltitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labeltitle.AutoSize = true;
+            this.labeltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labeltitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labeltitle.Location = new System.Drawing.Point(297, 26);
+            this.labeltitle.Name = "labeltitle";
+            this.labeltitle.Size = new System.Drawing.Size(110, 29);
+            this.labeltitle.TabIndex = 0;
+            this.labeltitle.Text = "Головна";
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.SystemColors.Menu;
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(220, 80);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(681, 387);
+            this.panelDesktop.TabIndex = 2;
             // 
             // exit
             // 
@@ -163,7 +212,7 @@ namespace курсовая.forms
             this.Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Account.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Account.Image = global::курсовая.Properties.Resources.free_icon_user_profile_33640441;
+            this.Account.Image = global::курсовая.Properties.Resources.user64;
             this.Account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Account.Location = new System.Drawing.Point(0, 0);
             this.Account.Name = "Account";
@@ -173,54 +222,6 @@ namespace курсовая.forms
             this.Account.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Account.UseVisualStyleBackColor = false;
             this.Account.Click += new System.EventHandler(this.Account_Click);
-            // 
-            // Title
-            // 
-            this.Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Title.Controls.Add(this.message);
-            this.Title.Controls.Add(this.labeltitle);
-            this.Title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Title.Location = new System.Drawing.Point(220, 0);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(681, 80);
-            this.Title.TabIndex = 1;
-            // 
-            // message
-            // 
-            this.message.FlatAppearance.BorderSize = 0;
-            this.message.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.message.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.message.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.message.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.message.Location = new System.Drawing.Point(0, 4);
-            this.message.Name = "message";
-            this.message.Size = new System.Drawing.Size(216, 70);
-            this.message.TabIndex = 1;
-            this.message.Text = "     Повідомлення";
-            this.message.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.message.UseVisualStyleBackColor = true;
-            this.message.Click += new System.EventHandler(this.message_Click);
-            // 
-            // labeltitle
-            // 
-            this.labeltitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labeltitle.AutoSize = true;
-            this.labeltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labeltitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labeltitle.Location = new System.Drawing.Point(297, 26);
-            this.labeltitle.Name = "labeltitle";
-            this.labeltitle.Size = new System.Drawing.Size(110, 29);
-            this.labeltitle.TabIndex = 0;
-            this.labeltitle.Text = "Головна";
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.SystemColors.Menu;
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(220, 80);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(681, 387);
-            this.panelDesktop.TabIndex = 2;
             // 
             // Golovna
             // 

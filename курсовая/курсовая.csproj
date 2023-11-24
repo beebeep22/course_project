@@ -330,5 +330,17 @@
   <ItemGroup>
     <None Include="Resources\повідомлення2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-user128.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

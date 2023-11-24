@@ -120,7 +120,7 @@
             this.Акаунт.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Акаунт.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Акаунт.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Акаунт.Image = global::курсовая.Properties.Resources.free_icon_user_profile_33640441;
+            this.Акаунт.Image = global::курсовая.Properties.Resources.free_icon_user64;
             this.Акаунт.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Акаунт.Location = new System.Drawing.Point(0, 0);
             this.Акаунт.Name = "Акаунт";

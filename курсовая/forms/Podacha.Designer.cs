@@ -102,7 +102,7 @@
             this.addproof.Name = "addproof";
             this.addproof.Size = new System.Drawing.Size(157, 44);
             this.addproof.TabIndex = 2;
-            this.addproof.Text = "Додати доказ";
+            this.addproof.Text = "+Додати доказ";
             this.addproof.UseVisualStyleBackColor = true;
             this.addproof.Click += new System.EventHandler(this.addproof_Click);
             // 

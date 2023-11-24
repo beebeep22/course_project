@@ -64,6 +64,8 @@
             // avatar_admin
             // 
             this.avatar_admin.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.avatar_admin.BackgroundImage = global::курсовая.Properties.Resources.user64;
+            this.avatar_admin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.avatar_admin.Location = new System.Drawing.Point(70, 26);
             this.avatar_admin.Name = "avatar_admin";
             this.avatar_admin.Size = new System.Drawing.Size(136, 145);

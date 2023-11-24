@@ -127,20 +127,23 @@
   <data name="заявка" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\заявка.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="status1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\status1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="повідомлення2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\повідомлення2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="дщпщ1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\дщпщ1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-user128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-user128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="free-icon-user-profile-33640441" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-user-profile-33640441.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,8 +160,8 @@
   <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="status1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\status1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,11 +169,11 @@
   <data name="повідомлення21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\повідомлення2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="user2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="повідомлення2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\повідомлення2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,7 +190,7 @@
   <data name="user3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-icon-user128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-user128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-user64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-user64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

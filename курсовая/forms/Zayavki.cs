@@ -44,11 +44,6 @@ namespace курсовая.forms
 
             userRequestsTable.DataSource = this.AllUserRequests;
 
-            foreach (var request in AdminOperations.GetUserRequests())
-            {
-                Console.WriteLine(request?.Response?.Status ?? "null status for request " + request.Topic);
-            }
-            
             userRequestsTable.Columns["_id"].Visible = false;
             userRequestsTable.Columns["ApplicantId"].Visible = false;
             userRequestsTable.Columns["Content"].Visible = false;

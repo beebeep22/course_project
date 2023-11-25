@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Amazon.Runtime.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,12 +19,15 @@ namespace курсовая.forms
         private DbAdminOperations AdminOperations { get; set; }
         private List<UserRequest> AllUserRequests { get; set; }
 
-        public Zayavki(Account AccountObj)
+        private Golovna_Admin parentForm;
+
+        public Zayavki(Account AccountObj, Golovna_Admin parentForm)
         {
             InitializeComponent();
             this.AccountObj = AccountObj;
             this.AdminOperations = new DbAdminOperations();
             this.AllUserRequests = AdminOperations.GetUserRequests();
+            this.parentForm = parentForm;
             InitializeDataGridView();
         }
 
@@ -140,6 +144,7 @@ namespace курсовая.forms
                 DataGridViewRow selectedRow = userRequestsTable.Rows[selectedRowIndex];
                 UserRequest selectedUserRequest = (UserRequest)selectedRow.DataBoundItem;
                 replyOnRequest(selectedUserRequest);
+                parentForm.OpenChildForm(new forms.AdminResponseCreation(selectedUserRequest),sender);
             }
         }
 
@@ -150,10 +155,9 @@ namespace курсовая.forms
                 MessageBox.Show("У вас нема права відповідати на повідомлення");
                 return;
             }
-
-            AdminResponseCreation adminResponseCreation = new AdminResponseCreation(Request);
+            /*AdminResponseCreation adminResponseCreation = new AdminResponseCreation(Request);
             adminResponseCreation.Location = new Point(520, 262);
-            adminResponseCreation.Show();
+            adminResponseCreation.Show();*/
 
 
             //я пыталась открыть внутри Golovna_Admin,но не вышло

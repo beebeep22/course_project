@@ -60,7 +60,7 @@ namespace курсовая.forms
 
         private void Zayavki_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new forms.Zayavki(this.AccountObj), sender);
+            OpenChildForm(new forms.Zayavki(this.AccountObj, this), sender);
             labeltitle.Text = "Заявки";
            
         }

@@ -42,19 +42,6 @@ namespace курсовая.forms
                 MessageBox.Show("Ви не обрали статусу заявки");
                 return false;
             }
-            /*if (statusAccepted.Checked || statusRejected.Checked)
-            {
-                if (themeresponse.Text == " ")
-                {
-                    MessageBox.Show("Ви не ввели тему відповіді");
-                    return false;
-                }
-                else if (richcontentBox.Text == " ")
-                {
-                    MessageBox.Show("Ви не ввели опис відповіді");
-                    return false;
-                }
-            }*/
             return true;
         }
 

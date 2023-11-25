@@ -74,20 +74,15 @@ namespace курсовая.classes
         }
 
 
-        private void DeleteOldResponseIfExist(UserRequest Request)
+        private void DeleteOldResponses(UserRequestResponse Response)
         {
-            var existingResponse = _userRequestsResponseCollection
-                .Find(x => x.UserRequestId == Request._id)
-                .FirstOrDefault();
-            if (existingResponse != null)
-            {
-                var filter = Builders<UserRequestResponse>.Filter.Eq("_id", existingResponse._id);
-                _userRequestsResponseCollection.DeleteOne(filter);
-            }
-
+            var filter = Builders<UserRequestResponse>.Filter.Eq("UserRequestId", Response.UserRequestId);
+            _userRequestsResponseCollection.DeleteMany(filter);
         }
+
         public void CreateUserRequestResponse(UserRequestResponse Response)
         {
+            DeleteOldResponses(Response);
             _userRequestsResponseCollection.InsertOne(Response);
         }
     }

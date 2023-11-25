@@ -55,8 +55,7 @@ namespace курсовая.forms
 
             userRequestsTable.CellFormatting += userRequestsTable_CellFormatting;
             userRequestsTable.SelectionChanged += listOfRequests_SelectionChanged;
-            userRequestsTable.CellClick += new DataGridViewCellEventHandler(this.userRequestsTable_CellClick);
-
+            userRequestsTable.CellDoubleClick += new DataGridViewCellEventHandler(this.userRequestsTable_CellDoubleClick);
             userRequestsTable.ClearSelection();
         }
 
@@ -83,7 +82,7 @@ namespace курсовая.forms
             e.FormattingApplied = true;
         }
 
-        private void userRequestsTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void userRequestsTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow clickedRow = userRequestsTable.Rows[e.RowIndex];
             UserRequest selectedRequest = (UserRequest)clickedRow?.DataBoundItem;
@@ -118,6 +117,7 @@ namespace курсовая.forms
             
         }
 
+
         private void createnotif_Click(object sender, EventArgs e)
         {
             if (this.AccountObj?.AdminDetails?.CanCreateNotifications != true)
@@ -131,14 +131,27 @@ namespace курсовая.forms
 
         private void reply_request_Click(object sender, EventArgs e)
         {
+            if (userRequestsTable.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = userRequestsTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = userRequestsTable.Rows[selectedRowIndex];
+                UserRequest selectedUserRequest = (UserRequest)selectedRow.DataBoundItem;
+                replyOnRequest(selectedUserRequest);
+            }
+        }
+
+        private void replyOnRequest(UserRequest Request)
+        {
             if (this.AccountObj?.AdminDetails?.CanRespondOnRequests != true)
             {
                 MessageBox.Show("У вас нема права відповідати на повідомлення");
                 return;
             }
-            AdminResponseCreation adminResponseCreation = new AdminResponseCreation();
+
+            AdminResponseCreation adminResponseCreation = new AdminResponseCreation(Request);
             adminResponseCreation.Location = new Point(520, 262);
             adminResponseCreation.Show();
+
 
             //я пыталась открыть внутри Golovna_Admin,но не вышло
             /*this.Close();
@@ -148,6 +161,7 @@ namespace курсовая.forms
             adminResponseCreation.MdiParent = this.MdiParent;
             adminResponseCreation.Show();*/
         }
+
         private void FilterDataGridViewByRegion(string region)
         {
             var filteredUserRequests = this.AllUserRequests 

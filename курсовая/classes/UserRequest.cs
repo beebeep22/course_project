@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace курсовая.classes
 {
-    class UserRequest
+    public class UserRequest
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

@@ -133,14 +133,14 @@
             this.pathdiseas.FormattingEnabled = true;
             this.pathdiseas.Location = new System.Drawing.Point(291, 288);
             this.pathdiseas.Name = "pathdiseas";
-            this.pathdiseas.Size = new System.Drawing.Size(182, 26);
+            this.pathdiseas.Size = new System.Drawing.Size(223, 26);
             this.pathdiseas.TabIndex = 11;
             // 
             // alergic
             // 
             this.alergic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.alergic.FormattingEnabled = true;
-            this.alergic.Location = new System.Drawing.Point(532, 288);
+            this.alergic.Location = new System.Drawing.Point(575, 288);
             this.alergic.Name = "alergic";
             this.alergic.Size = new System.Drawing.Size(151, 26);
             this.alergic.TabIndex = 12;
@@ -175,7 +175,7 @@
             // alergtitle
             // 
             this.alergtitle.AutoSize = true;
-            this.alergtitle.Location = new System.Drawing.Point(529, 269);
+            this.alergtitle.Location = new System.Drawing.Point(572, 269);
             this.alergtitle.Name = "alergtitle";
             this.alergtitle.Size = new System.Drawing.Size(55, 16);
             this.alergtitle.TabIndex = 18;

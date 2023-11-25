@@ -35,6 +35,7 @@ namespace курсовая.forms
 
         private bool isInputValid()
         {
+            int ageValue;
             if (name.Text == "")
             {
                 MessageBox.Show("Поле ім'я незаповнене");
@@ -52,7 +53,17 @@ namespace курсовая.forms
             }
             else if (age.Text == "")
             {
-                MessageBox.Show("Поле дати народження незаповнене");
+                MessageBox.Show("Поле віку незаповнене");
+                return false;
+            }
+            else if (!int.TryParse(age.Text, out ageValue))
+            {
+                MessageBox.Show("Поле віку має бути числовим значенням");
+                return false;
+            }
+            else if (ageValue < 16 || ageValue > 99)
+            {
+                MessageBox.Show("Поле віку заповнене некоректно");
                 return false;
             }
             else if (!women.Checked && !Men.Checked)

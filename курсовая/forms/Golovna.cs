@@ -32,7 +32,7 @@ namespace курсовая.forms
             this.FormBorderStyle = FormBorderStyle.Sizable;
             this.Size = new Size(919, 514);
             this.Text = "Облік тa розподіл державних та соціальних допомог";
-
+            IsMdiContainer = true;
         }
 
         /// <summary>
@@ -252,6 +252,8 @@ namespace курсовая.forms
             {
                 activeForm.Close();
             }
+            Golovna golovna = new Golovna(this.AccountObj);
+            childform.MdiParent = golovna;
             activeForm = childform;
             childform.TopLevel = false;
             childform.FormBorderStyle = FormBorderStyle.None;
@@ -260,7 +262,6 @@ namespace курсовая.forms
             this.panelDesktop.Tag = childform;
             childform.BringToFront();
             childform.Show();
-
         }
 
         private void Account_Click(object sender, EventArgs e)

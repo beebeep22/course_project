@@ -84,35 +84,38 @@ namespace курсовая.forms
 
         private void userRequestsTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow clickedRow = userRequestsTable.Rows[e.RowIndex];
-            UserRequest selectedRequest = (UserRequest)clickedRow?.DataBoundItem;
-
-            string topic;
-            string content;
-            string username;
-            string Fullname;
-            string region;
-            string age;
-            string sex;
-            string alergic;
-            string pathol_diseases;
-            string invalid;
-
-            if (selectedRequest != null)
+            if (e.RowIndex >= 0 && e.RowIndex < userRequestsTable.Rows.Count)
             {
-                topic = selectedRequest?.Topic ?? "Немає інформації про заявника"; 
-                content = selectedRequest?.Content ?? "Немає інформації про заявника";
-                username = selectedRequest.ApplicantObj.Username ?? "Немає інформації про заявника";
-                Fullname = selectedRequest.ApplicantObj?.UserDetails?.GetFullName() ?? "Немає інформації про заявника";
-                region = selectedRequest.ApplicantObj?.UserDetails?.Region ?? "Немає інформації про заявника";
-                age = selectedRequest.ApplicantObj?.UserDetails?.Age ?? "Немає інформації про заявника";
-                sex = selectedRequest.ApplicantObj?.UserDetails?.Gender ?? "Немає інформації про заявника";
-                alergic = selectedRequest.ApplicantObj?.UserDetails?.Allergies ?? "Немає інформації про заявника"; 
-                pathol_diseases = selectedRequest.ApplicantObj?.UserDetails?.Diseases ?? "Немає інформації про заявника";
-                invalid = selectedRequest.ApplicantObj?.UserDetails?.DisabilityLevel ?? "Немає інформації про заявника";
+                DataGridViewRow clickedRow = userRequestsTable.Rows[e.RowIndex];
+                UserRequest selectedRequest = (UserRequest)clickedRow?.DataBoundItem;
 
-                inform Inform = new inform(topic,content,Fullname,username,region,age,sex,alergic,invalid,pathol_diseases);
-                Inform.Show();
+                string topic;
+                string content;
+                string username;
+                string Fullname;
+                string region;
+                string age;
+                string sex;
+                string alergic;
+                string pathol_diseases;
+                string invalid;
+
+                if (selectedRequest != null)
+                {
+                    topic = selectedRequest?.Topic ?? "Немає інформації про заявника";
+                    content = selectedRequest?.Content ?? "Немає інформації про заявника";
+                    username = selectedRequest.ApplicantObj.Username ?? "Немає інформації про заявника";
+                    Fullname = selectedRequest.ApplicantObj?.UserDetails?.GetFullName() ?? "Немає інформації про заявника";
+                    region = selectedRequest.ApplicantObj?.UserDetails?.Region ?? "Немає інформації про заявника";
+                    age = selectedRequest.ApplicantObj?.UserDetails?.Age ?? "Немає інформації про заявника";
+                    sex = selectedRequest.ApplicantObj?.UserDetails?.Gender ?? "Немає інформації про заявника";
+                    alergic = selectedRequest.ApplicantObj?.UserDetails?.Allergies ?? "Немає інформації про заявника";
+                    pathol_diseases = selectedRequest.ApplicantObj?.UserDetails?.Diseases ?? "Немає інформації про заявника";
+                    invalid = selectedRequest.ApplicantObj?.UserDetails?.DisabilityLevel ?? "Немає інформації про заявника";
+
+                    inform Inform = new inform(topic, content, Fullname, username, region, age, sex, alergic, invalid, pathol_diseases);
+                    Inform.Show();
+                }
             }
             
         }
@@ -155,11 +158,10 @@ namespace курсовая.forms
 
             //я пыталась открыть внутри Golovna_Admin,но не вышло
             /*this.Close();
-            (this.MdiParent as Golovna_Admin)?.OpenChildForm(new forms.AdminResponseCreation(), sender);*/
-            /*this.Close();
             AdminResponseCreation adminResponseCreation = new AdminResponseCreation();
             adminResponseCreation.MdiParent = this.MdiParent;
             adminResponseCreation.Show();*/
+
         }
 
         private void FilterDataGridViewByRegion(string region)

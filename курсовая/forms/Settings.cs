@@ -13,10 +13,14 @@ namespace курсовая.forms
 {
     public partial class Settings : Form
     {
+        private Account AccountObj { get; set; }
+        private DbAccountOperations AccountOperations { get; set; }
 
-        public Settings()
+        public Settings(Account AccountObj)
         {
             InitializeComponent();
+            this.AccountObj = AccountObj;
+            this.AccountOperations = new DbAccountOperations();
         }
 
         private void smallsize_Click(object sender, EventArgs e)
@@ -36,7 +40,7 @@ namespace курсовая.forms
 
         private void deleteaccount_Click(object sender, EventArgs e)
         {
-            //можно сделать удаление аккаута,как еще один интерактивный объект
+            AccountOperations.removeAccount(this.AccountObj);
         }
     }
 }

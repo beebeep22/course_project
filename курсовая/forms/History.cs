@@ -37,6 +37,9 @@ namespace курсовая.forms
             listOfRequests.SelectionChanged += listOfRequests_SelectionChanged;
             listOfRequests.CellFormatting += listOfRequests_CellFormatting;
             listOfRequests.ScrollBars = ScrollBars.None;
+            
+            listOfRequests.Columns["Topic"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            listOfRequests.Columns["Topic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopLeft;
         }
 
         private void listOfRequests_SelectionChanged(object sender, EventArgs e)
@@ -64,7 +67,7 @@ namespace курсовая.forms
             // Format the "ResponseStatusColumn" to display "No response" if Response is null
             if (e.ColumnIndex == listOfRequests.Columns["ResponseStatusColumn"].Index)
             {
-                e.Value = (e.Value as UserRequestResponse)?.Status ?? "No response";
+                e.Value = (e.Value as UserRequestResponse)?.Status ?? "Не переглянуто";
                 e.FormattingApplied = true;
             }
         }
@@ -73,5 +76,6 @@ namespace курсовая.forms
         {
 
         }
+
     }
 }

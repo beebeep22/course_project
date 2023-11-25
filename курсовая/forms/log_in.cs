@@ -22,8 +22,9 @@ namespace курсовая.forms
             AccountOperations = new DbAccountOperations();
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.Size = new Size(391, 570);
-
-        }    
+            login.KeyDown += login_KeyDown;
+            password.KeyDown += password_KeyDown;
+        }
 
         private bool isInputValid(LoginInput input)
         {
@@ -65,7 +66,7 @@ namespace курсовая.forms
                 AccountMenu accountForm = new AccountMenu(accountObj);
                 golovna.OpenChildForm(accountForm, sender);
                 golovna.labeltitle.Text = "З поверненням!";
-            } 
+            }
             else if (accountObj.Role == "admin")
             {
                 Golovna_Admin golovna_Admin = new Golovna_Admin(accountObj);
@@ -100,6 +101,24 @@ namespace курсовая.forms
             sign_in registration = new sign_in();
             registration.Show();
             this.Hide();
+        }
+
+        private void login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                password.Focus();
+            }
+        }
+
+        private void password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                entrance.PerformClick();
+            }
         }
     }
 }

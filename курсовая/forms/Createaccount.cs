@@ -21,6 +21,10 @@ namespace курсовая.forms
             this.AccountObj = AccountObj;
             this.UserOperations = new DbUserOperations();
             this.Size = new Size(391, 570);
+            name.KeyDown += name_KeyDown;
+            surname.KeyDown += surname_KeyDown;
+            patronymic.KeyDown += patronymic_KeyDown;
+            age.KeyDown += age_KeyDown;
         }
 
 
@@ -73,12 +77,6 @@ namespace курсовая.forms
             UserOperations.UpdateUserDetails(AccountObj, details);
             Golovna golovna = new Golovna(AccountObj);
             golovna.Show();
-            //string firstName = name.Text;
-            //string lastName = surname.Text;
-            //string patronymicc = patronymic.Text;
-            //string a = age.Text;
-            //string gender = Men.Checked ? "М" : "Ж";
-            //AccountMenu accountForm = new AccountMenu(firstName, lastName, patronymicc, a, gender);
             AccountMenu accountForm = new AccountMenu(AccountObj);
             golovna.OpenChildForm(accountForm, sender);
             golovna.labeltitle.Text = "Привіт, " + name.Text + "!";
@@ -108,5 +106,39 @@ namespace курсовая.forms
                 women.Checked = false;
             }
         }
+
+        private void name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                surname.Focus();
+            }
+        }
+        private void surname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                patronymic.Focus();
+            }
+        }
+        private void patronymic_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                age.Focus();
+            }
+        }
+        private void age_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+
     }
 }

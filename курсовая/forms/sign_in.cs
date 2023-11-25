@@ -21,6 +21,9 @@ namespace курсовая.forms
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.Size = new Size(391, 570);
             AccountOperations = new DbAccountOperations();
+            login.KeyDown += login_KeyDown;
+            password.KeyDown += password_KeyDown;
+            passwordagain.KeyDown += passwordagain_KeyDown;
         }
 
         private bool isInputValid()
@@ -90,6 +93,33 @@ namespace курсовая.forms
             log_in log_In = new log_in();
             log_In.Show();
             this.Hide();
+        }
+
+        private void login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                password.Focus(); 
+            }
+        }
+
+        private void password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                passwordagain.Focus();
+            }
+        }
+
+        private void passwordagain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                register.PerformClick();
+            }
         }
     }
 }

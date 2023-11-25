@@ -57,18 +57,7 @@ namespace курсовая.forms
                 Application.Run(new log_in());
             });
 
-            // Запускаем поток
             thread.Start();
-
-            /* AccountOperations.removeAccount(this.AccountObj);
-             log_in log_In = new log_in();
-             log_In.Show();*/
-
-            //this.Close();
-            /*if (this.MdiParent != null && this.MdiParent.IsMdiContainer)
-                this.MdiParent.Close();
-            else
-                MessageBox.Show("Ne roditel");*/
         }
     }
 }

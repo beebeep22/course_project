@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using курсовая.classes;
@@ -295,9 +296,22 @@ namespace курсовая.forms
 
         private void exit_Click(object sender, EventArgs e)
         {
-            log_in login = new log_in();
-            login.Show();
-            this.Hide();
+            List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());
+
+            foreach (Form form in formsToClose)
+            {
+                if (form != this)
+                {
+                    form.Close();
+                }
+            }
+
+            Thread thread = new Thread(() =>
+            {
+                Application.Run(new log_in());
+            });
+
+            thread.Start();
         }
 
         private void Golovna_FormClosing(object sender, FormClosingEventArgs e)

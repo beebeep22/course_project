@@ -38,26 +38,29 @@
             // 
             // patronymic
             // 
+            this.patronymic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.patronymic.Location = new System.Drawing.Point(291, 133);
             this.patronymic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.patronymic.Name = "patronymic";
-            this.patronymic.Size = new System.Drawing.Size(151, 22);
+            this.patronymic.Size = new System.Drawing.Size(151, 24);
             this.patronymic.TabIndex = 6;
             // 
             // name
             // 
+            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.name.Location = new System.Drawing.Point(291, 78);
             this.name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(151, 22);
+            this.name.Size = new System.Drawing.Size(151, 24);
             this.name.TabIndex = 5;
             // 
             // surname
             // 
+            this.surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.surname.Location = new System.Drawing.Point(291, 26);
             this.surname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.surname.Name = "surname";
-            this.surname.Size = new System.Drawing.Size(151, 22);
+            this.surname.Size = new System.Drawing.Size(151, 24);
             this.surname.TabIndex = 4;
             this.surname.TextChanged += new System.EventHandler(this.surname_TextChanged);
             // 

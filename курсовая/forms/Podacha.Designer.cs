@@ -85,9 +85,10 @@
             // 
             // podatu
             // 
-            this.podatu.Location = new System.Drawing.Point(369, 416);
+            this.podatu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.podatu.Location = new System.Drawing.Point(369, 437);
             this.podatu.Name = "podatu";
-            this.podatu.Size = new System.Drawing.Size(146, 41);
+            this.podatu.Size = new System.Drawing.Size(157, 41);
             this.podatu.TabIndex = 0;
             this.podatu.Text = "Подати заявку";
             this.podatu.UseVisualStyleBackColor = true;
@@ -98,7 +99,7 @@
             this.addproof.FlatAppearance.BorderSize = 0;
             this.addproof.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addproof.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addproof.Location = new System.Drawing.Point(369, 320);
+            this.addproof.Location = new System.Drawing.Point(384, 322);
             this.addproof.Name = "addproof";
             this.addproof.Size = new System.Drawing.Size(157, 44);
             this.addproof.TabIndex = 2;

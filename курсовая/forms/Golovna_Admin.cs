@@ -32,6 +32,7 @@ namespace курсовая.forms
             Налаштування.Size = new System.Drawing.Size(220, 60);
             exit.Size = new System.Drawing.Size(220, 60);
             this.IsMdiContainer = true;
+            labeltitle.Text = "З поверненням, адміне!";
         }
 
         public void OpenChildForm(Form childform, object Sender)

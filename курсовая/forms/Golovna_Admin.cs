@@ -65,7 +65,7 @@ namespace курсовая.forms
 
         private void Settings_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new forms.Settings(), sender);
+            OpenChildForm(new forms.Settings(AccountObj), sender);
             labeltitle.Text = "Налаштування";
         }
 

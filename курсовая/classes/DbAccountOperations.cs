@@ -49,5 +49,10 @@ namespace курсовая.classes
                 Console.WriteLine($"Username: {account.Username}, Password: {account.Password}, Role: {account.Role}");
             }
         }
+        public void removeAccount(Account accountObj)
+        {
+            var filter = Builders<Account>.Filter.Eq("_id", accountObj._id);
+            _accountsCollection.DeleteOne(filter);
+        }
     }
 }

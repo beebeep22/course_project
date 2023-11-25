@@ -45,11 +45,10 @@
             this.listOfRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Topic,
             this.ResponseStatusColumn});
-            this.listOfRequests.Location = new System.Drawing.Point(49, 50);
-            this.listOfRequests.Margin = new System.Windows.Forms.Padding(4);
+            this.listOfRequests.Location = new System.Drawing.Point(37, 41);
             this.listOfRequests.Name = "listOfRequests";
             this.listOfRequests.RowHeadersWidth = 51;
-            this.listOfRequests.Size = new System.Drawing.Size(503, 423);
+            this.listOfRequests.Size = new System.Drawing.Size(377, 344);
             this.listOfRequests.TabIndex = 0;
             // 
             // Topic
@@ -74,10 +73,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(592, 50);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(444, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 18);
+            this.label1.Size = new System.Drawing.Size(138, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Обраний вміст запиту:";
             // 
@@ -85,44 +83,40 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(592, 202);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(444, 164);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(241, 18);
+            this.label3.Size = new System.Drawing.Size(204, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Обраний вміст відповіді на запит:";
             // 
             // txtRequestContent
             // 
             this.txtRequestContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtRequestContent.Location = new System.Drawing.Point(595, 87);
-            this.txtRequestContent.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRequestContent.Location = new System.Drawing.Point(446, 71);
             this.txtRequestContent.Multiline = true;
             this.txtRequestContent.Name = "txtRequestContent";
-            this.txtRequestContent.Size = new System.Drawing.Size(196, 39);
+            this.txtRequestContent.Size = new System.Drawing.Size(148, 32);
             this.txtRequestContent.TabIndex = 4;
             // 
             // txtResponseContent
             // 
             this.txtResponseContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtResponseContent.Location = new System.Drawing.Point(595, 253);
-            this.txtResponseContent.Margin = new System.Windows.Forms.Padding(4);
+            this.txtResponseContent.Location = new System.Drawing.Point(446, 206);
             this.txtResponseContent.Multiline = true;
             this.txtResponseContent.Name = "txtResponseContent";
-            this.txtResponseContent.Size = new System.Drawing.Size(196, 41);
+            this.txtResponseContent.Size = new System.Drawing.Size(148, 34);
             this.txtResponseContent.TabIndex = 6;
             // 
             // History
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 516);
+            this.ClientSize = new System.Drawing.Size(648, 419);
             this.Controls.Add(this.txtResponseContent);
             this.Controls.Add(this.txtRequestContent);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listOfRequests);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "History";
             this.Text = "History";
             this.Load += new System.EventHandler(this.History_Load);

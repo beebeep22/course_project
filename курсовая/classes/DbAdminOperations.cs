@@ -33,9 +33,9 @@ namespace курсовая.classes
         }
 
 
-        public List<UserRequest> FillRequestsWithApplicants(List<UserRequest> userRequests)
+        public List<UserRequest> FillRequestsWithApplicantsAndFilterByNotRejected(List<UserRequest> userRequests)
         {
-            var unansweredRequests = new List<UserRequest>();
+            var filledRequests = new List<UserRequest>();
 
             foreach (var request in userRequests)
             {
@@ -44,17 +44,28 @@ namespace курсовая.classes
                 if (applicantObj == null) continue; // Don't add requests with unknown applicants
                 request.SetApplicantObj(applicantObj);
 
-                unansweredRequests.Add(request);
+                var userRequestResponse = _userRequestsResponseCollection
+                    .Find(x => x.UserRequestId == request._id)
+                    .FirstOrDefault();
+
+                if (userRequestResponse != null)
+                {
+                    request.SetResponse(userRequestResponse);
+                }
+                if (userRequestResponse?.Status == null || userRequestResponse.Status != "Відхилено")
+                {
+                    filledRequests.Add(request);
+                }
             }
 
-            return unansweredRequests;
+            return filledRequests;
         }
 
 
         public List<UserRequest> GetUserRequests()
         {
             var allRequests = GetAllRequests();
-            return FillRequestsWithApplicants(allRequests);
+            return FillRequestsWithApplicantsAndFilterByNotRejected(allRequests);
         }
 
         public void CreateNotification(Notification Notification)

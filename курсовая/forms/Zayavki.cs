@@ -43,6 +43,11 @@ namespace курсовая.forms
         {
 
             userRequestsTable.DataSource = this.AllUserRequests;
+
+            foreach (var request in AdminOperations.GetUserRequests())
+            {
+                Console.WriteLine(request?.Response?.Status ?? "null status for request " + request.Topic);
+            }
             
             userRequestsTable.Columns["_id"].Visible = false;
             userRequestsTable.Columns["ApplicantId"].Visible = false;
@@ -55,7 +60,7 @@ namespace курсовая.forms
 
             userRequestsTable.CellFormatting += userRequestsTable_CellFormatting;
             userRequestsTable.SelectionChanged += listOfRequests_SelectionChanged;
-            userRequestsTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userRequestsTable_CellClick);
+            userRequestsTable.CellClick += new DataGridViewCellEventHandler(this.userRequestsTable_CellClick);
 
             userRequestsTable.ClearSelection();
         }
@@ -67,12 +72,12 @@ namespace курсовая.forms
 
         private void userRequestsTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == userRequestsTable.Columns["ResponseStatusColumn"].Index)
+            if (e.ColumnIndex == userRequestsTable.Columns["responseStatusColumn"].Index)
             {
-                // Format the "ResponseStatusColumn" to display "No response" if Response is null
-                e.Value = (e.Value as UserRequestResponse)?.Status ?? "No response";
+                // Format the "responseStatusColumn" to display "No response" if Response is null
+                e.Value = (e.Value as UserRequestResponse)?.Status ?? "Не переглянуто";
             }
-            else if (e.ColumnIndex == userRequestsTable.Columns["applicantUsername"].Index)
+            if (e.ColumnIndex == userRequestsTable.Columns["applicantUsername"].Index)
             {
                 e.Value = (e.Value as Account)?.Username;
             }
@@ -101,8 +106,8 @@ namespace курсовая.forms
 
             if (selectedRequest != null)
             {
-                topic = selectedRequest.Topic ?? "Немає інформації про заявника"; 
-                content = selectedRequest.Content ?? "Немає інформації про заявника";
+                topic = selectedRequest?.Topic ?? "Немає інформації про заявника"; 
+                content = selectedRequest?.Content ?? "Немає інформації про заявника";
                 username = selectedRequest.ApplicantObj.Username ?? "Немає інформації про заявника";
                 Fullname = selectedRequest.ApplicantObj?.UserDetails?.GetFullName() ?? "Немає інформації про заявника";
                 region = selectedRequest.ApplicantObj?.UserDetails?.Region ?? "Немає інформації про заявника";

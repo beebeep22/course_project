@@ -8,3 +8,4 @@ SocialHelpApp/obj/
 **/obj/*
 *.exe
 *.pdb
+**/*.cache

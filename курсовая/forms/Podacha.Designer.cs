@@ -42,7 +42,7 @@
             // 
             this.themetitle.AutoSize = true;
             this.themetitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.themetitle.Location = new System.Drawing.Point(212, 54);
+            this.themetitle.Location = new System.Drawing.Point(264, 54);
             this.themetitle.Name = "themetitle";
             this.themetitle.Size = new System.Drawing.Size(48, 18);
             this.themetitle.TabIndex = 1;
@@ -50,7 +50,7 @@
             // 
             // theme
             // 
-            this.theme.Location = new System.Drawing.Point(281, 43);
+            this.theme.Location = new System.Drawing.Point(333, 43);
             this.theme.Multiline = true;
             this.theme.Name = "theme";
             this.theme.Size = new System.Drawing.Size(327, 40);
@@ -60,7 +60,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(212, 183);
+            this.label1.Location = new System.Drawing.Point(264, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 18);
             this.label1.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             // description
             // 
-            this.description.Location = new System.Drawing.Point(281, 131);
+            this.description.Location = new System.Drawing.Point(333, 131);
             this.description.Multiline = true;
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(327, 142);
@@ -77,7 +77,7 @@
             // proof
             // 
             this.proof.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.proof.Location = new System.Drawing.Point(281, 303);
+            this.proof.Location = new System.Drawing.Point(333, 303);
             this.proof.Name = "proof";
             this.proof.Size = new System.Drawing.Size(81, 81);
             this.proof.TabIndex = 0;
@@ -86,7 +86,7 @@
             // podatu
             // 
             this.podatu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.podatu.Location = new System.Drawing.Point(369, 437);
+            this.podatu.Location = new System.Drawing.Point(421, 437);
             this.podatu.Name = "podatu";
             this.podatu.Size = new System.Drawing.Size(157, 41);
             this.podatu.TabIndex = 0;
@@ -99,7 +99,7 @@
             this.addproof.FlatAppearance.BorderSize = 0;
             this.addproof.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addproof.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addproof.Location = new System.Drawing.Point(384, 322);
+            this.addproof.Location = new System.Drawing.Point(436, 322);
             this.addproof.Name = "addproof";
             this.addproof.Size = new System.Drawing.Size(157, 44);
             this.addproof.TabIndex = 2;

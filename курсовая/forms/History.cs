@@ -75,15 +75,19 @@ namespace курсовая.forms
 
             if (selectedRequest != null)
             {
+                textTResponseTopic.Text = selectedRequest.Topic;
                 txtRequestContent.Text = selectedRequest.Content;
 
                 if (selectedRequest.Response != null)
                 {
+                    textTResponseTopic.Text = selectedRequest.Response.Topic;
+                    textTResponseTopic.Visible = true;
                     txtResponseContent.Text = selectedRequest.Response.Content;
                     txtResponseContent.Visible = true;
                 }
                 else
                 {
+                    textTResponseTopic.Visible = false;
                     txtResponseContent.Visible = false;
                 }
             }

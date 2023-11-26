@@ -33,6 +33,7 @@ namespace курсовая.forms
             Налаштування.Size = new System.Drawing.Size(220, 60);
             exit.Size = new System.Drawing.Size(220, 60);
             this.IsMdiContainer = true;
+            labeltitle.Location = new Point((paneltitle.Width - labeltitle.Width) / 2, (paneltitle.Height - labeltitle.Height) / 2);
             labeltitle.Text = "З поверненням, адміне!";
         }
 
@@ -56,6 +57,12 @@ namespace курсовая.forms
         {
             OpenChildForm(new forms.Account_admin(this.AccountObj), sender);
             labeltitle.Text = "Акаунт";
+        }
+
+        private void userverificationbutton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new forms.UserVerification(), sender);
+            labeltitle.Text = "Верифікація";
         }
 
         private void Zayavki_Click(object sender, EventArgs e)

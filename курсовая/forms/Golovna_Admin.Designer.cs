@@ -37,6 +37,7 @@
             this.paneltitle = new System.Windows.Forms.Panel();
             this.labeltitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.userverificationbutton = new System.Windows.Forms.Button();
             this.panelmenu.SuspendLayout();
             this.paneltitle.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +48,7 @@
             this.panelmenu.Controls.Add(this.exit);
             this.panelmenu.Controls.Add(this.Налаштування);
             this.panelmenu.Controls.Add(this.Заявки);
+            this.panelmenu.Controls.Add(this.userverificationbutton);
             this.panelmenu.Controls.Add(this.Акаунт);
             this.panelmenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelmenu.Location = new System.Drawing.Point(0, 0);
@@ -63,9 +65,9 @@
             this.exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.exit.Image = global::курсовая.Properties.Resources.exit;
             this.exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exit.Location = new System.Drawing.Point(0, 200);
+            this.exit.Location = new System.Drawing.Point(0, 258);
             this.exit.Name = "exit";
-            this.exit.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.exit.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.exit.Size = new System.Drawing.Size(220, 60);
             this.exit.TabIndex = 7;
             this.exit.Text = "             Вихід";
@@ -83,7 +85,7 @@
             this.Налаштування.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Налаштування.Image = global::курсовая.Properties.Resources.settings;
             this.Налаштування.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Налаштування.Location = new System.Drawing.Point(0, 140);
+            this.Налаштування.Location = new System.Drawing.Point(0, 198);
             this.Налаштування.Name = "Налаштування";
             this.Налаштування.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.Налаштування.Size = new System.Drawing.Size(220, 60);
@@ -101,7 +103,7 @@
             this.Заявки.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Заявки.Image = global::курсовая.Properties.Resources.заявка;
             this.Заявки.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Заявки.Location = new System.Drawing.Point(0, 80);
+            this.Заявки.Location = new System.Drawing.Point(0, 138);
             this.Заявки.Name = "Заявки";
             this.Заявки.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.Заявки.Size = new System.Drawing.Size(220, 60);
@@ -143,15 +145,16 @@
             // 
             // labeltitle
             // 
-            this.labeltitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labeltitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labeltitle.AutoSize = true;
             this.labeltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labeltitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labeltitle.Location = new System.Drawing.Point(297, 26);
+            this.labeltitle.Location = new System.Drawing.Point(294, 22);
             this.labeltitle.Name = "labeltitle";
             this.labeltitle.Size = new System.Drawing.Size(110, 29);
             this.labeltitle.TabIndex = 1;
             this.labeltitle.Text = "Головна";
+            this.labeltitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelDesktop
             // 
@@ -160,6 +163,26 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(681, 387);
             this.panelDesktop.TabIndex = 2;
+            // 
+            // userverificationbutton
+            // 
+            this.userverificationbutton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userverificationbutton.FlatAppearance.BorderSize = 0;
+            this.userverificationbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userverificationbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userverificationbutton.ForeColor = System.Drawing.Color.White;
+            this.userverificationbutton.Image = global::курсовая.Properties.Resources.status;
+            this.userverificationbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userverificationbutton.Location = new System.Drawing.Point(0, 80);
+            this.userverificationbutton.Name = "userverificationbutton";
+            this.userverificationbutton.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.userverificationbutton.Size = new System.Drawing.Size(220, 58);
+            this.userverificationbutton.TabIndex = 8;
+            this.userverificationbutton.Text = "          Верифікація \r\nкористувачів";
+            this.userverificationbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.userverificationbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.userverificationbutton.UseVisualStyleBackColor = true;
+            this.userverificationbutton.Click += new System.EventHandler(this.userverificationbutton_Click);
             // 
             // Golovna_Admin
             // 
@@ -192,5 +215,6 @@
         private System.Windows.Forms.Panel paneltitle;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Label labeltitle;
+        private System.Windows.Forms.Button userverificationbutton;
     }
 }

@@ -198,6 +198,12 @@
     <Compile Include="forms\sign_in.Designer.cs">
       <DependentUpon>sign_in.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\UserVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\UserVerification.Designer.cs">
+      <DependentUpon>UserVerification.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Zayavki.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\sign_in.resx">
       <DependentUpon>sign_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\UserVerification.resx">
+      <DependentUpon>UserVerification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Zayavki.resx">
       <DependentUpon>Zayavki.cs</DependentUpon>

@@ -13,6 +13,7 @@ namespace курсовая.classes
         public string Diseases { get; set; }
         public string Allergies { get; set;  }
         public string DisabilityLevel { get; set; }
+        public bool Approved { get; set; }
 
         public UserDetails(
             string FirstName,
@@ -35,6 +36,7 @@ namespace курсовая.classes
             this.Diseases = Diseases;
             this.Allergies = Allergies;
             this.DisabilityLevel = DisabilityLevel;
+            this.Approved = false;
         }
 
         public string GetFullName()

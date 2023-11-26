@@ -46,11 +46,13 @@
             this.userlogin,
             this.PIB,
             this.Approved});
+            this.userVerificationTable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userVerificationTable.Location = new System.Drawing.Point(37, 51);
             this.userVerificationTable.Name = "userVerificationTable";
             this.userVerificationTable.RowHeadersWidth = 51;
             this.userVerificationTable.RowTemplate.Height = 24;
-            this.userVerificationTable.Size = new System.Drawing.Size(523, 434);
+            this.userVerificationTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.userVerificationTable.Size = new System.Drawing.Size(626, 434);
             this.userVerificationTable.TabIndex = 0;
             // 
             // Approve

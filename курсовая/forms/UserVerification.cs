@@ -25,19 +25,42 @@ namespace курсовая.forms
 
         private void InitializeDataGridView()
         {
-            this.AdminOperations = new DbAdminOperations();
+            AdminOperations = new DbAdminOperations();
+            userVerificationTable.DataSource = AdminOperations;
+
+            userVerificationTable.CellDoubleClick += new DataGridViewCellEventHandler(this.userVerificationTable_CellDoubleClick);
         }
 
-        private void userRequestsTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void userVerificationTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex< userVerificationTable.Rows.Count)
             {
                 DataGridViewRow clickedRow = userVerificationTable.Rows[e.RowIndex];
                 UserDetails selectedUser = (UserDetails)clickedRow?.DataBoundItem;
+                string username;
+                string Fullname;
+                string region;
+                string age;
+                string sex;
+                string alergic;
+                string pathol_diseases;
+                string invalid;
+                string noInfoText = "Немає інформації";
 
                 if (selectedUser != null)
                 {
+                    //username = selectedUser.
+                    Fullname = selectedUser.GetFullName() ?? noInfoText;
+                    region = selectedUser.Region ?? noInfoText;
+                    age = selectedUser.Age ?? noInfoText;
+                    sex = selectedUser.Gender ?? noInfoText;
+                    alergic = selectedUser.Allergies ?? noInfoText;
+                    pathol_diseases = selectedUser.Diseases ?? noInfoText;
+                    invalid = selectedUser.DisabilityLevel ?? noInfoText;
 
+
+                    inform Inform = new inform(Fullname, "", region, age, sex, alergic, invalid, pathol_diseases);
+                    Inform.Show();
                 }
             }
         }

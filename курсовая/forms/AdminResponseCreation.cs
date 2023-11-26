@@ -27,6 +27,7 @@ namespace курсовая.forms
         {
             //нужно ли на тему и описание или можно "на розгляді" без темы и описания,а принятие/отказ с темой и описанием
             // нетб всегда тема и описание
+            // "заявка на розгляді,бо вона дуже гарна,сидимо і дивимося"
             if (themeresponse.Text == "")
             {
                 MessageBox.Show("Ви не ввели тему відповіді");
@@ -68,8 +69,6 @@ namespace курсовая.forms
 
         private void AdminResponseCreation_Load(object sender, EventArgs e)
         {
-            this.ControlBox = false;
-            this.FormBorderStyle = FormBorderStyle.None;
         }
     }
 }

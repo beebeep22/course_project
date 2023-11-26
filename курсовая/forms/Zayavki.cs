@@ -155,17 +155,6 @@ namespace курсовая.forms
                 MessageBox.Show("У вас нема права відповідати на повідомлення");
                 return;
             }
-            /*AdminResponseCreation adminResponseCreation = new AdminResponseCreation(Request);
-            adminResponseCreation.Location = new Point(520, 262);
-            adminResponseCreation.Show();*/
-
-
-            //я пыталась открыть внутри Golovna_Admin,но не вышло
-            /*this.Close();
-            AdminResponseCreation adminResponseCreation = new AdminResponseCreation();
-            adminResponseCreation.MdiParent = this.MdiParent;
-            adminResponseCreation.Show();*/
-
         }
 
         private void FilterDataGridViewByRegion(string region)

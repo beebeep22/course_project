@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.listOfRequests = new System.Windows.Forms.DataGridView();
-            this.Topic = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ResponseStatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtRequestContent = new System.Windows.Forms.TextBox();
             this.txtResponseContent = new System.Windows.Forms.TextBox();
+            this.requestTopic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResponseStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listOfRequests)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,31 +43,13 @@
             this.listOfRequests.BackgroundColor = System.Drawing.SystemColors.Control;
             this.listOfRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listOfRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Topic,
-            this.ResponseStatusColumn});
+            this.requestTopic,
+            this.ResponseStatus});
             this.listOfRequests.Location = new System.Drawing.Point(37, 41);
             this.listOfRequests.Name = "listOfRequests";
             this.listOfRequests.RowHeadersWidth = 51;
             this.listOfRequests.Size = new System.Drawing.Size(377, 344);
             this.listOfRequests.TabIndex = 0;
-            // 
-            // Topic
-            // 
-            this.Topic.DataPropertyName = "Topic";
-            this.Topic.HeaderText = "Тема запиту";
-            this.Topic.MinimumWidth = 6;
-            this.Topic.Name = "Topic";
-            this.Topic.ReadOnly = true;
-            this.Topic.Width = 200;
-            // 
-            // ResponseStatusColumn
-            // 
-            this.ResponseStatusColumn.DataPropertyName = "Response";
-            this.ResponseStatusColumn.HeaderText = "Статус";
-            this.ResponseStatusColumn.MinimumWidth = 6;
-            this.ResponseStatusColumn.Name = "ResponseStatusColumn";
-            this.ResponseStatusColumn.ReadOnly = true;
-            this.ResponseStatusColumn.Width = 125;
             // 
             // label1
             // 
@@ -107,6 +89,24 @@
             this.txtResponseContent.Size = new System.Drawing.Size(148, 34);
             this.txtResponseContent.TabIndex = 6;
             // 
+            // requestTopic
+            // 
+            this.requestTopic.DataPropertyName = "Topic";
+            this.requestTopic.HeaderText = "Тема запиту";
+            this.requestTopic.MinimumWidth = 6;
+            this.requestTopic.Name = "requestTopic";
+            this.requestTopic.ReadOnly = true;
+            this.requestTopic.Width = 200;
+            // 
+            // ResponseStatus
+            // 
+            this.ResponseStatus.DataPropertyName = "Response";
+            this.ResponseStatus.HeaderText = "Статус";
+            this.ResponseStatus.MinimumWidth = 6;
+            this.ResponseStatus.Name = "ResponseStatus";
+            this.ResponseStatus.ReadOnly = true;
+            this.ResponseStatus.Width = 120;
+            // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,7 +133,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRequestContent;
         private System.Windows.Forms.TextBox txtResponseContent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Topic;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ResponseStatusColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn requestTopic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResponseStatus;
     }
 }

@@ -85,5 +85,30 @@ namespace курсовая.classes
             DeleteOldResponses(Response);
             _userRequestsResponseCollection.InsertOne(Response);
         }
+
+        public List<Account> GetAllUsers()
+        {
+            return _accountsCollection.Find(acc => acc.Role == "User").ToList();
+        }
+
+        private void ChangeApproveStatusIfPossible(Account AccountObj, bool Status)
+        {
+            if (AccountObj.UserDetails == null) return;
+            AccountObj.UserDetails.Approved = Status;
+            var filter = Builders<Account>.Filter.Eq("_id", AccountObj._id);
+            var update = Builders<Account>.Update.Set("UserDetails.Approved", Status);
+            _accountsCollection.UpdateOne(filter, update);
+
+        }
+        public void ApproveUser(Account AccountObj)
+        {
+            ChangeApproveStatusIfPossible(AccountObj, true);  
+        }
+
+        public void DisapproveUser(Account AccountObj)
+        {
+            ChangeApproveStatusIfPossible(AccountObj, false);
+        }
+
     }
 }

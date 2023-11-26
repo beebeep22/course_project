@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using курсовая.classes;
+using System.Linq;
 
 
 namespace курсовая.forms
@@ -10,11 +11,13 @@ namespace курсовая.forms
     {
         private Account AccountObj { get; set; }
         private DbUserOperations UserOperations { get; set; }
+        private List<UserRequest> AllUserRequests { get; set; }
         public History(Account AccountObj)
         {
             InitializeComponent();
             this.AccountObj = AccountObj;
             this.UserOperations = new DbUserOperations();
+            this.AllUserRequests = getUserRequests();
             InitializeDataGridView();
         }
 
@@ -25,9 +28,8 @@ namespace курсовая.forms
 
         private void InitializeDataGridView()
         {
-            List<UserRequest> userRequests = getUserRequests();
 
-            listOfRequests.DataSource = userRequests;
+            listOfRequests.DataSource = AllUserRequests;
 
             listOfRequests.Columns["_id"].Visible = false;
             listOfRequests.Columns["ApplicantId"].Visible = false;
@@ -37,9 +39,34 @@ namespace курсовая.forms
             listOfRequests.SelectionChanged += listOfRequests_SelectionChanged;
             listOfRequests.CellFormatting += listOfRequests_CellFormatting;
             listOfRequests.ScrollBars = ScrollBars.None;
+            listOfRequests.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             
-            listOfRequests.Columns["Topic"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            listOfRequests.Columns["Topic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopLeft;
+            listOfRequests.Columns["requestTopic"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            listOfRequests.Columns["requestTopic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopLeft;
+
+            // sort on column header click
+            listOfRequests.ColumnHeaderMouseClick += listOfRequests_ColumnHeaderMouseClick;
+        }
+
+        private void listOfRequests_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            DataGridViewColumn clickedColumn = listOfRequests.Columns[e.ColumnIndex];
+
+            if (clickedColumn != null)
+            {
+                string propertyName = clickedColumn.Name;
+                switch (propertyName)
+                {
+                    case "requestTopic":
+                        this.AllUserRequests = AllUserRequests.OrderBy(request => request.Topic).ToList();
+                        break;
+                    case "ResponseStatus":
+                        this.AllUserRequests = AllUserRequests.OrderBy(request => request?.Response?.Status).ToList();
+                        break;
+                }
+                listOfRequests.DataSource = this.AllUserRequests;
+            }
         }
 
         private void listOfRequests_SelectionChanged(object sender, EventArgs e)
@@ -64,8 +91,8 @@ namespace курсовая.forms
 
         private void listOfRequests_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Format the "ResponseStatusColumn" to display "No response" if Response is null
-            if (e.ColumnIndex == listOfRequests.Columns["ResponseStatusColumn"].Index)
+            // Format the "responseStatus" to display "No response" if Response is null
+            if (e.ColumnIndex == listOfRequests.Columns["responseStatus"].Index)
             {
                 e.Value = (e.Value as UserRequestResponse)?.Status ?? "Не переглянуто";
                 e.FormattingApplied = true;

@@ -1,15 +1,10 @@
-﻿using Amazon.Runtime.Internal;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using курсовая.classes;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace курсовая.forms
 {
@@ -40,6 +35,8 @@ namespace курсовая.forms
             filterByRegion.Items.Add("Винницька область");
             filterByRegion.Items.Add("Житомирьська область");
             filterByRegion.Items.Add("Львівська область");
+            filterByRegion.Items.Add("-");
+            filterByRegion.SelectedIndex = filterByRegion.Items.Count - 1;
         }
 
 
@@ -58,24 +55,51 @@ namespace курсовая.forms
 
 
             userRequestsTable.CellFormatting += userRequestsTable_CellFormatting;
-            userRequestsTable.SelectionChanged += listOfRequests_SelectionChanged;
             userRequestsTable.CellDoubleClick += new DataGridViewCellEventHandler(this.userRequestsTable_CellDoubleClick);
             userRequestsTable.ClearSelection();
+
+            // sort on column header click
+            userRequestsTable.ColumnHeaderMouseClick += userRequestsTable_ColumnHeaderMouseClick;
+
         }
 
-        private void listOfRequests_SelectionChanged(object sender, EventArgs e)
+        private void userRequestsTable_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            DataGridViewColumn clickedColumn = userRequestsTable.Columns[e.ColumnIndex];
+
+            if (clickedColumn != null)
+            {
+                string propertyName = clickedColumn.Name;
+                switch (propertyName)
+                {
+                    case "requestTopic":
+                        this.AllUserRequests = AllUserRequests.OrderBy(request => request.Topic).ToList();
+                        break;
+                    case "responseStatus":
+                        this.AllUserRequests = AllUserRequests.OrderBy(request => request?.Response?.Status).ToList();
+                        break;
+                    case "applicantUsername":
+                        this.AllUserRequests = AllUserRequests.OrderBy(request => request.ApplicantObj.Username).ToList();
+                        break;
+                    case "applicantRegion":
+                        this.AllUserRequests = AllUserRequests.OrderBy(request => request.ApplicantObj.UserDetails.Region).ToList();
+                        break;
+                }
+                userRequestsTable.DataSource = this.AllUserRequests;
+
+            }
 
         }
+
 
         private void userRequestsTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == userRequestsTable.Columns["responseStatusColumn"].Index)
+            if (e.ColumnIndex == userRequestsTable.Columns["responseStatus"].Index)
             {
                 // Format the "responseStatusColumn" to display "No response" if Response is null
                 e.Value = (e.Value as UserRequestResponse)?.Status ?? "Не переглянуто";
             }
-            if (e.ColumnIndex == userRequestsTable.Columns["applicantUsername"].Index)
+            else if (e.ColumnIndex == userRequestsTable.Columns["applicantUsername"].Index)
             {
                 e.Value = (e.Value as Account)?.Username;
             }
@@ -103,19 +127,20 @@ namespace курсовая.forms
                 string alergic;
                 string pathol_diseases;
                 string invalid;
+                string noInfoText = "Немає інформації про заявника";
 
                 if (selectedRequest != null)
                 {
-                    topic = selectedRequest?.Topic ?? "Немає інформації про заявника";
-                    content = selectedRequest?.Content ?? "Немає інформації про заявника";
-                    username = selectedRequest.ApplicantObj.Username ?? "Немає інформації про заявника";
-                    Fullname = selectedRequest.ApplicantObj?.UserDetails?.GetFullName() ?? "Немає інформації про заявника";
-                    region = selectedRequest.ApplicantObj?.UserDetails?.Region ?? "Немає інформації про заявника";
-                    age = selectedRequest.ApplicantObj?.UserDetails?.Age ?? "Немає інформації про заявника";
-                    sex = selectedRequest.ApplicantObj?.UserDetails?.Gender ?? "Немає інформації про заявника";
-                    alergic = selectedRequest.ApplicantObj?.UserDetails?.Allergies ?? "Немає інформації про заявника";
-                    pathol_diseases = selectedRequest.ApplicantObj?.UserDetails?.Diseases ?? "Немає інформації про заявника";
-                    invalid = selectedRequest.ApplicantObj?.UserDetails?.DisabilityLevel ?? "Немає інформації про заявника";
+                    topic = selectedRequest?.Topic ?? noInfoText;
+                    content = selectedRequest?.Content ?? noInfoText;
+                    username = selectedRequest.ApplicantObj.Username ?? noInfoText;
+                    Fullname = selectedRequest.ApplicantObj?.UserDetails?.GetFullName() ?? noInfoText;
+                    region = selectedRequest.ApplicantObj?.UserDetails?.Region ?? noInfoText;
+                    age = selectedRequest.ApplicantObj?.UserDetails?.Age ?? noInfoText;
+                    sex = selectedRequest.ApplicantObj?.UserDetails?.Gender ?? noInfoText;
+                    alergic = selectedRequest.ApplicantObj?.UserDetails?.Allergies ?? noInfoText;
+                    pathol_diseases = selectedRequest.ApplicantObj?.UserDetails?.Diseases ?? noInfoText;
+                    invalid = selectedRequest.ApplicantObj?.UserDetails?.DisabilityLevel ?? noInfoText;
 
                     inform Inform = new inform(topic, content, Fullname, username, region, age, sex, alergic, invalid, pathol_diseases);
                     Inform.Show();
@@ -138,34 +163,34 @@ namespace курсовая.forms
 
         private void reply_request_Click(object sender, EventArgs e)
         {
-            if (userRequestsTable.SelectedCells.Count > 0)
-            {
-                int selectedRowIndex = userRequestsTable.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = userRequestsTable.Rows[selectedRowIndex];
-                UserRequest selectedUserRequest = (UserRequest)selectedRow.DataBoundItem;
-                replyOnRequest(selectedUserRequest);
-                parentForm.OpenChildForm(new forms.AdminResponseCreation(selectedUserRequest),sender);
-            }
-        }
-
-        private void replyOnRequest(UserRequest Request)
-        {
             if (this.AccountObj?.AdminDetails?.CanRespondOnRequests != true)
             {
                 MessageBox.Show("У вас нема права відповідати на повідомлення");
                 return;
             }
+
+            if (userRequestsTable.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = userRequestsTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = userRequestsTable.Rows[selectedRowIndex];
+                UserRequest selectedUserRequest = (UserRequest)selectedRow.DataBoundItem;
+                parentForm.OpenChildForm(new forms.AdminResponseCreation(selectedUserRequest), sender);
+            }
         }
 
         private void FilterDataGridViewByRegion(string region)
         {
-            var filteredUserRequests = this.AllUserRequests 
-                .Where(request =>
-                {
-                    string rowRegion = request.ApplicantObj?.UserDetails?.Region ?? "";
-                    return rowRegion == region;
-                })
-                .ToList();
+            var filteredUserRequests = this.AllUserRequests; 
+            if (region != "-")
+            {
+                filteredUserRequests = this.AllUserRequests
+                    .Where(request =>
+                    {
+                        string rowRegion = request.ApplicantObj?.UserDetails?.Region ?? "";
+                        return rowRegion == region;
+                    })
+                    .ToList();
+            }
             userRequestsTable.DataSource = filteredUserRequests;
         }
 

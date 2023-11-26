@@ -59,13 +59,23 @@ namespace курсовая.forms
             }
             if (accountObj.Role == "user")
             {
-                Golovna golovna = new Golovna(accountObj);
-                golovna.Show();
-                this.Hide();
+                if (accountObj.UserDetails == null)
+                {
+                    // forward to user details form to fill in the user data if the user has not done so yet
+                    Createaccount createaccount = new Createaccount(accountObj);
+                    createaccount.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Golovna golovna = new Golovna(accountObj);
+                    golovna.Show();
+                    this.Hide();
+                    AccountMenu accountForm = new AccountMenu(accountObj);
+                    golovna.OpenChildForm(accountForm, sender);
+                    golovna.labeltitle.Text = "З поверненням!";
+                }
 
-                AccountMenu accountForm = new AccountMenu(accountObj);
-                golovna.OpenChildForm(accountForm, sender);
-                golovna.labeltitle.Text = "З поверненням!";
             }
             else if (accountObj.Role == "admin")
             {

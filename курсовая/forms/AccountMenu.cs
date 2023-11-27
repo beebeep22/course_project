@@ -123,6 +123,7 @@ namespace курсовая.forms
             this.AccountObj.UserDetails.DisabilityLevel = invalid.Text;
             this.AccountObj.UserDetails.Diseases = pathdiseas.Text;
             this.AccountObj.UserDetails.Allergies = alergic.Text;
+            this.AccountObj.UserDetails.Approved = false;
             this.UserOperations.UpdateUserDetails(this.AccountObj, this.AccountObj.UserDetails);
             MessageBox.Show("Зміни збережено");
         }

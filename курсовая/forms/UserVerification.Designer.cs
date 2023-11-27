@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.userVerificationTable = new System.Windows.Forms.DataGridView();
-            this.userlogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PIB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Approved = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Approve = new System.Windows.Forms.Button();
             this.Disapprove = new System.Windows.Forms.Button();
+            this.userName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isApproved = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.userVerificationTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,45 +43,26 @@
             this.userVerificationTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userVerificationTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userVerificationTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userlogin,
-            this.PIB,
-            this.Approved});
+            this.userName,
+            this.fullName,
+            this.isApproved});
             this.userVerificationTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.userVerificationTable.Location = new System.Drawing.Point(37, 51);
+            this.userVerificationTable.Location = new System.Drawing.Point(28, 41);
+            this.userVerificationTable.Margin = new System.Windows.Forms.Padding(2);
             this.userVerificationTable.Name = "userVerificationTable";
             this.userVerificationTable.RowHeadersWidth = 51;
             this.userVerificationTable.RowTemplate.Height = 24;
             this.userVerificationTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.userVerificationTable.Size = new System.Drawing.Size(676, 434);
+            this.userVerificationTable.Size = new System.Drawing.Size(428, 353);
             this.userVerificationTable.TabIndex = 0;
-            // 
-            // userlogin
-            // 
-            this.userlogin.HeaderText = "user";
-            this.userlogin.MinimumWidth = 4;
-            this.userlogin.Name = "userlogin";
-            this.userlogin.Width = 125;
-            // 
-            // PIB
-            // 
-            this.PIB.HeaderText = "ПІБ";
-            this.PIB.MinimumWidth = 8;
-            this.PIB.Name = "PIB";
-            this.PIB.Width = 125;
-            // 
-            // Approved
-            // 
-            this.Approved.HeaderText = "Затверджено";
-            this.Approved.MinimumWidth = 6;
-            this.Approved.Name = "Approved";
-            this.Approved.Width = 125;
             // 
             // Approve
             // 
             this.Approve.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Approve.Location = new System.Drawing.Point(732, 180);
+            this.Approve.Location = new System.Drawing.Point(502, 146);
+            this.Approve.Margin = new System.Windows.Forms.Padding(2);
             this.Approve.Name = "Approve";
-            this.Approve.Size = new System.Drawing.Size(137, 46);
+            this.Approve.Size = new System.Drawing.Size(103, 37);
             this.Approve.TabIndex = 1;
             this.Approve.Text = "Підтверджено";
             this.Approve.UseVisualStyleBackColor = true;
@@ -90,22 +71,51 @@
             // Disapprove
             // 
             this.Disapprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Disapprove.Location = new System.Drawing.Point(732, 314);
+            this.Disapprove.Location = new System.Drawing.Point(502, 255);
+            this.Disapprove.Margin = new System.Windows.Forms.Padding(2);
             this.Disapprove.Name = "Disapprove";
-            this.Disapprove.Size = new System.Drawing.Size(137, 45);
+            this.Disapprove.Size = new System.Drawing.Size(103, 37);
             this.Disapprove.TabIndex = 2;
             this.Disapprove.Text = "Відхилено";
             this.Disapprove.UseVisualStyleBackColor = true;
             this.Disapprove.Click += new System.EventHandler(this.Disapprove_Click);
             // 
+            // userName
+            // 
+            this.userName.DataPropertyName = "Username";
+            this.userName.HeaderText = "Логін";
+            this.userName.MinimumWidth = 4;
+            this.userName.Name = "userName";
+            this.userName.ReadOnly = true;
+            this.userName.Width = 125;
+            // 
+            // fullName
+            // 
+            this.fullName.DataPropertyName = "UserDetails";
+            this.fullName.HeaderText = "ПІБ";
+            this.fullName.MinimumWidth = 8;
+            this.fullName.Name = "fullName";
+            this.fullName.ReadOnly = true;
+            this.fullName.Width = 125;
+            // 
+            // isApproved
+            // 
+            this.isApproved.DataPropertyName = "UserDetails";
+            this.isApproved.HeaderText = "Затверджено";
+            this.isApproved.MinimumWidth = 6;
+            this.isApproved.Name = "isApproved";
+            this.isApproved.ReadOnly = true;
+            this.isApproved.Width = 125;
+            // 
             // UserVerification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 516);
+            this.ClientSize = new System.Drawing.Size(648, 419);
             this.Controls.Add(this.Disapprove);
             this.Controls.Add(this.Approve);
             this.Controls.Add(this.userVerificationTable);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserVerification";
             this.Text = "UserVerification";
             ((System.ComponentModel.ISupportInitialize)(this.userVerificationTable)).EndInit();
@@ -118,8 +128,8 @@
         private System.Windows.Forms.DataGridView userVerificationTable;
         private System.Windows.Forms.Button Approve;
         private System.Windows.Forms.Button Disapprove;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userlogin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PIB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Approved;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isApproved;
     }
 }

@@ -88,7 +88,7 @@ namespace курсовая.classes
 
         public List<Account> GetAllUsers()
         {
-            return _accountsCollection.Find(acc => acc.Role == "User").ToList();
+            return _accountsCollection.Find(acc => acc.Role == "user").ToList();
         }
 
         private void ChangeApproveStatusIfPossible(Account AccountObj, bool Status)

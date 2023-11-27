@@ -15,20 +15,24 @@ namespace курсовая.forms
     {
         private Account AccountObj { get; set; }
         private DbAdminOperations AdminOperations { get; set; }
+        private List<Account> AllUsers { get; set; }
 
         public UserVerification()
         {
             InitializeComponent();
             this.AccountObj = AccountObj;
+            this.AdminOperations = new DbAdminOperations();
+            this.AllUsers = AdminOperations.GetAllUsers();
             InitializeDataGridView();
         }
 
         private void InitializeDataGridView()
         {
-            AdminOperations = new DbAdminOperations();
-            userVerificationTable.DataSource = AdminOperations;
-
+            userVerificationTable.DataSource = this.AllUsers;
             userVerificationTable.CellDoubleClick += new DataGridViewCellEventHandler(this.userVerificationTable_CellDoubleClick);
+            userVerificationTable.CellFormatting += userVerificationTable_CellFormatting;
+            userVerificationTable.ScrollBars = ScrollBars.None;
+            userVerificationTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void userVerificationTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -36,7 +40,8 @@ namespace курсовая.forms
             if (e.RowIndex >= 0 && e.RowIndex< userVerificationTable.Rows.Count)
             {
                 DataGridViewRow clickedRow = userVerificationTable.Rows[e.RowIndex];
-                UserDetails selectedUser = (UserDetails)clickedRow?.DataBoundItem;
+                Account selectedAccount = (Account)clickedRow?.DataBoundItem;
+                UserDetails selectedUser = selectedAccount.UserDetails; 
                 string username;
                 string Fullname;
                 string region;
@@ -49,7 +54,7 @@ namespace курсовая.forms
 
                 if (selectedUser != null)
                 {
-                    //username = selectedUser.
+                    username = selectedAccount.Username;
                     Fullname = selectedUser.GetFullName() ?? noInfoText;
                     region = selectedUser.Region ?? noInfoText;
                     age = selectedUser.Age ?? noInfoText;
@@ -58,35 +63,48 @@ namespace курсовая.forms
                     pathol_diseases = selectedUser.Diseases ?? noInfoText;
                     invalid = selectedUser.DisabilityLevel ?? noInfoText;
 
-                    inform Inform = new inform(Fullname, "", region, age, sex, alergic, invalid, pathol_diseases);
+
+                    inform Inform = new inform(Fullname, username, region, age, sex, alergic, invalid, pathol_diseases);
                     Inform.Show();
                 }
             }
         }
 
+        private void userVerificationTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == userVerificationTable.Columns["fullName"].Index)
+            {
+                UserDetails details = (e.Value as UserDetails);
+                e.Value = details?.FirstName != null ? details.GetFullName() : "Дані відсутні";
+                e.FormattingApplied = true;
+            }
+            else if (e.ColumnIndex == userVerificationTable.Columns["isApproved"].Index)
+            {
+                UserDetails details = (e.Value as UserDetails);
+                e.Value = details?.Approved != true ? "Не верифікован" : "Верифікован";
+                e.FormattingApplied = true;
+            }
+        }
+
         private void Approve_Click(object sender, EventArgs e)
         {
-            if (this.AccountObj?.AdminDetails?.CanRespondOnRequests != true)
-            {
-                MessageBox.Show("У вас нема права відповідати на повідомлення");
-                return;
-            }
             if (userVerificationTable.SelectedCells.Count > 0)
             {
-                AdminOperations.ApproveUser(this.AccountObj);
+                int selectedRowIndex = userVerificationTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = userVerificationTable.Rows[selectedRowIndex];
+                Account selectedUser = (Account)selectedRow.DataBoundItem;
+                AdminOperations.ApproveUser(selectedUser);
             }
         }
 
         private void Disapprove_Click(object sender, EventArgs e)
         {
-            if (this.AccountObj?.AdminDetails?.CanRespondOnRequests != true)
-            {
-                MessageBox.Show("У вас нема права відповідати на повідомлення");
-                return;
-            }
             if (userVerificationTable.SelectedCells.Count > 0)
             {
-                AdminOperations.DisapproveUser(this.AccountObj);
+                int selectedRowIndex = userVerificationTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = userVerificationTable.Rows[selectedRowIndex];
+                Account selectedUser = (Account)selectedRow.DataBoundItem;
+                AdminOperations.DisapproveUser(selectedUser);
             }
         }
     }

@@ -50,41 +50,47 @@ namespace курсовая.forms
         {
             LoginInput input = new LoginInput(login.Text, password.Text);
             if (!isInputValid(input)) return;
-
-            Account accountObj = AccountOperations.GetAccountByUsernameAndPassword(input);
-            if (accountObj == null)
+            try
             {
-                MessageBox.Show("Поле логіна чи пароля неправильне!");
+                Account accountObj = AccountOperations.GetAccountByUsernameAndPassword(input);
+                if (accountObj == null)
+                {
+                    throw new Exceptions("Поле логіна чи пароля неправильне!");
+                }
+                if (accountObj.Role == "user")
+                {
+                    if (accountObj.UserDetails == null)
+                    {
+                        // forward to user details form to fill in the user data if the user has not done so yet
+                        Createaccount createaccount = new Createaccount(accountObj);
+                        createaccount.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        Golovna golovna = new Golovna(accountObj);
+                        golovna.Show();
+                        this.Hide();
+                        AccountMenu accountForm = new AccountMenu(accountObj);
+                        golovna.OpenChildForm(accountForm, sender);
+                        golovna.labeltitle.Text = "З поверненням!";
+                    }
+
+                }
+                else if (accountObj.Role == "admin")
+                {
+                    Golovna_Admin golovna_Admin = new Golovna_Admin(accountObj);
+                    golovna_Admin.Show();
+                    this.Hide();
+
+                    Account_admin account_Admin = new Account_admin(accountObj);
+                    golovna_Admin.OpenChildForm(account_Admin, sender);
+                }
+            }
+            catch(Exceptions ex)
+            {
+                MessageBox.Show(ex.Message, "Помилка авторизації");
                 return;
-            }
-            if (accountObj.Role == "user")
-            {
-                if (accountObj.UserDetails == null)
-                {
-                    // forward to user details form to fill in the user data if the user has not done so yet
-                    Createaccount createaccount = new Createaccount(accountObj);
-                    createaccount.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    Golovna golovna = new Golovna(accountObj);
-                    golovna.Show();
-                    this.Hide();
-                    AccountMenu accountForm = new AccountMenu(accountObj);
-                    golovna.OpenChildForm(accountForm, sender);
-                    golovna.labeltitle.Text = "З поверненням!";
-                }
-
-            }
-            else if (accountObj.Role == "admin")
-            {
-                Golovna_Admin golovna_Admin = new Golovna_Admin(accountObj);
-                golovna_Admin.Show();
-                this.Hide();
-
-                Account_admin account_Admin = new Account_admin(accountObj);
-                golovna_Admin.OpenChildForm(account_Admin, sender);
             }
 
         }

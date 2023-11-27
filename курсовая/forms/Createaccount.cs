@@ -35,43 +35,70 @@ namespace курсовая.forms
 
         private bool isInputValid()
         {
-            int ageValue;
-            if (name.Text == "")
+            try
             {
-                MessageBox.Show("Поле ім'я незаповнене");
+                int ageValue;
+                if (name.Text == "")
+                {
+                    MessageBox.Show("Поле ім'я незаповнене");
+                    return false;
+                }
+                else if (surname.Text == "")
+                {
+                    MessageBox.Show("Поле прізвища незаповнене");
+                    return false;
+                }
+                else if (patronymic.Text == "")
+                {
+                    MessageBox.Show("Поле по-батькові незаповнене");
+                    return false;
+                }
+                else if (age.Text == "")
+                {
+                    MessageBox.Show("Поле віку незаповнене");
+                    return false;
+                }
+                else if (!int.TryParse(age.Text, out ageValue))
+                {
+                    MessageBox.Show("Поле віку має бути числовим значенням");
+                    return false;
+                }
+                else if (ageValue < 16 || ageValue > 99)
+                {
+                    MessageBox.Show("Поле віку заповнене некоректно");
+                    return false;
+                }
+                else if (!women.Checked && !Men.Checked)
+                {
+                    MessageBox.Show("Стать не обрано");
+                    return false;
+                }
+                else
+                {
+                    if (!IsCyrillicInput(name.Text) || !IsCyrillicInput(surname.Text) || !IsCyrillicInput(patronymic.Text))
+                    {
+                        throw new Exceptions("ПІБ повино бути кирилицею");
+                    }
+                    return true;
+                }
+            }
+            catch (Exceptions ex)
+            {
+                MessageBox.Show(ex.Message, "Помилка створення облікового запису");
                 return false;
             }
-            else if (surname.Text == "")
+        }
+
+        public bool IsCyrillicInput(string input)
+        {
+            foreach (char c in input)
             {
-                MessageBox.Show("Поле прізвища незаповнене");
-                return false;
+                if (!(c >= 'А' && c <= 'я'))
+                {
+                    return false;
+                }
             }
-            else if (patronymic.Text == "")
-            {
-                MessageBox.Show("Поле по-батькові незаповнене");
-                return false;
-            }
-            else if (age.Text == "")
-            {
-                MessageBox.Show("Поле віку незаповнене");
-                return false;
-            }
-            else if (!int.TryParse(age.Text, out ageValue))
-            {
-                MessageBox.Show("Поле віку має бути числовим значенням");
-                return false;
-            }
-            else if (ageValue < 16 || ageValue > 99)
-            {
-                MessageBox.Show("Поле віку заповнене некоректно");
-                return false;
-            }
-            else if (!women.Checked && !Men.Checked)
-            {
-                MessageBox.Show("Стать не обрано");
-                return false;
-            }
-        return true;
+            return true;
         }
 
         private void create_Click(object sender, EventArgs e)

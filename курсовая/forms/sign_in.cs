@@ -64,6 +64,10 @@ namespace курсовая.forms
                     {
                         throw new Exceptions("Логін повинен містити тільки латинські символи.");
                     }
+                    if (!IsLatinInput(password.Text))
+                    {
+                        throw new Exceptions("Пароль повинен містити тільки латинські символи.");
+                    }
                     return true;
                 }
             }

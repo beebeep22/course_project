@@ -188,7 +188,7 @@ namespace курсовая.forms
             // 
             this.OK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.OK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OK.Location = new System.Drawing.Point(208, 436);
+            this.OK.Location = new System.Drawing.Point(212, 444);
             this.OK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(121, 37);
@@ -303,12 +303,12 @@ namespace курсовая.forms
             // pathologicaldiseases
             // 
             this.pathologicaldiseases.BackColor = System.Drawing.Color.Honeydew;
+            this.pathologicaldiseases.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pathologicaldiseases.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.pathologicaldiseases.Location = new System.Drawing.Point(242, 366);
             this.pathologicaldiseases.Multiline = true;
             this.pathologicaldiseases.Name = "pathologicaldiseases";
-            this.pathologicaldiseases.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.pathologicaldiseases.Size = new System.Drawing.Size(295, 49);
+            this.pathologicaldiseases.Size = new System.Drawing.Size(295, 65);
             this.pathologicaldiseases.TabIndex = 22;
             // 
             // inform

@@ -37,50 +37,52 @@ namespace курсовая.forms
         {
             try
             {
-                int ageValue;
+                List<string> errorMessages = new List<string>();
+
                 if (name.Text == "")
                 {
-                    MessageBox.Show("Поле ім'я незаповнене");
-                    return false;
+                    errorMessages.Add("Поле ім'я незаповнене");
                 }
-                else if (surname.Text == "")
+
+                if (surname.Text == "")
                 {
-                    MessageBox.Show("Поле прізвища незаповнене");
-                    return false;
+                    errorMessages.Add("Поле прізвища незаповнене");
                 }
-                else if (patronymic.Text == "")
+
+                if (patronymic.Text == "")
                 {
-                    MessageBox.Show("Поле по-батькові незаповнене");
-                    return false;
+                    errorMessages.Add("Поле по-батькові незаповнене");
                 }
-                else if (age.Text == "")
+
+                if (age.Text == "")
                 {
-                    MessageBox.Show("Поле віку незаповнене");
-                    return false;
+                    errorMessages.Add("Поле віку незаповнене");
                 }
-                else if (!int.TryParse(age.Text, out ageValue))
+                else if (!int.TryParse(age.Text, out int ageValue))
                 {
-                    MessageBox.Show("Поле віку має бути числовим значенням");
-                    return false;
+                    errorMessages.Add("Поле віку має бути числовим значенням");
                 }
                 else if (ageValue < 16 || ageValue > 99)
                 {
-                    MessageBox.Show("Поле віку заповнене некоректно");
-                    return false;
+                    errorMessages.Add("Поле віку заповнене некоректно");
                 }
-                else if (!women.Checked && !Men.Checked)
+
+                if (!women.Checked && !Men.Checked)
                 {
-                    MessageBox.Show("Стать не обрано");
-                    return false;
+                    errorMessages.Add("Стать не обрано");
                 }
-                else
+
+                if (!IsCyrillicInput(name.Text) || !IsCyrillicInput(surname.Text) || !IsCyrillicInput(patronymic.Text))
                 {
-                    if (!IsCyrillicInput(name.Text) || !IsCyrillicInput(surname.Text) || !IsCyrillicInput(patronymic.Text))
-                    {
-                        throw new Exceptions("ПІБ повино бути кирилицею");
-                    }
-                    return true;
+                    errorMessages.Add("ПІБ повино бути кирилицею");
                 }
+
+                if (errorMessages.Count > 0)
+                {
+                    throw new Exceptions(string.Join("\n", errorMessages));
+                }
+
+                return true;
             }
             catch (Exceptions ex)
             {

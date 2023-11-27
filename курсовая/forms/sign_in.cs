@@ -31,45 +31,40 @@ namespace курсовая.forms
         {
             try
             {
+                List<string> errorMessages = new List<string>();
                 if (login.Text == "")
                 {
-                    MessageBox.Show("Поле логіна незаповнене");
-                    return false;
+                    errorMessages.Add("Поле логіна незаповнене");
                 }
-                else if (password.Text == "")
+                if (password.Text == "")
                 {
-                    MessageBox.Show("Поле пароля незаповнене");
-                    return false;
+                    errorMessages.Add("Поле пароля незаповнене");
                 }
                 else if (passwordagain.Text == "")
                 {
-                    MessageBox.Show("Поле повторення пароля незаповнене");
-                    return false;
+                    errorMessages.Add("Поле повторення пароля незаповнене");
                 }
                 else if (password.Text.Length < 12)
                 {
-                    MessageBox.Show("Не менше 12 символів у паролі!");
-                    return false;
+                    errorMessages.Add("Не менше 12 символів у паролі!");
                 }
                 else if (password.Text != passwordagain.Text)
                 {
-                    MessageBox.Show("Паролі не співпадають!");
-                    password.Text = "";
-                    passwordagain.Text = "";
-                    return false;
+                    errorMessages.Add("Паролі не співпадають!");
                 }
-                else
+                else if (!IsLatinInput(login.Text))
                 {
-                    if (!IsLatinInput(login.Text))
-                    {
-                        throw new Exceptions("Логін повинен містити тільки латинські символи.");
-                    }
-                    if (!IsLatinInput(password.Text))
-                    {
-                        throw new Exceptions("Пароль повинен містити тільки латинські символи.");
-                    }
-                    return true;
+                    errorMessages.Add("Логін повинен містити тільки латинські символи.");
                 }
+                else if (!IsLatinInput(password.Text))
+                {
+                    errorMessages.Add("Пароль повинен містити тільки латинські символи.");
+                }
+                if (errorMessages.Count > 0)
+                {
+                    throw new Exceptions(string.Join("\n", errorMessages));
+                }
+                return true;
             }
             catch (Exception ex)
             {
@@ -80,13 +75,15 @@ namespace курсовая.forms
 
         public bool IsLatinInput(string input)
         {
+
             foreach (char c in input)
             {
-                if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z'))
+                if (c >= 'А' && c <= 'я')
                 {
                     return false;
                 }
             }
+
             return true;
         }
 

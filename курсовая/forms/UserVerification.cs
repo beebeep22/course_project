@@ -58,7 +58,6 @@ namespace курсовая.forms
                     pathol_diseases = selectedUser.Diseases ?? noInfoText;
                     invalid = selectedUser.DisabilityLevel ?? noInfoText;
 
-
                     inform Inform = new inform(Fullname, "", region, age, sex, alergic, invalid, pathol_diseases);
                     Inform.Show();
                 }
@@ -67,7 +66,28 @@ namespace курсовая.forms
 
         private void Approve_Click(object sender, EventArgs e)
         {
+            if (this.AccountObj?.AdminDetails?.CanRespondOnRequests != true)
+            {
+                MessageBox.Show("У вас нема права відповідати на повідомлення");
+                return;
+            }
+            if (userVerificationTable.SelectedCells.Count > 0)
+            {
+                AdminOperations.ApproveUser(this.AccountObj);
+            }
+        }
 
+        private void Disapprove_Click(object sender, EventArgs e)
+        {
+            if (this.AccountObj?.AdminDetails?.CanRespondOnRequests != true)
+            {
+                MessageBox.Show("У вас нема права відповідати на повідомлення");
+                return;
+            }
+            if (userVerificationTable.SelectedCells.Count > 0)
+            {
+                AdminOperations.DisapproveUser(this.AccountObj);
+            }
         }
     }
 }

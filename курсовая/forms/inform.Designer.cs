@@ -222,7 +222,7 @@ namespace курсовая.forms
             // topic
             // 
             this.topic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.topic.BackColor = System.Drawing.Color.Honeydew;
+            this.topic.BackColor = System.Drawing.Color.White;
             this.topic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.topic.Location = new System.Drawing.Point(95, 74);
             this.topic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -236,7 +236,7 @@ namespace курсовая.forms
             // content
             // 
             this.content.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.content.BackColor = System.Drawing.Color.Honeydew;
+            this.content.BackColor = System.Drawing.Color.White;
             this.content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.content.Location = new System.Drawing.Point(95, 131);
             this.content.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -305,11 +305,12 @@ namespace курсовая.forms
             this.pathologicaldiseases.BackColor = System.Drawing.Color.Honeydew;
             this.pathologicaldiseases.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pathologicaldiseases.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pathologicaldiseases.Location = new System.Drawing.Point(242, 366);
+            this.pathologicaldiseases.Location = new System.Drawing.Point(242, 369);
             this.pathologicaldiseases.Multiline = true;
             this.pathologicaldiseases.Name = "pathologicaldiseases";
             this.pathologicaldiseases.Size = new System.Drawing.Size(295, 65);
             this.pathologicaldiseases.TabIndex = 22;
+            this.pathologicaldiseases.TextChanged += new System.EventHandler(this.pathologicaldiseases_TextChanged);
             // 
             // inform
             // 

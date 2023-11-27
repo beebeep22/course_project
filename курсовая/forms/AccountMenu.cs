@@ -15,6 +15,8 @@ namespace курсовая.forms
     {
         private Account AccountObj { get; set; }
         private DbUserOperations UserOperations { get; set; }
+
+        private ComboBox[] comboBoxes;
         public AccountMenu(Account AccountObj)
         {
             InitializeComponent();
@@ -30,6 +32,9 @@ namespace курсовая.forms
             alergic.Text = AccountObj?.UserDetails?.Allergies ?? "";
             invalid.Text = AccountObj?.UserDetails?.DisabilityLevel ?? "";
             region.Text = AccountObj?.UserDetails?.Region ?? "";
+
+            comboBoxes = new ComboBox[] { invalid, pathdiseas,alergic };
+
         }
 
         private void Account_Load(object sender, EventArgs e)
@@ -111,10 +116,31 @@ namespace курсовая.forms
             return true;
         }
 
+        private bool flag;
+        private void SelectedDataChanged(object sender, EventArgs e)
+        {
+           flag = false;
+            if (sender is ComboBox comboBox)
+            {
+                string selectedValue = comboBox.SelectedItem?.ToString();
+
+                if (!string.IsNullOrEmpty(selectedValue) && !flag)
+                {
+                    MessageBox.Show("Після внесення змін верефікація спаде!");
+                    flag = true;
+                }
+            }
+          
+        }
         //збереження змін
         private void save_Click(object sender, EventArgs e)
         {
             if (!PersonalData()) return;
+            foreach (ComboBox comboBox in comboBoxes)
+            {
+                SelectedDataChanged(comboBox, EventArgs.Empty);
+            }
+
             this.AccountObj.UserDetails.FirstName = name.Text;
             this.AccountObj.UserDetails.LastName = surname.Text;
             this.AccountObj.UserDetails.MiddleName = patronymic.Text;

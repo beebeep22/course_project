@@ -75,5 +75,10 @@ namespace курсовая.forms
         {
             this.Hide();
         }
+
+        private void pathologicaldiseases_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

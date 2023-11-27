@@ -33,11 +33,11 @@
             this.exit = new System.Windows.Forms.Button();
             this.Налаштування = new System.Windows.Forms.Button();
             this.Заявки = new System.Windows.Forms.Button();
+            this.userverificationbutton = new System.Windows.Forms.Button();
             this.Акаунт = new System.Windows.Forms.Button();
             this.paneltitle = new System.Windows.Forms.Panel();
             this.labeltitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.userverificationbutton = new System.Windows.Forms.Button();
             this.panelmenu.SuspendLayout();
             this.paneltitle.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             this.exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.exit.Image = global::курсовая.Properties.Resources.exit;
             this.exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exit.Location = new System.Drawing.Point(0, 258);
+            this.exit.Location = new System.Drawing.Point(0, 274);
             this.exit.Name = "exit";
             this.exit.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.exit.Size = new System.Drawing.Size(220, 60);
@@ -85,12 +85,12 @@
             this.Налаштування.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Налаштування.Image = global::курсовая.Properties.Resources.settings;
             this.Налаштування.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Налаштування.Location = new System.Drawing.Point(0, 198);
+            this.Налаштування.Location = new System.Drawing.Point(0, 214);
             this.Налаштування.Name = "Налаштування";
             this.Налаштування.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.Налаштування.Size = new System.Drawing.Size(220, 60);
             this.Налаштування.TabIndex = 5;
-            this.Налаштування.Text = "   Налаштування";
+            this.Налаштування.Text = "     Налаштування";
             this.Налаштування.UseVisualStyleBackColor = true;
             this.Налаштування.Click += new System.EventHandler(this.Settings_Click);
             // 
@@ -103,7 +103,7 @@
             this.Заявки.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Заявки.Image = global::курсовая.Properties.Resources.заявка;
             this.Заявки.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Заявки.Location = new System.Drawing.Point(0, 138);
+            this.Заявки.Location = new System.Drawing.Point(0, 154);
             this.Заявки.Name = "Заявки";
             this.Заявки.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.Заявки.Size = new System.Drawing.Size(220, 60);
@@ -113,6 +113,26 @@
             this.Заявки.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Заявки.UseVisualStyleBackColor = true;
             this.Заявки.Click += new System.EventHandler(this.Zayavki_Click);
+            // 
+            // userverificationbutton
+            // 
+            this.userverificationbutton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userverificationbutton.FlatAppearance.BorderSize = 0;
+            this.userverificationbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userverificationbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userverificationbutton.ForeColor = System.Drawing.Color.White;
+            this.userverificationbutton.Image = global::курсовая.Properties.Resources.status;
+            this.userverificationbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userverificationbutton.Location = new System.Drawing.Point(0, 80);
+            this.userverificationbutton.Name = "userverificationbutton";
+            this.userverificationbutton.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.userverificationbutton.Size = new System.Drawing.Size(220, 74);
+            this.userverificationbutton.TabIndex = 8;
+            this.userverificationbutton.Text = "        Верифікація \r\nкористувачів";
+            this.userverificationbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.userverificationbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.userverificationbutton.UseVisualStyleBackColor = true;
+            this.userverificationbutton.Click += new System.EventHandler(this.userverificationbutton_Click);
             // 
             // Акаунт
             // 
@@ -128,7 +148,7 @@
             this.Акаунт.Name = "Акаунт";
             this.Акаунт.Size = new System.Drawing.Size(220, 80);
             this.Акаунт.TabIndex = 0;
-            this.Акаунт.Text = "      Акаунт";
+            this.Акаунт.Text = "     Акаунт";
             this.Акаунт.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Акаунт.UseVisualStyleBackColor = false;
             this.Акаунт.Click += new System.EventHandler(this.Account_Click);
@@ -163,26 +183,6 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(681, 387);
             this.panelDesktop.TabIndex = 2;
-            // 
-            // userverificationbutton
-            // 
-            this.userverificationbutton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userverificationbutton.FlatAppearance.BorderSize = 0;
-            this.userverificationbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userverificationbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userverificationbutton.ForeColor = System.Drawing.Color.White;
-            this.userverificationbutton.Image = global::курсовая.Properties.Resources.status;
-            this.userverificationbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.userverificationbutton.Location = new System.Drawing.Point(0, 80);
-            this.userverificationbutton.Name = "userverificationbutton";
-            this.userverificationbutton.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.userverificationbutton.Size = new System.Drawing.Size(220, 58);
-            this.userverificationbutton.TabIndex = 8;
-            this.userverificationbutton.Text = "          Верифікація \r\nкористувачів";
-            this.userverificationbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.userverificationbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.userverificationbutton.UseVisualStyleBackColor = true;
-            this.userverificationbutton.Click += new System.EventHandler(this.userverificationbutton_Click);
             // 
             // Golovna_Admin
             // 

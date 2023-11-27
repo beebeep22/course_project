@@ -29,6 +29,13 @@ namespace курсовая.forms
         private void InitializeDataGridView()
         {
             userVerificationTable.DataSource = this.AllUsers;
+
+            userVerificationTable.Columns["_id"].Visible = false;
+            userVerificationTable.Columns["password"].Visible = false;
+            userVerificationTable.Columns["Role"].Visible = false;
+            userVerificationTable.Columns["AdminDetails"].Visible = false;
+
+
             userVerificationTable.CellDoubleClick += new DataGridViewCellEventHandler(this.userVerificationTable_CellDoubleClick);
             userVerificationTable.CellFormatting += userVerificationTable_CellFormatting;
             userVerificationTable.ScrollBars = ScrollBars.None;

@@ -26,6 +26,10 @@ namespace курсовая.forms
         {
             try
             {
+                if (theme.Text == "" || description.Text == "")
+                {
+                    throw new Exceptions("Ви намагаєтесь відправити пусту заявку!");
+                }
                 foreach (UserRequest existingRequest in this.UserOperations.GetUserRequests(this.AccountObj))
                 {
                     if (existingRequest.Topic == theme.Text && existingRequest.Content == description.Text)

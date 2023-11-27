@@ -71,9 +71,50 @@ namespace курсовая.forms
             region.Items.Add("Львівська область");
         }
 
+        private bool PersonalData()
+        {
+            int errorcount = 0;
+            try
+            {
+                if (!ContainsDigit(pathdiseas.Text))
+                {
+                    errorcount++;
+                }
+                if (!ContainsDigit(alergic.Text))
+                {
+                    errorcount++;
+                }
+                if (errorcount > 0)
+                {
+                    throw new Exceptions("Помилка даних");
+                }
+                else 
+                    return true;
+            }
+            catch(Exceptions ex)
+            {
+                MessageBox.Show("Некоректно введені дані", "Помилка даних");
+                return false;
+            }
+        }
+
+        public bool ContainsDigit(string input)
+        {
+            foreach (char c in input)
+            {
+                if (char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         //збереження змін
         private void save_Click(object sender, EventArgs e)
         {
+            if (!PersonalData()) return;
             this.AccountObj.UserDetails.FirstName = name.Text;
             this.AccountObj.UserDetails.LastName = surname.Text;
             this.AccountObj.UserDetails.MiddleName = patronymic.Text;

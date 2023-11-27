@@ -114,7 +114,7 @@
             this.pers.Controls.Add(this.personal);
             this.pers.Location = new System.Drawing.Point(291, 228);
             this.pers.Name = "pers";
-            this.pers.Size = new System.Drawing.Size(466, 27);
+            this.pers.Size = new System.Drawing.Size(544, 27);
             this.pers.TabIndex = 10;
             // 
             // personal
@@ -133,16 +133,16 @@
             this.pathdiseas.FormattingEnabled = true;
             this.pathdiseas.Location = new System.Drawing.Point(291, 288);
             this.pathdiseas.Name = "pathdiseas";
-            this.pathdiseas.Size = new System.Drawing.Size(223, 26);
+            this.pathdiseas.Size = new System.Drawing.Size(317, 26);
             this.pathdiseas.TabIndex = 11;
             // 
             // alergic
             // 
             this.alergic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.alergic.FormattingEnabled = true;
-            this.alergic.Location = new System.Drawing.Point(575, 288);
+            this.alergic.Location = new System.Drawing.Point(614, 288);
             this.alergic.Name = "alergic";
-            this.alergic.Size = new System.Drawing.Size(151, 26);
+            this.alergic.Size = new System.Drawing.Size(221, 26);
             this.alergic.TabIndex = 12;
             // 
             // invalid
@@ -175,7 +175,7 @@
             // alergtitle
             // 
             this.alergtitle.AutoSize = true;
-            this.alergtitle.Location = new System.Drawing.Point(572, 269);
+            this.alergtitle.Location = new System.Drawing.Point(611, 269);
             this.alergtitle.Name = "alergtitle";
             this.alergtitle.Size = new System.Drawing.Size(55, 16);
             this.alergtitle.TabIndex = 18;
@@ -243,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(862, 450);
             this.Controls.Add(this.avatar);
             this.Controls.Add(this.age);
             this.Controls.Add(this.tltsex);

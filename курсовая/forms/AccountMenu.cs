@@ -117,9 +117,10 @@ namespace курсовая.forms
         }
 
         private bool flag;
-        private void SelectedDataChanged(object sender, EventArgs e)
+        private bool SelectedDataChanged(object sender, EventArgs e)
         {
-           flag = false;
+            flag = false;
+            bool comboBoxChanged = false;
             if (sender is ComboBox comboBox)
             {
                 string selectedValue = comboBox.SelectedItem?.ToString();
@@ -128,9 +129,11 @@ namespace курсовая.forms
                 {
                     MessageBox.Show("Після внесення змін верефікація спаде!");
                     flag = true;
+                    comboBoxChanged = true;
                 }
             }
-          
+            return comboBoxChanged;
+
         }
         //збереження змін
         private void save_Click(object sender, EventArgs e)
@@ -138,9 +141,11 @@ namespace курсовая.forms
             if (!PersonalData()) return;
             foreach (ComboBox comboBox in comboBoxes)
             {
-                SelectedDataChanged(comboBox, EventArgs.Empty);
+                if (SelectedDataChanged(comboBox, EventArgs.Empty))
+                {
+                    this.AccountObj.UserDetails.Approved = false;
+                }
             }
-
             this.AccountObj.UserDetails.FirstName = name.Text;
             this.AccountObj.UserDetails.LastName = surname.Text;
             this.AccountObj.UserDetails.MiddleName = patronymic.Text;
@@ -149,7 +154,6 @@ namespace курсовая.forms
             this.AccountObj.UserDetails.DisabilityLevel = invalid.Text;
             this.AccountObj.UserDetails.Diseases = pathdiseas.Text;
             this.AccountObj.UserDetails.Allergies = alergic.Text;
-            this.AccountObj.UserDetails.Approved = false;
             this.UserOperations.UpdateUserDetails(this.AccountObj, this.AccountObj.UserDetails);
             MessageBox.Show("Зміни збережено");
         }

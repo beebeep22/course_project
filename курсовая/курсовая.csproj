@@ -104,7 +104,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions.cs" />
+    <Compile Include="classes\Exceptions.cs" />
     <Compile Include="classes\Account.cs" />
     <Compile Include="classes\AdminDetails.cs" />
     <Compile Include="classes\DbAccountOperations.cs" />

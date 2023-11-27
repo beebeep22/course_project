@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using курсовая.classes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace курсовая.forms
 {
@@ -28,37 +29,61 @@ namespace курсовая.forms
 
         private bool isInputValid()
         {
-            if (login.Text == "")
+            try
             {
-                MessageBox.Show("Поле логіна незаповнене");
+                if (login.Text == "")
+                {
+                    MessageBox.Show("Поле логіна незаповнене");
+                    return false;
+                }
+                else if (password.Text == "")
+                {
+                    MessageBox.Show("Поле пароля незаповнене");
+                    return false;
+                }
+                else if (passwordagain.Text == "")
+                {
+                    MessageBox.Show("Поле повторення пароля незаповнене");
+                    return false;
+                }
+                else if (password.Text.Length < 12)
+                {
+                    MessageBox.Show("Не менше 12 символів у паролі!");
+                    return false;
+                }
+                else if (password.Text != passwordagain.Text)
+                {
+                    MessageBox.Show("Паролі не співпадають!");
+                    password.Text = "";
+                    passwordagain.Text = "";
+                    return false;
+                }
+                else
+                {
+                    if (!IsLatinInput(login.Text))
+                    {
+                        throw new Exceptions("Логін повинен містити тільки латинські символи.");
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Помилка реєстрації");
                 return false;
             }
-            else if (password.Text == "")
+        }
+
+        public bool IsLatinInput(string input)
+        {
+            foreach (char c in input)
             {
-                MessageBox.Show("Поле пароля незаповнене");
-                return false;
+                if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z'))
+                {
+                    return false;
+                }
             }
-            else if (passwordagain.Text == "")
-            {
-                MessageBox.Show("Поле повторення пароля незаповнене");
-                return false;
-            }
-            else if (password.Text.Length < 12)
-            {
-                MessageBox.Show("Не менше 12 символів у паролі!");
-                return false;
-            }
-            else if (password.Text != passwordagain.Text)
-            {
-                MessageBox.Show("Паролі не співпадають!");
-                password.Text = "";
-                passwordagain.Text = "";
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return true;
         }
 
         private void register_Click(object sender, EventArgs e)
@@ -85,7 +110,7 @@ namespace курсовая.forms
 
         private void sign_in_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void returnlog_Click(object sender, EventArgs e)

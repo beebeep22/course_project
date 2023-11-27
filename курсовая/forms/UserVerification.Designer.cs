@@ -47,62 +47,62 @@
             this.PIB,
             this.Approved});
             this.userVerificationTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.userVerificationTable.Location = new System.Drawing.Point(37, 51);
+            this.userVerificationTable.Location = new System.Drawing.Point(38, 51);
             this.userVerificationTable.Name = "userVerificationTable";
-            this.userVerificationTable.RowHeadersWidth = 51;
-            this.userVerificationTable.RowTemplate.Height = 24;
+            this.userVerificationTable.RowHeadersWidth = 52;
+            this.userVerificationTable.RowTemplate.Height = 25;
             this.userVerificationTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.userVerificationTable.Size = new System.Drawing.Size(676, 434);
-            this.userVerificationTable.TabIndex = 0;
+            this.userVerificationTable.Size = new System.Drawing.Size(677, 434);
+            this.userVerificationTable.TabIndex = 1;
             // 
             // userlogin
             // 
             this.userlogin.HeaderText = "user";
-            this.userlogin.MinimumWidth = 4;
+            this.userlogin.MinimumWidth = 5;
             this.userlogin.Name = "userlogin";
-            this.userlogin.Width = 125;
+            this.userlogin.Width = 126;
             // 
             // PIB
             // 
             this.PIB.HeaderText = "ПІБ";
-            this.PIB.MinimumWidth = 8;
+            this.PIB.MinimumWidth = 9;
             this.PIB.Name = "PIB";
-            this.PIB.Width = 125;
+            this.PIB.Width = 126;
             // 
             // Approved
             // 
             this.Approved.HeaderText = "Затверджено";
-            this.Approved.MinimumWidth = 6;
+            this.Approved.MinimumWidth = 7;
             this.Approved.Name = "Approved";
-            this.Approved.Width = 125;
+            this.Approved.Width = 126;
             // 
             // Approve
             // 
-            this.Approve.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Approve.Location = new System.Drawing.Point(732, 180);
+            this.Approve.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Approve.Location = new System.Drawing.Point(733, 180);
             this.Approve.Name = "Approve";
-            this.Approve.Size = new System.Drawing.Size(137, 46);
-            this.Approve.TabIndex = 1;
+            this.Approve.Size = new System.Drawing.Size(138, 46);
+            this.Approve.TabIndex = 2;
             this.Approve.Text = "Підтверджено";
             this.Approve.UseVisualStyleBackColor = true;
             this.Approve.Click += new System.EventHandler(this.Approve_Click);
             // 
             // Disapprove
             // 
-            this.Disapprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Disapprove.Location = new System.Drawing.Point(732, 314);
+            this.Disapprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Disapprove.Location = new System.Drawing.Point(733, 314);
             this.Disapprove.Name = "Disapprove";
-            this.Disapprove.Size = new System.Drawing.Size(137, 45);
-            this.Disapprove.TabIndex = 2;
+            this.Disapprove.Size = new System.Drawing.Size(138, 45);
+            this.Disapprove.TabIndex = 3;
             this.Disapprove.Text = "Відхилено";
             this.Disapprove.UseVisualStyleBackColor = true;
             this.Disapprove.Click += new System.EventHandler(this.Disapprove_Click);
             // 
             // UserVerification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 516);
+            this.ClientSize = new System.Drawing.Size(882, 516);
             this.Controls.Add(this.Disapprove);
             this.Controls.Add(this.Approve);
             this.Controls.Add(this.userVerificationTable);
@@ -118,8 +118,8 @@
         private System.Windows.Forms.DataGridView userVerificationTable;
         private System.Windows.Forms.Button Approve;
         private System.Windows.Forms.Button Disapprove;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userlogin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PIB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Approved;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isApproved;
     }
 }

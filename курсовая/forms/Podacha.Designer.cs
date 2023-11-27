@@ -50,6 +50,7 @@
             // 
             // theme
             // 
+            this.theme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.theme.Location = new System.Drawing.Point(333, 43);
             this.theme.Multiline = true;
             this.theme.Name = "theme";
@@ -68,6 +69,7 @@
             // 
             // description
             // 
+            this.description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.description.Location = new System.Drawing.Point(333, 131);
             this.description.Multiline = true;
             this.description.Name = "description";
@@ -79,7 +81,7 @@
             this.proof.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.proof.Location = new System.Drawing.Point(333, 303);
             this.proof.Name = "proof";
-            this.proof.Size = new System.Drawing.Size(81, 81);
+            this.proof.Size = new System.Drawing.Size(97, 99);
             this.proof.TabIndex = 0;
             this.proof.TabStop = false;
             // 
@@ -99,7 +101,7 @@
             this.addproof.FlatAppearance.BorderSize = 0;
             this.addproof.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addproof.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addproof.Location = new System.Drawing.Point(436, 322);
+            this.addproof.Location = new System.Drawing.Point(436, 331);
             this.addproof.Name = "addproof";
             this.addproof.Size = new System.Drawing.Size(157, 44);
             this.addproof.TabIndex = 2;

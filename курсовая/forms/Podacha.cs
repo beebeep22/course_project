@@ -22,8 +22,30 @@ namespace курсовая.forms
             this.UserOperations = new DbUserOperations();
         }
 
+        private bool application_verification()
+        {
+            try
+            {
+                foreach (UserRequest existingRequest in this.UserOperations.GetUserRequests(this.AccountObj))
+                {
+                    if (existingRequest.Topic == theme.Text && existingRequest.Content == description.Text)
+                    {
+                        throw new Exceptions("Така заявка вже існує!");
+                    }
+                }
+                return true;
+            }
+            catch(Exceptions ex)
+            {
+                MessageBox.Show(ex.Message, "Помилка відправки");
+                return false;
+            }
+        }
+
         private void podatu_Click(object sender, EventArgs e)
         {
+            if (!application_verification()) return;
+
             UserRequest request = new UserRequest(
                 Topic: theme.Text,
                 Content: description.Text,

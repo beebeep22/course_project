@@ -58,9 +58,9 @@
             this.avatarka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.avatarka.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.avatarka.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.avatarka.Location = new System.Drawing.Point(64, 170);
+            this.avatarka.Location = new System.Drawing.Point(52, 170);
             this.avatarka.Name = "avatarka";
-            this.avatarka.Size = new System.Drawing.Size(136, 28);
+            this.avatarka.Size = new System.Drawing.Size(145, 26);
             this.avatarka.TabIndex = 0;
             this.avatarka.Text = "Змінити фото";
             this.avatarka.UseVisualStyleBackColor = true;
@@ -234,8 +234,8 @@
             this.avatar.Image = global::курсовая.Properties.Resources.user64;
             this.avatar.Location = new System.Drawing.Point(65, 26);
             this.avatar.Name = "avatar";
-            this.avatar.Size = new System.Drawing.Size(136, 145);
-            this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.avatar.Size = new System.Drawing.Size(124, 138);
+            this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.avatar.TabIndex = 45;
             this.avatar.TabStop = false;
             // 

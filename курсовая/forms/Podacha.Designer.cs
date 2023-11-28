@@ -82,6 +82,7 @@
             this.proof.Location = new System.Drawing.Point(333, 303);
             this.proof.Name = "proof";
             this.proof.Size = new System.Drawing.Size(97, 99);
+            this.proof.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.proof.TabIndex = 0;
             this.proof.TabStop = false;
             // 

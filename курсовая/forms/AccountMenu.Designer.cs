@@ -60,7 +60,7 @@
             this.avatarka.ForeColor = System.Drawing.SystemColors.Highlight;
             this.avatarka.Location = new System.Drawing.Point(52, 170);
             this.avatarka.Name = "avatarka";
-            this.avatarka.Size = new System.Drawing.Size(145, 26);
+            this.avatarka.Size = new System.Drawing.Size(145, 38);
             this.avatarka.TabIndex = 0;
             this.avatarka.Text = "Змінити фото";
             this.avatarka.UseVisualStyleBackColor = true;

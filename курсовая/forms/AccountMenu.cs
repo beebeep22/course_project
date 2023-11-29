@@ -176,6 +176,9 @@ namespace курсовая.forms
             {
                 MessageBox.Show("Виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
+
+
     }
 }

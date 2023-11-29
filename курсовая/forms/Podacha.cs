@@ -94,11 +94,9 @@ namespace курсовая.forms
         private void removeProof_Click(object sender, EventArgs e)
         {
             proof.Image = null;
-            if(proof.Image == null)
-            {
-                addproof.Text = "+Додати доказ";
-                removeProof.Visible = false;
-            }
+            addproof.Text = "+Додати доказ";
+            removeProof.Visible = false;
+            
         }
     }
 }

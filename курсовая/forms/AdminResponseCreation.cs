@@ -30,17 +30,26 @@ namespace курсовая.forms
             // "заявка на розгляді,бо вона дуже гарна,сидимо і дивимося"
             if (themeresponse.Text == "")
             {
-                MessageBox.Show("Ви не ввели тему відповіді");
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = "Ви не ввели тему відповіді";
+                warning_Message.ShowDialog();
                 return false;
             }
             else if (richcontentBox.Text == "")
             {
-                MessageBox.Show("Ви не ввели опис відповіді");
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = "Ви не ввели опис відповіді";
+                warning_Message.ShowDialog();
                 return false;
             }
             else if(!statusAccepted.Checked && !statusOnReview.Checked && !statusRejected.Checked)
             {
-                MessageBox.Show("Ви не обрали статусу заявки");
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = "Ви не обрали статусу заявки";
+                warning_Message.ShowDialog();
                 return false;
             }
             return true;
@@ -64,6 +73,7 @@ namespace курсовая.forms
                 UserRequestObj: this.Request
                 );
             AdminOperations.CreateUserRequestResponse(response);
+
             this.Hide();
         }
     }

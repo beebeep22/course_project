@@ -127,9 +127,16 @@ namespace курсовая.forms
 
                 if (!string.IsNullOrEmpty(selectedValue) && !flag)
                 {
-                    MessageBox.Show("Після внесення змін верефікація спаде!");
+                    Warning_message warning_Message = new Warning_message();
+                    warning_Message.Text = "Попередження";
+                    warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                    warning_Message.outputText.Text = "Після внесення змін верефікація спаде!";
+                    warning_Message.pictureBox1.Image = Properties.Resources.грустныйкот128;
                     flag = true;
-                    comboBoxChanged = true;
+                    if (warning_Message.ShowDialog() == DialogResult.OK)
+                    {
+                        comboBoxChanged = true;
+                    }
                 }
             }
             return comboBoxChanged;
@@ -138,24 +145,56 @@ namespace курсовая.forms
         //збереження змін
         private void save_Click(object sender, EventArgs e)
         {
+            bool changesDetected = false;
             if (!PersonalData()) return;
             foreach (ComboBox comboBox in comboBoxes)
             {
-                if (SelectedDataChanged(comboBox, EventArgs.Empty))
+                if (AccountObj.UserDetails.Approved == true)
                 {
-                    this.AccountObj.UserDetails.Approved = false;
+                    if (SelectedDataChanged(comboBox, EventArgs.Empty))
+                    {
+                        changesDetected = true;
+                        this.AccountObj.UserDetails.Approved = false;
+                    }
+                    else
+                    {
+                        changesDetected = false;
+                        break;
+                    }
+
+                }
+                else
+                {
+                    changesDetected = true;
+                    break;
                 }
             }
-            this.AccountObj.UserDetails.FirstName = name.Text;
-            this.AccountObj.UserDetails.LastName = surname.Text;
-            this.AccountObj.UserDetails.MiddleName = patronymic.Text;
-            this.AccountObj.UserDetails.Age = age.Text;
-            this.AccountObj.UserDetails.Region = region.Text;
-            this.AccountObj.UserDetails.DisabilityLevel = invalid.Text;
-            this.AccountObj.UserDetails.Diseases = pathdiseas.Text;
-            this.AccountObj.UserDetails.Allergies = alergic.Text;
-            this.UserOperations.UpdateUserDetails(this.AccountObj, this.AccountObj.UserDetails);
-            MessageBox.Show("Зміни збережено");
+            if (changesDetected)
+            {
+                this.AccountObj.UserDetails.FirstName = name.Text;
+                this.AccountObj.UserDetails.LastName = surname.Text;
+                this.AccountObj.UserDetails.MiddleName = patronymic.Text;
+                this.AccountObj.UserDetails.Age = age.Text;
+                this.AccountObj.UserDetails.Region = region.Text;
+                this.AccountObj.UserDetails.DisabilityLevel = invalid.Text;
+                this.AccountObj.UserDetails.Diseases = pathdiseas.Text;
+                this.AccountObj.UserDetails.Allergies = alergic.Text;
+                this.UserOperations.UpdateUserDetails(this.AccountObj, this.AccountObj.UserDetails);
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.Text = "Успіх!";
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = "Зміни збережено!";
+                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_munchkin_cat_6855253;
+                warning_Message.ShowDialog();
+            }
+            else
+            {
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = "Зміни не збережено!";
+                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_cat_5772431;
+                warning_Message.ShowDialog();
+            }
         }
 
         private void avatarka_Click(object sender, EventArgs e)

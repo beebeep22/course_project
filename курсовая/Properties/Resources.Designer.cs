@@ -93,6 +93,26 @@ namespace курсовая.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_cat_5772431 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-cat-5772431", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_munchkin_cat_6855253 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-munchkin-cat-6855253", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_user_profile_3364044 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-user-profile-3364044", resourceCulture);
@@ -246,6 +266,16 @@ namespace курсовая.Properties {
         internal static System.Drawing.Bitmap во_весь_экран {
             get {
                 object obj = ResourceManager.GetObject("во весь экран", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap грустныйкот128 {
+            get {
+                object obj = ResourceManager.GetObject("грустныйкот128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

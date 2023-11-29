@@ -89,7 +89,11 @@ namespace курсовая.forms
             }
             catch(Exceptions ex)
             {
-                MessageBox.Show(ex.Message, "Помилка авторизації");
+                //MessageBox.Show(ex.Message, "Помилка авторизації");
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = ex.Message;
+                warning_Message.ShowDialog();
                 return;
             }
 

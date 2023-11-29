@@ -204,6 +204,12 @@
     <Compile Include="forms\UserVerification.Designer.cs">
       <DependentUpon>UserVerification.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Warning_message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Warning_message.Designer.cs">
+      <DependentUpon>Warning_message.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Zayavki.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\UserVerification.resx">
       <DependentUpon>UserVerification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Warning_message.resx">
+      <DependentUpon>Warning_message.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Zayavki.resx">
       <DependentUpon>Zayavki.cs</DependentUpon>
@@ -353,6 +362,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\free-icon-user64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-cat-5772431.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\грустныйкот128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-munchkin-cat-6855253.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -71,11 +71,33 @@ namespace курсовая.forms
                 {
                     imageLocation = openfile.FileName;
                     proof.ImageLocation = imageLocation;
+
+                    addproof.Text = "Змінити доказ";
+                    removeProof.Visible = true;
+                    
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Podacha_Load(object sender, EventArgs e)
+        {
+            if (proof.Image == null)
+            {
+                removeProof.Visible = false;
+            }
+        }
+
+        private void removeProof_Click(object sender, EventArgs e)
+        {
+            proof.Image = null;
+            if(proof.Image == null)
+            {
+                addproof.Text = "+Додати доказ";
+                removeProof.Visible = false;
             }
         }
     }

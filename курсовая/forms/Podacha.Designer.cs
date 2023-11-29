@@ -35,6 +35,7 @@
             this.proof = new System.Windows.Forms.PictureBox();
             this.podatu = new System.Windows.Forms.Button();
             this.addproof = new System.Windows.Forms.Button();
+            this.removeProof = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.proof)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,11 +111,22 @@
             this.addproof.UseVisualStyleBackColor = true;
             this.addproof.Click += new System.EventHandler(this.addproof_Click);
             // 
+            // removeProof
+            // 
+            this.removeProof.Image = global::курсовая.Properties.Resources.close1;
+            this.removeProof.Location = new System.Drawing.Point(405, 303);
+            this.removeProof.Name = "removeProof";
+            this.removeProof.Size = new System.Drawing.Size(25, 24);
+            this.removeProof.TabIndex = 3;
+            this.removeProof.UseVisualStyleBackColor = true;
+            this.removeProof.Click += new System.EventHandler(this.removeProof_Click);
+            // 
             // Podacha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 516);
+            this.Controls.Add(this.removeProof);
             this.Controls.Add(this.addproof);
             this.Controls.Add(this.themetitle);
             this.Controls.Add(this.label1);
@@ -124,6 +136,7 @@
             this.Controls.Add(this.proof);
             this.Name = "Podacha";
             this.Text = "Podacha";
+            this.Load += new System.EventHandler(this.Podacha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.proof)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -138,5 +151,6 @@
         private System.Windows.Forms.PictureBox proof;
         private System.Windows.Forms.Button podatu;
         private System.Windows.Forms.Button addproof;
+        private System.Windows.Forms.Button removeProof;
     }
 }

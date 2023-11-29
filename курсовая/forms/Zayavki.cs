@@ -53,6 +53,8 @@ namespace курсовая.forms
             userRequestsTable.Columns["requestTopic"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopLeft;
             userRequestsTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
+            userRequestsTable.Columns["ProofImageData"].Visible = false;
+
 
             userRequestsTable.CellFormatting += userRequestsTable_CellFormatting;
             userRequestsTable.CellDoubleClick += new DataGridViewCellEventHandler(this.userRequestsTable_CellDoubleClick);
@@ -97,17 +99,21 @@ namespace курсовая.forms
             if (e.ColumnIndex == userRequestsTable.Columns["responseStatus"].Index)
             {
                 // Format the "responseStatusColumn" to display "No response" if Response is null
-                e.Value = (e.Value as UserRequestResponse)?.Status ?? "Не переглянуто";
+                //e.Value = (e.Value as UserRequestResponse)?.Status ?? "Не переглянуто";
+                UserRequestResponse response = e.Value as UserRequestResponse;
+                e.Value = response?.Status ?? "Не переглянуто";
+                e.FormattingApplied = true;
             }
             else if (e.ColumnIndex == userRequestsTable.Columns["applicantUsername"].Index)
             {
-                e.Value = (e.Value as Account)?.Username;
+                e.Value = (e.Value as Account)?.Username ?? "No username";
+                e.FormattingApplied = true;
             }
             else if (e.ColumnIndex == userRequestsTable.Columns["applicantRegion"].Index)
             {
-                e.Value = (e.Value as Account)?.UserDetails?.Region;
+                e.Value = (e.Value as Account)?.UserDetails?.Region ?? "Дані відсутні";
+                e.FormattingApplied = true;
             }
-            e.FormattingApplied = true;
         }
 
         private void userRequestsTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -127,6 +133,7 @@ namespace курсовая.forms
                 string alergic;
                 string pathol_diseases;
                 string invalid;
+                byte[] proof;
                 string noInfoText = "Немає інформації про заявника";
 
                 if (selectedRequest != null)
@@ -141,8 +148,9 @@ namespace курсовая.forms
                     alergic = selectedRequest.ApplicantObj?.UserDetails?.Allergies ?? noInfoText;
                     pathol_diseases = selectedRequest.ApplicantObj?.UserDetails?.Diseases ?? noInfoText;
                     invalid = selectedRequest.ApplicantObj?.UserDetails?.DisabilityLevel ?? noInfoText;
+                    proof = selectedRequest.ProofImageData;
 
-                    inform Inform = new inform(topic, content, Fullname, username, region, age, sex, alergic, invalid, pathol_diseases);
+                    inform Inform = new inform(topic, content, Fullname, username, region, age, sex, alergic, invalid, pathol_diseases, proof);
                     Inform.Show();
                 }
             }

@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.IO;
 
 namespace курсовая.classes
 {
@@ -13,6 +14,7 @@ namespace курсовая.classes
         public ObjectId ApplicantId { get; set; }
         public UserRequestResponse Response { get; set; }
         public Account ApplicantObj { get; set; }
+        public byte[] ProofImageData { get; set; }
 
         public UserRequest(string Topic, string Content, Account AccountObj)
         {
@@ -30,6 +32,12 @@ namespace курсовая.classes
         public void SetApplicantObj(Account AccountObj)
         {
             this.ApplicantObj = AccountObj;
+        }
+
+
+        public void LoadProofImage(string imagePath)
+        {
+            this.ProofImageData = File.ReadAllBytes(imagePath);
         }
     }
 }

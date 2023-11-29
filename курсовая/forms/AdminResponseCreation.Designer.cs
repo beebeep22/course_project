@@ -175,7 +175,6 @@
             this.Name = "AdminResponseCreation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AdminResponseCreation";
-            this.Load += new System.EventHandler(this.AdminResponseCreation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

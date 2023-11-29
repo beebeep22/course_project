@@ -17,6 +17,7 @@ namespace курсовая.classes
         public UserRequestResponse(string Topic, string Content, string Status, UserRequest UserRequestObj)
         {
             this._id = ObjectId.GenerateNewId();
+            this.Topic = Topic;
             this.Content = Content;
             this.Status = Status;
             this.UserRequestId = UserRequestObj._id;

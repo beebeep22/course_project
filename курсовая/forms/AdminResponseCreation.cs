@@ -66,9 +66,5 @@ namespace курсовая.forms
             AdminOperations.CreateUserRequestResponse(response);
             this.Hide();
         }
-
-        private void AdminResponseCreation_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

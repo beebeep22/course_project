@@ -79,14 +79,20 @@ namespace курсовая.forms
 
                 if (errorMessages.Count > 0)
                 {
-                    throw new Exceptions(string.Join("\n", errorMessages));
+                    string errorMessage = string.Join("\r\n", errorMessages);
+                    throw new Exceptions(errorMessage);
                 }
 
                 return true;
             }
             catch (Exceptions ex)
             {
-                MessageBox.Show(ex.Message, "Помилка створення облікового запису");
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.Text = "Помилка створення облікового запису";
+                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_cat_5772431;
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = ex.Message;
+                warning_Message.ShowDialog();
                 return false;
             }
         }

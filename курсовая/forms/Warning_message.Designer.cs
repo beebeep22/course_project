@@ -38,9 +38,10 @@
             // agree
             // 
             this.agree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.agree.Location = new System.Drawing.Point(168, 316);
+            this.agree.Location = new System.Drawing.Point(122, 259);
+            this.agree.Margin = new System.Windows.Forms.Padding(2);
             this.agree.Name = "agree";
-            this.agree.Size = new System.Drawing.Size(102, 36);
+            this.agree.Size = new System.Drawing.Size(89, 33);
             this.agree.TabIndex = 0;
             this.agree.Text = "OK";
             this.agree.UseVisualStyleBackColor = true;
@@ -51,32 +52,36 @@
             this.outputText.BackColor = System.Drawing.Color.Honeydew;
             this.outputText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.outputText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.outputText.Location = new System.Drawing.Point(77, 126);
+            this.outputText.Location = new System.Drawing.Point(46, 108);
+            this.outputText.Margin = new System.Windows.Forms.Padding(2);
             this.outputText.Multiline = true;
             this.outputText.Name = "outputText";
-            this.outputText.Size = new System.Drawing.Size(280, 184);
+            this.outputText.Size = new System.Drawing.Size(245, 147);
             this.outputText.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::курсовая.Properties.Resources.free_icon_cat_5772431;
-            this.pictureBox1.Location = new System.Drawing.Point(158, 12);
+            this.pictureBox1.Image = global::курсовая.Properties.Resources.грустныйкот128;
+            this.pictureBox1.Location = new System.Drawing.Point(113, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(98, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // Warning_message
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(427, 372);
+            this.ClientSize = new System.Drawing.Size(332, 303);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.outputText);
             this.Controls.Add(this.agree);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Warning_message";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Попередження";

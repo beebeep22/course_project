@@ -30,17 +30,18 @@ namespace курсовая.forms
         {
             if (input.Username == "")
             {
-                MessageBox.Show("Поле логіна незаповнене");
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = "Поле логіна незаповнене";
+                warning_Message.ShowDialog();
                 return false;
             }
             else if (input.Password == "")
             {
-                MessageBox.Show("Поле пароля незаповнене");
-                return false;
-            }
-            else if (input.Password.Length < 12)
-            {
-                MessageBox.Show("Не менше 12 символів у паролі!");
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = "Поле пароля незаповнене";
+                warning_Message.ShowDialog();
                 return false;
             }
             return true;
@@ -89,8 +90,8 @@ namespace курсовая.forms
             }
             catch(Exceptions ex)
             {
-                //MessageBox.Show(ex.Message, "Помилка авторизації");
                 Warning_message warning_Message = new Warning_message();
+                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_cat_5772431;
                 warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = ex.Message;
                 warning_Message.ShowDialog();

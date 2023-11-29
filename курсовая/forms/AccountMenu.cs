@@ -98,7 +98,10 @@ namespace курсовая.forms
             }
             catch(Exceptions ex)
             {
-                MessageBox.Show("Некоректно введені дані", "Помилка даних");
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.Text = "Помилка даних";
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = "Некоректно введені дані";
                 return false;
             }
         }
@@ -131,7 +134,6 @@ namespace курсовая.forms
                     warning_Message.Text = "Попередження";
                     warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                     warning_Message.outputText.Text = "Після внесення змін верефікація спаде!";
-                    warning_Message.pictureBox1.Image = Properties.Resources.грустныйкот128;
                     flag = true;
                     if (warning_Message.ShowDialog() == DialogResult.OK)
                     {

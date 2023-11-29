@@ -41,7 +41,12 @@ namespace курсовая.forms
             }
             catch(Exceptions ex)
             {
-                MessageBox.Show(ex.Message, "Помилка відправки");
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.Text = "Помилка відправки";
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = ex.Message;
+                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_munchkin_cat_6855253;
+                warning_Message.ShowDialog();
                 return false;
             }
         }
@@ -80,7 +85,12 @@ namespace курсовая.forms
             }
             catch (Exception)
             {
-                MessageBox.Show("Виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.Text = "Помилка";
+                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
+                warning_Message.outputText.Text = "Виникла помилка";
+                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_munchkin_cat_6855253;
+                warning_Message.ShowDialog();
             }
         }
 

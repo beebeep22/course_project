@@ -48,7 +48,7 @@ namespace курсовая.forms
             pathologicaldiseases.Text = diseases;
         }
 
-        public inform(string theme, string description,string PIB,string login,string obl,string vik,string gender,string alerg, string inval, string diseases)
+        public inform(string theme, string description,string PIB,string login,string obl,string vik,string gender,string alerg, string inval, string diseases, byte[] proof)
         {
             InitializeComponent();
             topic.Text = theme;
@@ -61,6 +61,8 @@ namespace курсовая.forms
             alergic.Text = alerg;
             invalid.Text = inval;
             pathologicaldiseases.Text = diseases;
+            // show proof argument if it's not null
+            Console.WriteLine(proof);
         }
 
         private void inform_Load(object sender, EventArgs e)

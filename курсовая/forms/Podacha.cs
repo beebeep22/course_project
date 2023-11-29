@@ -56,6 +56,8 @@ namespace курсовая.forms
                 AccountObj: this.AccountObj
             );
 
+            if (proof.ImageLocation != null) request.LoadProofImage(proof.ImageLocation);
+
             this.UserOperations.SendUserRequest(request);
         }
 
@@ -71,7 +73,6 @@ namespace курсовая.forms
                 {
                     imageLocation = openfile.FileName;
                     proof.ImageLocation = imageLocation;
-
                     addproof.Text = "Змінити доказ";
                     removeProof.Visible = true;
                     

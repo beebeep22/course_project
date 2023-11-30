@@ -14,6 +14,7 @@ namespace курсовая.classes
         private readonly IMongoCollection<UserRequest> _userRequestsCollection;
         private readonly IMongoCollection<UserRequestResponse> _userRequestsResponseCollection;
         private readonly IMongoCollection<Notification> _notificationsCollection;
+        private readonly IMongoCollection<MarkedAsReadRequest> _markedAsReadRequestsCollection;
 
         public DbUserOperations() : base()
         {
@@ -21,7 +22,7 @@ namespace курсовая.classes
             _userRequestsCollection = Database.GetCollection<UserRequest>("user_request");
             _userRequestsResponseCollection = Database.GetCollection<UserRequestResponse>("user_request_response");
             _notificationsCollection = Database.GetCollection<Notification>("notification");
-
+            _markedAsReadRequestsCollection = Database.GetCollection<MarkedAsReadRequest>("marked_as_read_requests");
         }
 
         public void UpdateUserDetails(Account AccountObj, UserDetails NewUserDetails)
@@ -43,6 +44,18 @@ namespace курсовая.classes
             ObjectId ApplicantId = AccountObj._id;
             var filter = Builders<UserRequest>.Filter.Eq("ApplicantId", ApplicantId);
             return _userRequestsCollection.Find(filter).ToList();
+        }
+
+        public List<UserRequest> GetRequestsWithUnreadResponses(Account AccountObj)
+        {
+            List<UserRequest> allRequests = GetUserRequests(AccountObj);
+            List<MarkedAsReadRequest> allReadRequests = _markedAsReadRequestsCollection.Find(new BsonDocument()).ToList();
+            List<ObjectId> readRequestIds = allReadRequests.Select(readRequest => readRequest.RequestId).ToList();
+
+            List<UserRequest> unreadRequests = allRequests.Where(request => !readRequestIds.Contains(request._id)).ToList();
+
+            return unreadRequests;
+
         }
 
         public List<UserRequest> FillUserRequestsWithAnswers(List<UserRequest> userRequests)

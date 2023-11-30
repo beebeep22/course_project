@@ -45,28 +45,31 @@
             // richcontentBox
             // 
             this.richcontentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richcontentBox.Location = new System.Drawing.Point(232, 157);
+            this.richcontentBox.Location = new System.Drawing.Point(309, 193);
+            this.richcontentBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richcontentBox.Name = "richcontentBox";
-            this.richcontentBox.Size = new System.Drawing.Size(281, 143);
+            this.richcontentBox.Size = new System.Drawing.Size(373, 175);
             this.richcontentBox.TabIndex = 0;
             this.richcontentBox.Text = "";
             // 
             // themeresponse
             // 
             this.themeresponse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.themeresponse.Location = new System.Drawing.Point(229, 47);
+            this.themeresponse.Location = new System.Drawing.Point(305, 58);
+            this.themeresponse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.themeresponse.Multiline = true;
             this.themeresponse.Name = "themeresponse";
-            this.themeresponse.Size = new System.Drawing.Size(284, 29);
+            this.themeresponse.Size = new System.Drawing.Size(377, 35);
             this.themeresponse.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(111, 47);
+            this.label1.Location = new System.Drawing.Point(148, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 15);
+            this.label1.Size = new System.Drawing.Size(108, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "Тема відповіді";
             // 
@@ -74,9 +77,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(111, 157);
+            this.label2.Location = new System.Drawing.Point(148, 193);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 15);
+            this.label2.Size = new System.Drawing.Size(108, 18);
             this.label2.TabIndex = 4;
             this.label2.Text = "Опис відповіді";
             // 
@@ -84,18 +88,20 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(111, 111);
+            this.label3.Location = new System.Drawing.Point(148, 137);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 15);
+            this.label3.Size = new System.Drawing.Size(108, 18);
             this.label3.TabIndex = 5;
             this.label3.Text = "Статус заявки";
             // 
             // createResponse
             // 
             this.createResponse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.createResponse.Location = new System.Drawing.Point(302, 342);
+            this.createResponse.Location = new System.Drawing.Point(403, 421);
+            this.createResponse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.createResponse.Name = "createResponse";
-            this.createResponse.Size = new System.Drawing.Size(136, 37);
+            this.createResponse.Size = new System.Drawing.Size(181, 46);
             this.createResponse.TabIndex = 6;
             this.createResponse.Text = "Створити відповідь";
             this.createResponse.UseVisualStyleBackColor = true;
@@ -105,9 +111,10 @@
             // 
             this.statusAccepted.AutoSize = true;
             this.statusAccepted.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.statusAccepted.Location = new System.Drawing.Point(6, 19);
+            this.statusAccepted.Location = new System.Drawing.Point(8, 23);
+            this.statusAccepted.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statusAccepted.Name = "statusAccepted";
-            this.statusAccepted.Size = new System.Drawing.Size(83, 19);
+            this.statusAccepted.Size = new System.Drawing.Size(96, 22);
             this.statusAccepted.TabIndex = 7;
             this.statusAccepted.TabStop = true;
             this.statusAccepted.Text = "Прийнято";
@@ -117,9 +124,10 @@
             // 
             this.statusOnReview.AutoSize = true;
             this.statusOnReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.statusOnReview.Location = new System.Drawing.Point(95, 19);
+            this.statusOnReview.Location = new System.Drawing.Point(127, 23);
+            this.statusOnReview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statusOnReview.Name = "statusOnReview";
-            this.statusOnReview.Size = new System.Drawing.Size(93, 19);
+            this.statusOnReview.Size = new System.Drawing.Size(112, 22);
             this.statusOnReview.TabIndex = 8;
             this.statusOnReview.TabStop = true;
             this.statusOnReview.Text = "На розгляді";
@@ -129,9 +137,10 @@
             // 
             this.statusRejected.AutoSize = true;
             this.statusRejected.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.statusRejected.Location = new System.Drawing.Point(199, 19);
+            this.statusRejected.Location = new System.Drawing.Point(265, 23);
+            this.statusRejected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statusRejected.Name = "statusRejected";
-            this.statusRejected.Size = new System.Drawing.Size(84, 19);
+            this.statusRejected.Size = new System.Drawing.Size(100, 22);
             this.statusRejected.TabIndex = 9;
             this.statusRejected.TabStop = true;
             this.statusRejected.Text = "Відхилено";
@@ -143,17 +152,24 @@
             this.groupBox1.Controls.Add(this.statusRejected);
             this.groupBox1.Controls.Add(this.statusOnReview);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(232, 91);
+            this.groupBox1.Location = new System.Drawing.Point(309, 112);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(280, 50);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(373, 62);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
             // askAIButton
             // 
-            this.askAIButton.Location = new System.Drawing.Point(38, 342);
+            this.askAIButton.FlatAppearance.BorderSize = 0;
+            this.askAIButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.askAIButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.askAIButton.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.askAIButton.Location = new System.Drawing.Point(129, 322);
+            this.askAIButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.askAIButton.Name = "askAIButton";
-            this.askAIButton.Size = new System.Drawing.Size(96, 23);
+            this.askAIButton.Size = new System.Drawing.Size(165, 46);
             this.askAIButton.TabIndex = 11;
             this.askAIButton.Text = "Покращити з AI";
             this.askAIButton.UseVisualStyleBackColor = true;
@@ -161,9 +177,9 @@
             // 
             // AdminResponseCreation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 394);
+            this.ClientSize = new System.Drawing.Size(931, 485);
             this.Controls.Add(this.askAIButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.createResponse);
@@ -172,6 +188,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.themeresponse);
             this.Controls.Add(this.richcontentBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminResponseCreation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AdminResponseCreation";

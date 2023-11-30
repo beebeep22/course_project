@@ -219,6 +219,12 @@
     <Compile Include="forms\History.Designer.cs">
       <DependentUpon>History.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Improvement_with_AI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Improvement_with_AI.Designer.cs">
+      <DependentUpon>Improvement_with_AI.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\inform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\History.resx">
       <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Improvement_with_AI.resx">
+      <DependentUpon>Improvement_with_AI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\inform.resx">
       <DependentUpon>inform.cs</DependentUpon>

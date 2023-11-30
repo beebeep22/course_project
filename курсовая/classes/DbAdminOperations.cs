@@ -45,6 +45,7 @@ namespace курсовая.classes
             - Стать: {Request.ApplicantObj?.UserDetails?.Gender}
             - Захворювання: {Request.ApplicantObj?.UserDetails?.Diseases}
             - АлегріЇ: {Request.ApplicantObj?.UserDetails?.Allergies}
+            - Ступінь інвалідності:  {Request.ApplicantObj?.UserDetails?.DisabilityLevel}
         Будь ласка, напиши відповідь на цю заявку текстом розміром у {tokens} символів, маючи за основу наступну відповідь:
         {prompt}
         ";

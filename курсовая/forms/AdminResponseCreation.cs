@@ -76,14 +76,29 @@ namespace курсовая.forms
             this.Hide();
         }
 
-        private async void askAIAndSetResponse(int tokens)
+        private async void askAIAndSetResponse(string theme_request,int tokens)
         {
-            richcontentBox.Text = await AdminOperations.GetAiResponse(this.Request, richcontentBox.Text, tokens);
+            richcontentBox.Text = await AdminOperations.GetAiResponse(this.Request, theme_request, tokens);
         }
 
         private void askAIButton_Click(object sender, EventArgs e)
         {
-            askAIAndSetResponse(1000);
+            string topic_request = "";
+            int tokens = 0;
+            bool generate = false;
+            Improvement_with_AI improvement_With_AI = new Improvement_with_AI();
+            if (improvement_With_AI.ShowDialog() == DialogResult.OK)
+            {
+                generate = true;
+                topic_request = improvement_With_AI.TopicForAIRequest.Text;
+                int.TryParse(improvement_With_AI.tokenForAI.Text, out int token);
+                tokens = token;
+            }
+
+            if (generate) 
+            {
+                askAIAndSetResponse(topic_request, tokens);
+            }
         }
     }
 }

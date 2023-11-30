@@ -24,21 +24,6 @@ namespace курсовая.forms
             this.AccountOperations = new DbAccountOperations();
         }
 
-        private void smallsize_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Mediumsize_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Bigsize_Click(object sender, EventArgs e)
-        {
-     
-        }
-
         private void deleteaccount_Click(object sender, EventArgs e)
         {
             List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());

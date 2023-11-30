@@ -35,6 +35,7 @@ namespace курсовая.forms
             listOfRequests.Columns["ApplicantId"].Visible = false;
             listOfRequests.Columns["ApplicantObj"].Visible = false;
             listOfRequests.Columns["Content"].Visible = false;
+            listOfRequests.Columns["ProofImageData"].Visible = false;
 
             listOfRequests.SelectionChanged += listOfRequests_SelectionChanged;
             listOfRequests.CellFormatting += listOfRequests_CellFormatting;

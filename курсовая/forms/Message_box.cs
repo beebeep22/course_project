@@ -24,19 +24,14 @@ namespace курсовая.forms
             InitializeComponent();
 
             this.Notifications = UserOperations.GetNotifications(this.AccountObj);
-            foreach (var notification in Notifications)
-            {
-                Console.WriteLine(notification.Topic);
-            }
-
             this.NotReadRespondedRequests = UserOperations.GetRequestsWithUnreadResponses(this.AccountObj);
-            foreach (var request in NotReadRespondedRequests)
-            {
-                Console.WriteLine(request.Topic);
-            }
 
         }
 
+        private void markRequestAsRead(UserRequest Request)
+        {
+            UserOperations.MarkRequestAsRead(Request);
+        }
         private void notification_Click(object sender, EventArgs e)
         {
 

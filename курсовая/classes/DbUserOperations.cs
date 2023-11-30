@@ -46,16 +46,30 @@ namespace курсовая.classes
             return _userRequestsCollection.Find(filter).ToList();
         }
 
+        private List<UserRequest> GetRespondedUserRequests(Account AccountObj)
+        {
+            List<UserRequest> requestsWithResponses = GetUserRequestsWithResponses(AccountObj);
+            List<UserRequest> respondedUserRequests = requestsWithResponses
+                .Where(request => request.Response != null)
+                .ToList();
+            return respondedUserRequests;
+        }
+
         public List<UserRequest> GetRequestsWithUnreadResponses(Account AccountObj)
         {
-            List<UserRequest> allRequests = GetUserRequests(AccountObj);
-            List<MarkedAsReadRequest> allReadRequests = _markedAsReadRequestsCollection.Find(new BsonDocument()).ToList();
+            List<UserRequest> respondedRequests = GetRespondedUserRequests(AccountObj);
+            var filter = Builders<MarkedAsReadRequest>.Filter.Empty;
+            List<MarkedAsReadRequest> allReadRequests = _markedAsReadRequestsCollection.Find(filter).ToList();
             List<ObjectId> readRequestIds = allReadRequests.Select(readRequest => readRequest.RequestId).ToList();
+            List<UserRequest> unreadRespondedRequests = respondedRequests.Where(request => !readRequestIds.Contains(request._id)).ToList();
+            return unreadRespondedRequests;
 
-            List<UserRequest> unreadRequests = allRequests.Where(request => !readRequestIds.Contains(request._id)).ToList();
+        }
 
-            return unreadRequests;
-
+        public void MarkRequestAsRead(UserRequest Request)
+        {
+            MarkedAsReadRequest markedAsReadRequest = new MarkedAsReadRequest(Request);
+            _markedAsReadRequestsCollection.InsertOne(markedAsReadRequest);
         }
 
         public List<UserRequest> FillUserRequestsWithAnswers(List<UserRequest> userRequests)

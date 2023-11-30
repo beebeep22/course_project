@@ -58,7 +58,7 @@ namespace курсовая.forms
 
         private void createResponse_Click(object sender, EventArgs e)
         {
-            if (!ResponseInputValid()) 
+            if (!ResponseInputValid())
                 return;
 
             string inputStatus;
@@ -74,7 +74,6 @@ namespace курсовая.forms
                 UserRequestObj: this.Request
                 );
             AdminOperations.CreateUserRequestResponse(response);
-
             this.Hide();
         }
 

@@ -109,5 +109,9 @@ namespace курсовая.forms
 
         }
 
+        private void txtResponseContent_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

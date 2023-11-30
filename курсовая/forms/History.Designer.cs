@@ -117,6 +117,7 @@
             this.txtResponseContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResponseContent.Size = new System.Drawing.Size(238, 159);
             this.txtResponseContent.TabIndex = 6;
+            this.txtResponseContent.TextChanged += new System.EventHandler(this.txtResponseContent_TextChanged);
             // 
             // textTResponseTopic
             // 

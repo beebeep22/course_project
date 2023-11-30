@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace курсовая.forms
 {
     public partial class inform : Form
     {
+        private byte[] imageBytes;
+
         public inform(string PIB, string login, string obl, string vik, string gender, string alerg, string inval, string diseases)
         {
             InitializeComponent();
@@ -19,6 +22,7 @@ namespace курсовая.forms
             content.Visible = false;
             label7.Visible = false;
             label8.Visible = false;
+            proof.Visible = false;
 
             label1.Location = new Point(22, 97);
             fullname.Location = new Point(56, 97);
@@ -51,6 +55,7 @@ namespace курсовая.forms
         public inform(string theme, string description,string PIB,string login,string obl,string vik,string gender,string alerg, string inval, string diseases, byte[] proof)
         {
             InitializeComponent();
+            fullProof.Visible = false;
             topic.Text = theme;
             content.Text = description;
             fullname.Text = PIB;
@@ -61,8 +66,16 @@ namespace курсовая.forms
             alergic.Text = alerg;
             invalid.Text = inval;
             pathologicaldiseases.Text = diseases;
-            // show proof argument if it's not null
-            Console.WriteLine(proof);
+            if (proof != null)
+            {
+                using (MemoryStream ms = new MemoryStream(proof))
+                {
+                    this.proof.Image = Image.FromStream(ms);
+                    fullProof.Visible = true;
+                }
+            }
+            imageBytes = proof;
+            //show proof argument if it's not null
         }
 
         private void inform_Load(object sender, EventArgs e)
@@ -78,9 +91,11 @@ namespace курсовая.forms
             this.Hide();
         }
 
-        private void pathologicaldiseases_TextChanged(object sender, EventArgs e)
+        private void fullProof_Click(object sender, EventArgs e)
         {
 
+            FullPhoto fullPhoto = new FullPhoto(imageBytes);
+            fullPhoto.Show();
         }
     }
 }

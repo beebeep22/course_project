@@ -142,3 +142,4 @@ C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая
 C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.UserVerification.resources
 Z:\C#\Cursach\course_test\course_project\курсовая\obj\Debug\курсовая.forms.UserVerification.resources
 C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.Warning_message.resources
+C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.FAQ.resources

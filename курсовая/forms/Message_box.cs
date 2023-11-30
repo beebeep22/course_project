@@ -22,6 +22,8 @@ namespace курсовая.forms
             this.AccountObj = AccountObj;
             this.UserOperations = new DbUserOperations();
             InitializeComponent();
+            InitializeNotReadRespondedRequests(); 
+            InitializeNotifications();
 
             this.Notifications = UserOperations.GetNotifications(this.AccountObj);
             this.NotReadRespondedRequests = UserOperations.GetRequestsWithUnreadResponses(this.AccountObj);
@@ -32,7 +34,34 @@ namespace курсовая.forms
         {
             UserOperations.MarkRequestAsRead(Request);
         }
-        private void notification_Click(object sender, EventArgs e)
+
+        private void InitializeNotReadRespondedRequests()
+        {
+            NotReadRespondedRequestsTable.DataSource = this.NotReadRespondedRequests;
+
+            NotReadRespondedRequestsTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+        private void InitializeNotifications()
+        {
+
+        }
+
+
+        private void NotReadRespondedRequestsTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == NotReadRespondedRequestsTable.Columns["status"].Index)
+            {
+                UserRequestResponse response = e.Value as UserRequestResponse;
+                if (response.Status!= "Не переглянуто")
+                {
+                    e.Value = response.Status;
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+        private void Message_box_Load(object sender, EventArgs e)
         {
 
         }

@@ -28,49 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.notification = new System.Windows.Forms.Button();
-            this.notification2 = new System.Windows.Forms.Button();
+            this.NotReadRespondedRequestsTable = new System.Windows.Forms.DataGridView();
+            this.NotificationsTable = new System.Windows.Forms.DataGridView();
+            this.topicResponse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.NotReadRespondedRequestsTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotificationsTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // notification
+            // NotReadRespondedRequestsTable
             // 
-            this.notification.Dock = System.Windows.Forms.DockStyle.Top;
-            this.notification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.notification.Location = new System.Drawing.Point(0, 0);
-            this.notification.Name = "notification";
-            this.notification.Size = new System.Drawing.Size(864, 71);
-            this.notification.TabIndex = 0;
-            this.notification.Text = "Вам повідомлення";
-            this.notification.UseVisualStyleBackColor = true;
-            this.notification.Click += new System.EventHandler(this.notification_Click);
+            this.NotReadRespondedRequestsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.NotReadRespondedRequestsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.topicResponse,
+            this.status});
+            this.NotReadRespondedRequestsTable.Location = new System.Drawing.Point(43, 44);
+            this.NotReadRespondedRequestsTable.Name = "NotReadRespondedRequestsTable";
+            this.NotReadRespondedRequestsTable.RowHeadersWidth = 51;
+            this.NotReadRespondedRequestsTable.RowTemplate.Height = 24;
+            this.NotReadRespondedRequestsTable.Size = new System.Drawing.Size(337, 393);
+            this.NotReadRespondedRequestsTable.TabIndex = 0;
             // 
-            // notification2
+            // NotificationsTable
             // 
-            this.notification2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.notification2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.notification2.Location = new System.Drawing.Point(0, 71);
-            this.notification2.Name = "notification2";
-            this.notification2.Size = new System.Drawing.Size(864, 71);
-            this.notification2.TabIndex = 1;
-            this.notification2.Text = "Вам повідомлення";
-            this.notification2.UseVisualStyleBackColor = true;
+            this.NotificationsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.NotificationsTable.Location = new System.Drawing.Point(480, 44);
+            this.NotificationsTable.Name = "NotificationsTable";
+            this.NotificationsTable.RowHeadersWidth = 51;
+            this.NotificationsTable.RowTemplate.Height = 24;
+            this.NotificationsTable.Size = new System.Drawing.Size(337, 393);
+            this.NotificationsTable.TabIndex = 1;
+            // 
+            // topicResponse
+            // 
+            this.topicResponse.HeaderText = "Тема заявки";
+            this.topicResponse.MinimumWidth = 6;
+            this.topicResponse.Name = "topicResponse";
+            this.topicResponse.Width = 125;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Статус";
+            this.status.MinimumWidth = 6;
+            this.status.Name = "status";
+            this.status.Width = 125;
             // 
             // Message_box
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 516);
-            this.Controls.Add(this.notification2);
-            this.Controls.Add(this.notification);
+            this.Controls.Add(this.NotificationsTable);
+            this.Controls.Add(this.NotReadRespondedRequestsTable);
             this.Name = "Message_box";
             this.Text = "Message_box";
+            this.Load += new System.EventHandler(this.Message_box_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.NotReadRespondedRequestsTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotificationsTable)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button notification;
-        private System.Windows.Forms.Button notification2;
+        private System.Windows.Forms.DataGridView NotReadRespondedRequestsTable;
+        private System.Windows.Forms.DataGridView NotificationsTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn topicResponse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }

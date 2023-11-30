@@ -1,6 +1,12 @@
 ﻿using MongoDB.Driver;
 using MongoDB.Bson;
 using System.Collections.Generic;
+using OpenAI.GPT3.Managers;
+using OpenAI.GPT3;
+using OpenAI.GPT3.ObjectModels.RequestModels;
+using OpenAI.GPT3.ObjectModels;
+using System;
+using System.Threading.Tasks;
 
 namespace курсовая.classes
 {
@@ -10,6 +16,7 @@ namespace курсовая.classes
         private readonly IMongoCollection<UserRequest> _userRequestsCollection;
         private readonly IMongoCollection<UserRequestResponse> _userRequestsResponseCollection;
         private readonly IMongoCollection<Notification> _notificationsCollection;
+        private readonly OpenAIService AIService;
         
         public DbAdminOperations() : base()
         {
@@ -18,6 +25,36 @@ namespace курсовая.classes
             _userRequestsCollection = Database.GetCollection<UserRequest>("user_request");
             _userRequestsResponseCollection = Database.GetCollection<UserRequestResponse>("user_request_response");
             _notificationsCollection = Database.GetCollection<Notification>("notification");
+            AIService = new OpenAIService(new OpenAiOptions()
+            {
+                ApiKey = "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"
+            });
+
+        }
+
+        public async Task<String> GetAiResponse(UserRequest Request, string prompt, int tokens)
+        {
+            string multiLineString = $@"
+Уяви, що ти - державний співробітник, який надає відповідь на певні заявки громадян. Ось інформація щодо заявки:
+Тема: {Request.Topic}
+Вміст: {Request.Content}
+Чи прикріплені докази: {(Request.ProofImageData == null ? "Ні" : "Так")}
+Інформація щодо громадяна:
+    - ПІБ: {Request.ApplicantObj?.UserDetails?.GetFullName()}
+    - Стать: {Request.ApplicantObj?.UserDetails?.Gender}
+    - Захворювання: {Request.ApplicantObj?.UserDetails?.Diseases}
+Будь ласка, напиши відповідь на цю заявку текстом розміром до 300 символів відповідно з наступними інструкціями:
+{prompt}
+";
+
+            var completionResult = await AIService.Completions.CreateCompletion(new CompletionCreateRequest()
+            {
+                Prompt = multiLineString, 
+                Model = Models.TextDavinciV3,
+                Temperature = 0.5F,
+                MaxTokens = tokens 
+            });
+            return completionResult.Choices[0].Text;
         }
 
         public Account GetApplicantById(ObjectId ApplicantId)

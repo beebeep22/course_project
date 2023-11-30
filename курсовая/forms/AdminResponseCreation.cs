@@ -21,7 +21,6 @@ namespace курсовая.forms
             InitializeComponent();
             this.AdminOperations = new DbAdminOperations();
             this.Request = Request;
-            askAIAndSetResponse("Ввічливо скажи якось щоб він відстав", 1000);
         }
 
         private bool ResponseInputValid()
@@ -77,9 +76,14 @@ namespace курсовая.forms
             this.Hide();
         }
 
-        private async void askAIAndSetResponse(string prompt, int tokens)
+        private async void askAIAndSetResponse(int tokens)
         {
-            richcontentBox.Text = await AdminOperations.GetAiResponse(this.Request, prompt, tokens);
+            richcontentBox.Text = await AdminOperations.GetAiResponse(this.Request, richcontentBox.Text, tokens);
+        }
+
+        private void askAIButton_Click(object sender, EventArgs e)
+        {
+            askAIAndSetResponse(1000);
         }
     }
 }

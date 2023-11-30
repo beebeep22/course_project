@@ -8,6 +8,7 @@ using OpenAI.GPT3.ObjectModels;
 using System;
 using System.Threading.Tasks;
 
+
 namespace курсовая.classes
 {
     class DbAdminOperations : DbOperations
@@ -17,7 +18,7 @@ namespace курсовая.classes
         private readonly IMongoCollection<UserRequestResponse> _userRequestsResponseCollection;
         private readonly IMongoCollection<Notification> _notificationsCollection;
         private readonly OpenAIService AIService;
-        
+
         public DbAdminOperations() : base()
         {
 
@@ -27,7 +28,7 @@ namespace курсовая.classes
             _notificationsCollection = Database.GetCollection<Notification>("notification");
             AIService = new OpenAIService(new OpenAiOptions()
             {
-                ApiKey = "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"
+                ApiKey = ""
             });
 
         }
@@ -35,27 +36,40 @@ namespace курсовая.classes
         public async Task<String> GetAiResponse(UserRequest Request, string prompt, int tokens)
         {
             string multiLineString = $@"
-Уяви, що ти - державний співробітник, який надає відповідь на певні заявки громадян. Ось інформація щодо заявки:
-Тема: {Request.Topic}
-Вміст: {Request.Content}
-Чи прикріплені докази: {(Request.ProofImageData == null ? "Ні" : "Так")}
-Інформація щодо громадяна:
-    - ПІБ: {Request.ApplicantObj?.UserDetails?.GetFullName()}
-    - Стать: {Request.ApplicantObj?.UserDetails?.Gender}
-    - Захворювання: {Request.ApplicantObj?.UserDetails?.Diseases}
-Будь ласка, напиши відповідь на цю заявку текстом розміром до 300 символів відповідно з наступними інструкціями:
-{prompt}
-";
+        Уяви, що ти - державний співробітник, який надає відповідь на певні заявки громадян. Ось інформація щодо заявки:
+        Тема: {Request.Topic}
+        Вміст: {Request.Content}
+        Чи прикріплені докази: {(Request.ProofImageData == null ? "Ні" : "Так")}
+        Інформація щодо громадяна:
+            - ПІБ: {Request.ApplicantObj?.UserDetails?.GetFullName()}
+            - Стать: {Request.ApplicantObj?.UserDetails?.Gender}
+            - Захворювання: {Request.ApplicantObj?.UserDetails?.Diseases}
+            - АлегріЇ: {Request.ApplicantObj?.UserDetails?.Allergies}
+        Будь ласка, напиши відповідь на цю заявку текстом розміром у {tokens} символів, маючи за основу наступну відповідь:
+        {prompt}
+        ";
 
-            var completionResult = await AIService.Completions.CreateCompletion(new CompletionCreateRequest()
+            CompletionCreateRequest complectionRequest = new CompletionCreateRequest()
+
             {
-                Prompt = multiLineString, 
+                Prompt = multiLineString,
                 Model = Models.TextDavinciV3,
                 Temperature = 0.5F,
-                MaxTokens = tokens 
-            });
-            return completionResult.Choices[0].Text;
+                MaxTokens = tokens
+            };
+
+            try
+            {
+                var completionResult = await AIService.Completions.CreateCompletion(complectionRequest);
+                return completionResult.Choices[0].Text;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in GetAiResponse: {ex.Message}");
+                return "Something went wrong. Ensure that your API key is configured.";
+            }
         }
+
 
         public Account GetApplicantById(ObjectId ApplicantId)
         {
@@ -107,7 +121,7 @@ namespace курсовая.classes
 
         public void CreateNotification(Notification Notification)
         {
-            _notificationsCollection.InsertOne(Notification);        
+            _notificationsCollection.InsertOne(Notification);
         }
 
 
@@ -139,7 +153,7 @@ namespace курсовая.classes
         }
         public void ApproveUser(Account AccountObj)
         {
-            ChangeApproveStatusIfPossible(AccountObj, true);  
+            ChangeApproveStatusIfPossible(AccountObj, true);
         }
 
         public void DisapproveUser(Account AccountObj)

@@ -15,17 +15,26 @@ namespace курсовая.forms
     {
         private Account AccountObj { get; set; }
         private DbUserOperations UserOperations { get; set; }
+        private List<Notification> Notifications { get; set; }
+        private List<UserRequest> NotReadRespondedRequests { get; set; }
         public Message_box(Account AccountObj)
         {
             this.AccountObj = AccountObj;
             this.UserOperations = new DbUserOperations();
             InitializeComponent();
 
-            List<Notification> notifications = UserOperations.GetNotifications(this.AccountObj);
-            foreach (var notification in notifications)
+            this.Notifications = UserOperations.GetNotifications(this.AccountObj);
+            foreach (var notification in Notifications)
             {
                 Console.WriteLine(notification.Topic);
             }
+
+            this.NotReadRespondedRequests = UserOperations.GetRequestsWithUnreadResponses(this.AccountObj);
+            foreach (var request in NotReadRespondedRequests)
+            {
+                Console.WriteLine(request.Topic);
+            }
+
         }
 
         private void notification_Click(object sender, EventArgs e)

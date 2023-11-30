@@ -40,4 +40,17 @@ namespace курсовая.classes
             this.ProofImageData = File.ReadAllBytes(imagePath);
         }
     }
+
+    public class MarkedAsReadRequest 
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public ObjectId _id { get; set; }
+        public ObjectId RequestId { get; set; }
+        public MarkedAsReadRequest(UserRequest Request)
+        {
+            this._id = ObjectId.GenerateNewId();
+            this.RequestId = Request._id;
+        }
+    }
 }

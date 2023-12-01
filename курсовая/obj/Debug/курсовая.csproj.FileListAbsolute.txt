@@ -266,3 +266,4 @@ C:\Users\User\Desktop\course_project\курсовая\bin\Debug\System.Text.Enco
 C:\Users\User\Desktop\course_project\курсовая\bin\Debug\System.Text.Json.xml
 C:\Users\User\Desktop\course_project\курсовая\bin\Debug\System.ValueTuple.xml
 C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.Improvement_with_AI.resources
+C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.Change_Password.resources

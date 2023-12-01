@@ -186,6 +186,12 @@
     <Compile Include="forms\AdminResponseCreation.Designer.cs">
       <DependentUpon>AdminResponseCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Change_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Change_Password.Designer.cs">
+      <DependentUpon>Change_Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Createaccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\AdminResponseCreation.resx">
       <DependentUpon>AdminResponseCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Change_Password.resx">
+      <DependentUpon>Change_Password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Createaccount.resx">
       <DependentUpon>Createaccount.cs</DependentUpon>

@@ -28,31 +28,30 @@ namespace курсовая.forms
             //нужно ли на тему и описание или можно "на розгляді" без темы и описания,а принятие/отказ с темой и описанием
             // нетб всегда тема и описание
             // "заявка на розгляді,бо вона дуже гарна,сидимо і дивимося"
-            if (themeresponse.Text == "")
+            try
+            {
+                if (themeresponse.Text == "")
+                {
+                    throw new Exception("Ви не ввели тему відповіді");
+                }
+                else if (richcontentBox.Text == "")
+                {
+                    throw new Exception("Ви не ввели опис відповіді");
+                }
+                else if (!statusAccepted.Checked && !statusOnReview.Checked && !statusRejected.Checked)
+                {
+                    throw new Exception("Ви не обрали статусу заявки");
+                }
+                return true;
+            }
+            catch (Exceptions ex)
             {
                 Warning_message warning_Message = new Warning_message();
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
-                warning_Message.outputText.Text = "Ви не ввели тему відповіді";
+                warning_Message.Text = "Помилка";
+                warning_Message.outputText.Text = ex.Message;
                 warning_Message.ShowDialog();
                 return false;
             }
-            else if (richcontentBox.Text == "")
-            {
-                Warning_message warning_Message = new Warning_message();
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
-                warning_Message.outputText.Text = "Ви не ввели опис відповіді";
-                warning_Message.ShowDialog();
-                return false;
-            }
-            else if(!statusAccepted.Checked && !statusOnReview.Checked && !statusRejected.Checked)
-            {
-                Warning_message warning_Message = new Warning_message();
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
-                warning_Message.outputText.Text = "Ви не обрали статусу заявки";
-                warning_Message.ShowDialog();
-                return false;
-            }
-            return true;
         }
 
         private void createResponse_Click(object sender, EventArgs e)

@@ -21,8 +21,6 @@ namespace курсовая.forms
 
         private void Warning_message_Load(object sender, EventArgs e)
         {
-            /*this.FormBorderStyle = FormBorderStyle.None;
-            ControlBox = false;*/
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 

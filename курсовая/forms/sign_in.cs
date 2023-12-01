@@ -36,29 +36,29 @@ namespace курсовая.forms
                 {
                     errorMessages.Add("Поле логіна незаповнене");
                 }
+                else if (!IsLatinInput(login.Text))
+                {
+                    errorMessages.Add("Логін повинен містити тільки латинські символи.");
+                }
                 if (password.Text == "")
                 {
                     errorMessages.Add("Поле пароля незаповнене");
-                }
-                else if (passwordagain.Text == "")
-                {
-                    errorMessages.Add("Поле повторення пароля незаповнене");
                 }
                 else if (password.Text.Length < 12)
                 {
                     errorMessages.Add("Не менше 12 символів у паролі!");
                 }
-                else if (password.Text != passwordagain.Text)
-                {
-                    errorMessages.Add("Паролі не співпадають!");
-                }
-                else if (!IsLatinInput(login.Text))
-                {
-                    errorMessages.Add("Логін повинен містити тільки латинські символи.");
-                }
                 else if (!IsLatinInput(password.Text))
                 {
                     errorMessages.Add("Пароль повинен містити тільки латинські символи.");
+                }
+                else if (passwordagain.Text == "")
+                {
+                    errorMessages.Add("Поле повторення пароля незаповнене");
+                }
+                else if (password.Text != passwordagain.Text)
+                {
+                    errorMessages.Add("Паролі не співпадають!");
                 }
                 if (errorMessages.Count > 0)
                 {
@@ -72,7 +72,6 @@ namespace курсовая.forms
                 Warning_message warning_Message = new Warning_message();
                 warning_Message.Text = "Помилка реєстрації";
                 warning_Message.pictureBox1.Image = Properties.Resources.free_icon_cat_5772431;
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = ex.Message;
                 warning_Message.ShowDialog();
                 return false;

@@ -38,7 +38,7 @@
             // agree
             // 
             this.agree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.agree.Location = new System.Drawing.Point(122, 259);
+            this.agree.Location = new System.Drawing.Point(113, 210);
             this.agree.Margin = new System.Windows.Forms.Padding(2);
             this.agree.Name = "agree";
             this.agree.Size = new System.Drawing.Size(89, 33);
@@ -52,17 +52,18 @@
             this.outputText.BackColor = System.Drawing.Color.Honeydew;
             this.outputText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.outputText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.outputText.Location = new System.Drawing.Point(46, 108);
+            this.outputText.Location = new System.Drawing.Point(42, 108);
             this.outputText.Margin = new System.Windows.Forms.Padding(2);
             this.outputText.Multiline = true;
             this.outputText.Name = "outputText";
-            this.outputText.Size = new System.Drawing.Size(245, 147);
+            this.outputText.Size = new System.Drawing.Size(228, 98);
             this.outputText.TabIndex = 1;
+            this.outputText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::курсовая.Properties.Resources.грустныйкот128;
-            this.pictureBox1.Location = new System.Drawing.Point(113, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(104, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(98, 102);
@@ -75,7 +76,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(332, 303);
+            this.ClientSize = new System.Drawing.Size(310, 261);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.outputText);
             this.Controls.Add(this.agree);

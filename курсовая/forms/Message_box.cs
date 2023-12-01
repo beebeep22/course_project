@@ -83,11 +83,8 @@ namespace курсовая.forms
 
         private void InitializeNotifications()
         {
-            var filteredNotifications = this.Notifications
-            .Where(notification => CheckFilters(notification.Filters))
-            .ToList();
+            var filteredNotifications = this.Notifications.Where(notification => CheckFilters(notification.Filters)).ToList();
 
-            // Устанавливаем новый источник данных
             NotificationsTable.DataSource = filteredNotifications;
 
             NotificationsTable.Columns["_id"].Visible = false;

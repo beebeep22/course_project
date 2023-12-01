@@ -81,14 +81,14 @@ namespace курсовая.forms
             // 
             // exit
             // 
-            this.exit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.exit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.exit.FlatAppearance.BorderSize = 0;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.exit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.exit.Image = global::курсовая.Properties.Resources.exit;
             this.exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exit.Location = new System.Drawing.Point(0, 260);
+            this.exit.Location = new System.Drawing.Point(0, 407);
             this.exit.Name = "exit";
             this.exit.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.exit.Size = new System.Drawing.Size(220, 60);

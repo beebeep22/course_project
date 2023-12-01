@@ -23,6 +23,7 @@ namespace курсовая.forms
             label7.Visible = false;
             label8.Visible = false;
             proof.Visible = false;
+            fullProof.Visible = false;
 
             label1.Location = new Point(22, 97);
             fullname.Location = new Point(56, 97);

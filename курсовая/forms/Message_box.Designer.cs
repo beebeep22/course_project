@@ -30,8 +30,6 @@
         {
             this.NotReadRespondedRequestsTable = new System.Windows.Forms.DataGridView();
             this.NotificationsTable = new System.Windows.Forms.DataGridView();
-            this.topicResponse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.NotReadRespondedRequestsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NotificationsTable)).BeginInit();
             this.SuspendLayout();
@@ -39,9 +37,6 @@
             // NotReadRespondedRequestsTable
             // 
             this.NotReadRespondedRequestsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.NotReadRespondedRequestsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.topicResponse,
-            this.status});
             this.NotReadRespondedRequestsTable.Location = new System.Drawing.Point(43, 44);
             this.NotReadRespondedRequestsTable.Name = "NotReadRespondedRequestsTable";
             this.NotReadRespondedRequestsTable.RowHeadersWidth = 51;
@@ -58,20 +53,6 @@
             this.NotificationsTable.RowTemplate.Height = 24;
             this.NotificationsTable.Size = new System.Drawing.Size(337, 393);
             this.NotificationsTable.TabIndex = 1;
-            // 
-            // topicResponse
-            // 
-            this.topicResponse.HeaderText = "Тема заявки";
-            this.topicResponse.MinimumWidth = 6;
-            this.topicResponse.Name = "topicResponse";
-            this.topicResponse.Width = 125;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Статус";
-            this.status.MinimumWidth = 6;
-            this.status.Name = "status";
-            this.status.Width = 125;
             // 
             // Message_box
             // 
@@ -93,7 +74,5 @@
 
         private System.Windows.Forms.DataGridView NotReadRespondedRequestsTable;
         private System.Windows.Forms.DataGridView NotificationsTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn topicResponse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }

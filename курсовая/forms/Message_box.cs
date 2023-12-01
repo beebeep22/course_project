@@ -47,6 +47,7 @@ namespace курсовая.forms
             NotReadRespondedRequestsTable.Columns["Content"].Visible = false;
 
             NotReadRespondedRequestsTable.Columns["Topic"].HeaderText = "Тема";
+            NotReadRespondedRequestsTable.Columns["Topic"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
             int columnIndex = NotReadRespondedRequestsTable.Columns["Topic"].Index;
             DataGridViewTextBoxColumn statusColumn = new DataGridViewTextBoxColumn();
@@ -56,6 +57,7 @@ namespace курсовая.forms
 
             NotReadRespondedRequestsTable.CellFormatting += NotReadRespondedRequestsTable_CellFormatting;
             NotReadRespondedRequestsTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            NotReadRespondedRequestsTable.CellDoubleClick += new DataGridViewCellEventHandler(this.NotReadRespondedRequestsTable_CellDoubleClick);
             NotReadRespondedRequestsTable.ClearSelection();
         }
 
@@ -81,7 +83,18 @@ namespace курсовая.forms
 
         private void InitializeNotifications()
         {
+            NotificationsTable.DataSource = this.Notifications;
 
+            NotificationsTable.Columns["_id"].Visible = false;
+            NotificationsTable.Columns["Filters"].Visible = false;
+
+            NotificationsTable.Columns["Topic"].HeaderText = "Тема";
+            NotificationsTable.Columns["Topic"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            NotificationsTable.Columns["Content"].HeaderText = "Опис";
+            NotificationsTable.Columns["Content"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            NotificationsTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            NotificationsTable.ClearSelection();
         }
 
         private void Message_box_Load(object sender, EventArgs e)

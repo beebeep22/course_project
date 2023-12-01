@@ -41,17 +41,19 @@
             this.NotReadRespondedRequestsTable.Name = "NotReadRespondedRequestsTable";
             this.NotReadRespondedRequestsTable.RowHeadersWidth = 51;
             this.NotReadRespondedRequestsTable.RowTemplate.Height = 24;
-            this.NotReadRespondedRequestsTable.Size = new System.Drawing.Size(337, 393);
+            this.NotReadRespondedRequestsTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.NotReadRespondedRequestsTable.Size = new System.Drawing.Size(352, 393);
             this.NotReadRespondedRequestsTable.TabIndex = 0;
             // 
             // NotificationsTable
             // 
             this.NotificationsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.NotificationsTable.Location = new System.Drawing.Point(480, 44);
+            this.NotificationsTable.Location = new System.Drawing.Point(464, 44);
             this.NotificationsTable.Name = "NotificationsTable";
             this.NotificationsTable.RowHeadersWidth = 51;
             this.NotificationsTable.RowTemplate.Height = 24;
-            this.NotificationsTable.Size = new System.Drawing.Size(337, 393);
+            this.NotificationsTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.NotificationsTable.Size = new System.Drawing.Size(352, 393);
             this.NotificationsTable.TabIndex = 1;
             // 
             // Message_box

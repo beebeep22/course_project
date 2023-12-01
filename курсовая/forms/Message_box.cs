@@ -83,7 +83,12 @@ namespace курсовая.forms
 
         private void InitializeNotifications()
         {
-            NotificationsTable.DataSource = this.Notifications;
+            var filteredNotifications = this.Notifications
+            .Where(notification => CheckFilters(notification.Filters))
+            .ToList();
+
+            // Устанавливаем новый источник данных
+            NotificationsTable.DataSource = filteredNotifications;
 
             NotificationsTable.Columns["_id"].Visible = false;
             NotificationsTable.Columns["Filters"].Visible = false;
@@ -95,6 +100,41 @@ namespace курсовая.forms
 
             NotificationsTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             NotificationsTable.ClearSelection();
+            
+        }
+
+        private bool CheckFilters(TargetFilters filters)
+        {
+            int.TryParse(AccountObj.UserDetails.Age,out int userAge);
+            int.TryParse(filters.AgeFrom, out int ageFrom);
+            int.TryParse(filters.AgeTo, out int ageTo);
+
+            if (filters.AgeFrom!=null && filters.AgeTo != null && userAge < ageFrom || userAge > ageTo)
+            {
+                return false;
+            }
+            else if(filters.Allergies != null && AccountObj.UserDetails.Allergies != filters.Allergies)
+            {
+                return false;
+            }
+            else if(filters.DisabilityLevel != null && AccountObj.UserDetails.DisabilityLevel != filters.DisabilityLevel)
+            {
+                return false;
+            }
+            else if (filters.Diseases != null && AccountObj.UserDetails.Diseases != filters.Diseases)
+            {
+                return false;
+            }
+            else if (filters.Region != null && AccountObj.UserDetails.Region!= filters.Region)
+            {
+                return false;
+            }
+            else if (filters.Gender != null && AccountObj.UserDetails.Gender != filters.Gender)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private void Message_box_Load(object sender, EventArgs e)

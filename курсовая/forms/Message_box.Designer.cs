@@ -36,6 +36,7 @@
             // 
             // NotReadRespondedRequestsTable
             // 
+            this.NotReadRespondedRequestsTable.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.NotReadRespondedRequestsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NotReadRespondedRequestsTable.Location = new System.Drawing.Point(43, 44);
             this.NotReadRespondedRequestsTable.Name = "NotReadRespondedRequestsTable";
@@ -47,6 +48,7 @@
             // 
             // NotificationsTable
             // 
+            this.NotificationsTable.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.NotificationsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NotificationsTable.Location = new System.Drawing.Point(464, 44);
             this.NotificationsTable.Name = "NotificationsTable";
@@ -60,6 +62,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(864, 516);
             this.Controls.Add(this.NotificationsTable);
             this.Controls.Add(this.NotReadRespondedRequestsTable);

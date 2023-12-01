@@ -53,7 +53,7 @@ namespace курсовая.forms
             TargetFilters filters = new TargetFilters(
                 AgeTo: ageupto.SelectedItem?.ToString() ?? "",
                 AgeFrom: agefrom.SelectedItem?.ToString() ?? "",
-                Gender: men.Checked ? "M" : "Ж", // TODO: add gender selection in form
+                Gender: men.Checked ? "M" : "Ж", 
                 Region: region.Text,
                 Diseases: pathdiseas.Text,
                 DisabilityLevel: invalid.Text,

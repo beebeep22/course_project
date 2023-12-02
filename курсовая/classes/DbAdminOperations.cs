@@ -28,27 +28,30 @@ namespace курсовая.classes
             _notificationsCollection = Database.GetCollection<Notification>("notification");
             AIService = new OpenAIService(new OpenAiOptions()
             {
-                ApiKey = ""
+                ApiKey = " "
             });
 
         }
 
-        public async Task<String> GetAiResponse(UserRequest Request, string prompt, int tokens)
+        public async Task<String> GetAiResponse(UserRequest Request, string prompt, int tokens, string status)
         {
             string multiLineString = $@"
-        Уяви, що ти - державний співробітник, який надає відповідь на певні заявки громадян. Ось інформація щодо заявки:
-        Тема: {Request.Topic}
-        Вміст: {Request.Content}
-        Чи прикріплені докази: {(Request.ProofImageData == null ? "Ні" : "Так")}
-        Інформація щодо громадяна:
-            - ПІБ: {Request.ApplicantObj?.UserDetails?.GetFullName()}
-            - Стать: {Request.ApplicantObj?.UserDetails?.Gender}
-            - Захворювання: {Request.ApplicantObj?.UserDetails?.Diseases}
-            - АлегріЇ: {Request.ApplicantObj?.UserDetails?.Allergies}
-            - Ступінь інвалідності:  {Request.ApplicantObj?.UserDetails?.DisabilityLevel}
-        Будь ласка, напиши відповідь на цю заявку текстом розміром у {tokens} символів, маючи за основу наступну відповідь:
-        {prompt}
-        ";
+Уявіть, що ви урядовець, відповідальний за реагування на конкретні запити громадян. Ось інформація щодо запиту:
+Тема: {Request.Topic}
+Вміст: {Request.Content}
+Чи прикріплені докази: {(Request.ProofImageData == null ? "Ні" : "Так")}
+Інформація щодо громадяна (не обов'язково згадувати її, але май на увазі):
+    - ПІБ: {Request.ApplicantObj?.UserDetails?.GetFullName()}
+    - Стать: {Request.ApplicantObj?.UserDetails?.Gender}
+    - Захворювання: {Request.ApplicantObj?.UserDetails?.Diseases}
+    - АлегріЇ: {Request.ApplicantObj?.UserDetails?.Allergies}
+    - Ступінь інвалідності:  {Request.ApplicantObj?.UserDetails?.DisabilityLevel}
+Ваша відповідь має відповідати такій структурі:
+1. Почніть з офіційного привітання.
+2. Надати відповідь на звернення, враховуючи, що його тема зазначена як: '{prompt}', а статус заявки користувача ти змінюєш на: {status}. Зберігайте емпатичний і офіційний тон.
+3. Завершіть подякою за прохання та фразою 'З повагою, служба державної допомоги'.
+Будь ласка, напишіть відповідь у текстовому форматі дотримуючись усіх правил українскьої мови, переконавшись, що вона відповідає обмеженню кількості символів, представленому {tokens}. Майте на увазі, що відповідь має бути анонімною; не називати ім'я працівника.
+";
 
             CompletionCreateRequest complectionRequest = new CompletionCreateRequest()
 

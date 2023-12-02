@@ -54,16 +54,21 @@ namespace курсовая.forms
             }
         }
 
+        private string getInputStatus()
+        {
+            string inputStatus;
+            if (statusAccepted.Checked) inputStatus = "Прийнято";
+            else if (statusOnReview.Checked) inputStatus = "На розгляді";
+            else if (statusRejected.Checked) inputStatus = "Відхилено";
+            else return null;
+            return inputStatus;
+        }
         private void createResponse_Click(object sender, EventArgs e)
         {
             if (!ResponseInputValid())
                 return;
 
-            string inputStatus;
-            if (statusAccepted.Checked) inputStatus = "Прийнято";
-            else if (statusOnReview.Checked) inputStatus = "На розгляді";
-            else if (statusRejected.Checked) inputStatus = "Відхилено";
-            else return;
+            string inputStatus = getInputStatus();
 
             UserRequestResponse response = new UserRequestResponse(
                 Topic: themeresponse.Text,
@@ -75,15 +80,16 @@ namespace курсовая.forms
             this.Hide();
         }
 
-        private async void askAIAndSetResponse(string theme_request,int tokens)
+        private async void askAIAndSetResponse(string theme_request,int tokens, string inputStatus)
         {
-            richcontentBox.Text = await AdminOperations.GetAiResponse(this.Request, theme_request, tokens);
+            richcontentBox.Text = await AdminOperations.GetAiResponse(this.Request, theme_request, tokens, inputStatus);
         }
 
         private void askAIButton_Click(object sender, EventArgs e)
         {
             string topic_request = "";
             int tokens = 0;
+            string inputStatus = getInputStatus();
             bool generate = false;
             Improvement_with_AI improvement_With_AI = new Improvement_with_AI();
             if (improvement_With_AI.ShowDialog() == DialogResult.OK)
@@ -96,7 +102,7 @@ namespace курсовая.forms
 
             if (generate) 
             {
-                askAIAndSetResponse(topic_request, tokens);
+                askAIAndSetResponse(topic_request, tokens, inputStatus);
             }
         }
     }

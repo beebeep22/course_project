@@ -101,7 +101,7 @@ namespace курсовая.forms
         {
             foreach (char c in input)
             {
-                if (!(c >= 'А' && c <= 'я'))
+                if (!(c >= 'А' && c <= 'Я') && !(c >= 'а' && c <= 'я') && c != 'і' && c != 'І')
                 {
                     return false;
                 }

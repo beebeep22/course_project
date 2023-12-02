@@ -192,6 +192,12 @@
     <Compile Include="forms\Change_Password.Designer.cs">
       <DependentUpon>Change_Password.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Confirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Confirmation.Designer.cs">
+      <DependentUpon>Confirmation.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Createaccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Change_Password.resx">
       <DependentUpon>Change_Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Confirmation.resx">
+      <DependentUpon>Confirmation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Createaccount.resx">
       <DependentUpon>Createaccount.cs</DependentUpon>

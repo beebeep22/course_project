@@ -26,23 +26,28 @@ namespace курсовая.forms
 
         private void deleteaccount_Click(object sender, EventArgs e)
         {
-            List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());
-
-            foreach (Form form in formsToClose)
+            Confirmation confirmation = new Confirmation();
+            if (confirmation.ShowDialog() == DialogResult.OK)
             {
-                if (form != this)
+
+                List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());
+
+                foreach (Form form in formsToClose)
                 {
-                    form.Close();
+                    if (form != this)
+                    {
+                        form.Close();
+                    }
                 }
+
+                AccountOperations.removeAccount(this.AccountObj);
+                Thread thread = new Thread(() =>
+                {
+                    Application.Run(new log_in());
+                });
+
+                thread.Start();
             }
-
-            AccountOperations.removeAccount(this.AccountObj);
-            Thread thread = new Thread(() =>
-            {
-                Application.Run(new log_in());
-            });
-
-            thread.Start();
         }
 
         private void changePassword_Click(object sender, EventArgs e)

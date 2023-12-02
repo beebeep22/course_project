@@ -269,3 +269,4 @@ C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая
 C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.Change_Password.resources
 Z:\C#\Cursach\course_test\temp2\course_project\курсовая\obj\Debug\курсовая.forms.Change_Password.resources
 Z:\C#\Cursach\course_test\temp2\course_project\курсовая\obj\Debug\курсовая.forms.Improvement_with_AI.resources
+C:\Users\User\Desktop\course_project\курсовая\obj\Debug\курсовая.forms.Confirmation.resources

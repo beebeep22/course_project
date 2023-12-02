@@ -54,5 +54,15 @@ namespace курсовая.classes
             var filter = Builders<Account>.Filter.Eq("_id", accountObj._id);
             _accountsCollection.DeleteOne(filter);
         }
+
+        public void ChangePassword(Account accountObj, string NewPassword)
+        {
+            var newHashedPassword = ComputeHash(NewPassword);
+            accountObj.Password = newHashedPassword;
+            var filter = Builders<Account>.Filter.Eq("_id", accountObj._id);
+            var update = Builders<Account>.Update.Set("Password", newHashedPassword);
+
+            _accountsCollection.UpdateOne(filter, update);
+        }
     }
 }

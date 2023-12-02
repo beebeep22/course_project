@@ -47,12 +47,11 @@ namespace курсовая.forms
 
         private void changePassword_Click(object sender, EventArgs e)
         {
-            //можно добавить изменение пароля или я просто удалю то, что добавила
             Change_Password change_Password = new Change_Password();
             if (change_Password.ShowDialog() == DialogResult.OK)
             {
                 string newpassword = change_Password.new_password.Text;
-                //save password
+                this.AccountOperations.ChangePassword(this.AccountObj, newpassword);
             }
         }
     }

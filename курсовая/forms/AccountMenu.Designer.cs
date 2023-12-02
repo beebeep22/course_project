@@ -58,9 +58,10 @@
             this.avatarka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.avatarka.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.avatarka.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.avatarka.Location = new System.Drawing.Point(52, 170);
+            this.avatarka.Location = new System.Drawing.Point(48, 138);
+            this.avatarka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.avatarka.Name = "avatarka";
-            this.avatarka.Size = new System.Drawing.Size(145, 38);
+            this.avatarka.Size = new System.Drawing.Size(114, 31);
             this.avatarka.TabIndex = 0;
             this.avatarka.Text = "Змінити фото";
             this.avatarka.UseVisualStyleBackColor = true;
@@ -69,33 +70,37 @@
             // surname
             // 
             this.surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.surname.Location = new System.Drawing.Point(291, 26);
+            this.surname.Location = new System.Drawing.Point(218, 21);
+            this.surname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.surname.Name = "surname";
-            this.surname.Size = new System.Drawing.Size(151, 24);
+            this.surname.Size = new System.Drawing.Size(114, 21);
             this.surname.TabIndex = 1;
             // 
             // name
             // 
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name.Location = new System.Drawing.Point(291, 78);
+            this.name.Location = new System.Drawing.Point(218, 63);
+            this.name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(151, 24);
+            this.name.Size = new System.Drawing.Size(114, 21);
             this.name.TabIndex = 2;
             // 
             // patronymic
             // 
             this.patronymic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.patronymic.Location = new System.Drawing.Point(291, 133);
+            this.patronymic.Location = new System.Drawing.Point(218, 108);
+            this.patronymic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.patronymic.Name = "patronymic";
-            this.patronymic.Size = new System.Drawing.Size(151, 24);
+            this.patronymic.Size = new System.Drawing.Size(114, 21);
             this.patronymic.TabIndex = 3;
             // 
             // data
             // 
             this.data.AutoSize = true;
-            this.data.Location = new System.Drawing.Point(61, 211);
+            this.data.Location = new System.Drawing.Point(46, 171);
+            this.data.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.data.Name = "data";
-            this.data.Size = new System.Drawing.Size(29, 16);
+            this.data.Size = new System.Drawing.Size(25, 13);
             this.data.TabIndex = 7;
             this.data.Text = "Вік:";
             // 
@@ -103,27 +108,30 @@
             // 
             this.region.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.region.FormattingEnabled = true;
-            this.region.Location = new System.Drawing.Point(64, 357);
+            this.region.Location = new System.Drawing.Point(48, 290);
+            this.region.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.region.Name = "region";
-            this.region.Size = new System.Drawing.Size(151, 26);
+            this.region.Size = new System.Drawing.Size(114, 23);
             this.region.TabIndex = 9;
             // 
             // pers
             // 
             this.pers.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.pers.Controls.Add(this.personal);
-            this.pers.Location = new System.Drawing.Point(291, 228);
+            this.pers.Location = new System.Drawing.Point(218, 185);
+            this.pers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pers.Name = "pers";
-            this.pers.Size = new System.Drawing.Size(544, 27);
+            this.pers.Size = new System.Drawing.Size(408, 22);
             this.pers.TabIndex = 10;
             // 
             // personal
             // 
             this.personal.AutoSize = true;
             this.personal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.personal.Location = new System.Drawing.Point(3, 3);
+            this.personal.Location = new System.Drawing.Point(2, 2);
+            this.personal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.personal.Name = "personal";
-            this.personal.Size = new System.Drawing.Size(101, 18);
+            this.personal.Size = new System.Drawing.Size(85, 15);
             this.personal.TabIndex = 0;
             this.personal.Text = "Персональне";
             // 
@@ -131,62 +139,69 @@
             // 
             this.pathdiseas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.pathdiseas.FormattingEnabled = true;
-            this.pathdiseas.Location = new System.Drawing.Point(291, 288);
+            this.pathdiseas.Location = new System.Drawing.Point(218, 234);
+            this.pathdiseas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pathdiseas.Name = "pathdiseas";
-            this.pathdiseas.Size = new System.Drawing.Size(317, 26);
+            this.pathdiseas.Size = new System.Drawing.Size(239, 23);
             this.pathdiseas.TabIndex = 11;
             // 
             // alergic
             // 
             this.alergic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.alergic.FormattingEnabled = true;
-            this.alergic.Location = new System.Drawing.Point(614, 288);
+            this.alergic.Location = new System.Drawing.Point(460, 234);
+            this.alergic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.alergic.Name = "alergic";
-            this.alergic.Size = new System.Drawing.Size(221, 26);
+            this.alergic.Size = new System.Drawing.Size(167, 23);
             this.alergic.TabIndex = 12;
             // 
             // invalid
             // 
             this.invalid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.invalid.FormattingEnabled = true;
-            this.invalid.Location = new System.Drawing.Point(291, 357);
+            this.invalid.Location = new System.Drawing.Point(218, 290);
+            this.invalid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.invalid.Name = "invalid";
-            this.invalid.Size = new System.Drawing.Size(151, 26);
+            this.invalid.Size = new System.Drawing.Size(114, 23);
             this.invalid.TabIndex = 13;
             // 
             // regiontitle
             // 
             this.regiontitle.AutoSize = true;
-            this.regiontitle.Location = new System.Drawing.Point(62, 338);
+            this.regiontitle.Location = new System.Drawing.Point(46, 275);
+            this.regiontitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.regiontitle.Name = "regiontitle";
-            this.regiontitle.Size = new System.Drawing.Size(52, 16);
+            this.regiontitle.Size = new System.Drawing.Size(42, 13);
             this.regiontitle.TabIndex = 16;
             this.regiontitle.Text = "Регіон:";
             // 
             // diseasestitle
             // 
             this.diseasestitle.AutoSize = true;
-            this.diseasestitle.Location = new System.Drawing.Point(288, 269);
+            this.diseasestitle.Location = new System.Drawing.Point(216, 219);
+            this.diseasestitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.diseasestitle.Name = "diseasestitle";
-            this.diseasestitle.Size = new System.Drawing.Size(185, 16);
+            this.diseasestitle.Size = new System.Drawing.Size(143, 13);
             this.diseasestitle.TabIndex = 17;
             this.diseasestitle.Text = "Патологічні захворювання:";
             // 
             // alergtitle
             // 
             this.alergtitle.AutoSize = true;
-            this.alergtitle.Location = new System.Drawing.Point(611, 269);
+            this.alergtitle.Location = new System.Drawing.Point(458, 219);
+            this.alergtitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.alergtitle.Name = "alergtitle";
-            this.alergtitle.Size = new System.Drawing.Size(55, 16);
+            this.alergtitle.Size = new System.Drawing.Size(45, 13);
             this.alergtitle.TabIndex = 18;
             this.alergtitle.Text = "Алергії:";
             // 
             // inval
             // 
             this.inval.AutoSize = true;
-            this.inval.Location = new System.Drawing.Point(294, 338);
+            this.inval.Location = new System.Drawing.Point(220, 275);
+            this.inval.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.inval.Name = "inval";
-            this.inval.Size = new System.Drawing.Size(88, 16);
+            this.inval.Size = new System.Drawing.Size(70, 13);
             this.inval.TabIndex = 19;
             this.inval.Text = "Інвалідність:";
             // 
@@ -195,9 +210,10 @@
             this.save.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.save.FlatAppearance.BorderSize = 0;
             this.save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save.Location = new System.Drawing.Point(297, 403);
+            this.save.Location = new System.Drawing.Point(223, 327);
+            this.save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(120, 35);
+            this.save.Size = new System.Drawing.Size(90, 28);
             this.save.TabIndex = 20;
             this.save.Text = "Зберегти";
             this.save.UseVisualStyleBackColor = false;
@@ -206,44 +222,48 @@
             // sex
             // 
             this.sex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sex.Location = new System.Drawing.Point(64, 299);
+            this.sex.Location = new System.Drawing.Point(48, 243);
+            this.sex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sex.Name = "sex";
-            this.sex.Size = new System.Drawing.Size(59, 24);
+            this.sex.Size = new System.Drawing.Size(45, 21);
             this.sex.TabIndex = 42;
             // 
             // tltsex
             // 
             this.tltsex.AutoSize = true;
-            this.tltsex.Location = new System.Drawing.Point(61, 280);
+            this.tltsex.Location = new System.Drawing.Point(46, 228);
+            this.tltsex.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tltsex.Name = "tltsex";
-            this.tltsex.Size = new System.Drawing.Size(48, 16);
+            this.tltsex.Size = new System.Drawing.Size(39, 13);
             this.tltsex.TabIndex = 43;
             this.tltsex.Text = "Стать:";
             // 
             // age
             // 
             this.age.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.age.Location = new System.Drawing.Point(64, 233);
+            this.age.Location = new System.Drawing.Point(48, 189);
+            this.age.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.age.Name = "age";
-            this.age.Size = new System.Drawing.Size(46, 24);
+            this.age.Size = new System.Drawing.Size(36, 21);
             this.age.TabIndex = 44;
             // 
             // avatar
             // 
             this.avatar.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.avatar.Image = global::курсовая.Properties.Resources.user64;
-            this.avatar.Location = new System.Drawing.Point(65, 26);
+            this.avatar.Location = new System.Drawing.Point(48, 21);
+            this.avatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.avatar.Name = "avatar";
-            this.avatar.Size = new System.Drawing.Size(124, 138);
+            this.avatar.Size = new System.Drawing.Size(113, 113);
             this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.avatar.TabIndex = 45;
             this.avatar.TabStop = false;
             // 
             // AccountMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 450);
+            this.ClientSize = new System.Drawing.Size(646, 366);
             this.Controls.Add(this.avatar);
             this.Controls.Add(this.age);
             this.Controls.Add(this.tltsex);
@@ -263,6 +283,7 @@
             this.Controls.Add(this.patronymic);
             this.Controls.Add(this.name);
             this.Controls.Add(this.surname);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AccountMenu";
             this.Text = "Account";
             this.Load += new System.EventHandler(this.Account_Load);

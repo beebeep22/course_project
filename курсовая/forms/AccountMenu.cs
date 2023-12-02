@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using курсовая.classes;
 
@@ -39,6 +34,8 @@ namespace курсовая.forms
 
         private void Account_Load(object sender, EventArgs e)
         {
+            UpdateProfilePicture();
+
             //дані,які не змінюємо
             sex.ReadOnly = true;
 
@@ -199,6 +196,19 @@ namespace курсовая.forms
             }
         }
 
+        private void UpdateProfilePicture()
+        {
+            byte[] profileImage = this.AccountObj?.UserDetails?.ProfileImage;
+            if (profileImage == null || profileImage.Length <= 0) return;
+            Image image;
+            using (MemoryStream ms = new MemoryStream(profileImage))
+            {
+                image = Image.FromStream(ms);
+            }
+            avatar.Image = image;
+        }
+
+
         private void avatarka_Click(object sender, EventArgs e)
         {
             string imageLocation = "";
@@ -210,7 +220,10 @@ namespace курсовая.forms
                 if (openfile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     imageLocation = openfile.FileName;
-                    avatar.ImageLocation = imageLocation;
+                    this.AccountObj.UserDetails.SetProfilePhoto(imageLocation);
+                    this.UserOperations.UpdateUserDetails(this.AccountObj, this.AccountObj.UserDetails);
+                    UpdateProfilePicture(); 
+                    //avatar.ImageLocation = imageLocation;
                 }
             }
             catch (Exception)

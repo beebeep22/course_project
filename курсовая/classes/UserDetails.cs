@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.IO;
 
 namespace курсовая.classes
 {
@@ -14,6 +14,7 @@ namespace курсовая.classes
         public string Allergies { get; set;  }
         public string DisabilityLevel { get; set; }
         public bool Approved { get; set; }
+        public byte[] ProfileImage { get; set; }
 
         public UserDetails(
             string FirstName,
@@ -42,6 +43,11 @@ namespace курсовая.classes
         public string GetFullName()
         {
             return this.LastName + " " + this.FirstName + " " + this.MiddleName;
+        }
+
+        public void SetProfilePhoto(string imagePath)
+        {
+            this.ProfileImage = File.ReadAllBytes(imagePath);
         }
     }
 }

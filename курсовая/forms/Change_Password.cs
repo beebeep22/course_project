@@ -85,5 +85,17 @@ namespace курсовая.forms
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
+
+        private void showpassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showpassword.Checked)
+            {
+                new_password_again.PasswordChar = '\0';
+            }
+            else
+            {
+                new_password_again.PasswordChar = '*';
+            }
+        }
     }
 }

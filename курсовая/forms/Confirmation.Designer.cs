@@ -63,6 +63,7 @@
             this.Controls.Add(this.to_confirm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Confirmation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Підтвердження";
             this.ResumeLayout(false);
             this.PerformLayout();

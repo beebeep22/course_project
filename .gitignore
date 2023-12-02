@@ -1,7 +1,7 @@
  .vscode/
 packages/
-SocialHelpApp/bin/
-SocialHelpApp/obj/
+bin/
+obj/
 
 # User-specific files
 *.rsuser

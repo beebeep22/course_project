@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CB4E297-5DAC-4962-8FB3-76B9B495A679}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>курсовая</RootNamespace>
+    <AssemblyName>курсовая</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.100.14\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SecurityToken, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SecurityToken.3.7.100.14\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.6.1\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Http, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Http.6.0.0\lib\net461\Microsoft.Extensions.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.6.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.6.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.ConfigurationExtensions.6.0.0\lib\net461\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.6.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.22.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.22.0\lib\netstandard2.0\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.22.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.22.0\lib\netstandard2.0\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.22.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.22.0\lib\netstandard2.0\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.8.0\lib\netstandard2.0\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenAI.GPT3, Version=6.8.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Betalgo.OpenAI.GPT3.6.8.4\lib\netstandard2.0\OpenAI.GPT3.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappier, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a1b25124e6e13a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappier.1.0.0\lib\netstandard2.0\Snappier.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Json.6.0.0\lib\net461\System.Net.Http.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\Exceptions.cs" />
+    <Compile Include="classes\Account.cs" />
+    <Compile Include="classes\AdminDetails.cs" />
+    <Compile Include="classes\DbAccountOperations.cs" />
+    <Compile Include="classes\DbAdminOperations.cs" />
+    <Compile Include="classes\DbOperations.cs" />
+    <Compile Include="classes\DbSession.cs" />
+    <Compile Include="classes\DbUserOperations.cs" />
+    <Compile Include="classes\LoginInput.cs" />
+    <Compile Include="classes\Notification.cs" />
+    <Compile Include="classes\UserDetails.cs" />
+    <Compile Include="classes\UserRequest.cs" />
+    <Compile Include="classes\UserRequestResposne.cs" />
+    <Compile Include="forms\AccountMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AccountMenu.Designer.cs">
+      <DependentUpon>AccountMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Account_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Account_admin.Designer.cs">
+      <DependentUpon>Account_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AdminResponseCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AdminResponseCreation.Designer.cs">
+      <DependentUpon>AdminResponseCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Change_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Change_Password.Designer.cs">
+      <DependentUpon>Change_Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Createaccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Createaccount.Designer.cs">
+      <DependentUpon>Createaccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\create_notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\create_notification.Designer.cs">
+      <DependentUpon>create_notification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FullPhoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FullPhoto.Designer.cs">
+      <DependentUpon>FullPhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Golovna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Golovna_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Golovna_Admin.Designer.cs">
+      <DependentUpon>Golovna_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Improvement_with_AI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Improvement_with_AI.Designer.cs">
+      <DependentUpon>Improvement_with_AI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\inform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\inform.Designer.cs">
+      <DependentUpon>inform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\log_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\log_in.Designer.cs">
+      <DependentUpon>log_in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Message_box.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Message_box.Designer.cs">
+      <DependentUpon>Message_box.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Podacha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Podacha.Designer.cs">
+      <DependentUpon>Podacha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\sign_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\sign_in.Designer.cs">
+      <DependentUpon>sign_in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\UserVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\UserVerification.Designer.cs">
+      <DependentUpon>UserVerification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Warning_message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Warning_message.Designer.cs">
+      <DependentUpon>Warning_message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Zayavki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Zayavki.Designer.cs">
+      <DependentUpon>Zayavki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\AccountMenu.resx">
+      <DependentUpon>AccountMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Account_admin.resx">
+      <DependentUpon>Account_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\AdminResponseCreation.resx">
+      <DependentUpon>AdminResponseCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Change_Password.resx">
+      <DependentUpon>Change_Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Createaccount.resx">
+      <DependentUpon>Createaccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\create_notification.resx">
+      <DependentUpon>create_notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FullPhoto.resx">
+      <DependentUpon>FullPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Golovna.resx">
+      <DependentUpon>Golovna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Golovna_Admin.resx">
+      <DependentUpon>Golovna_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\History.resx">
+      <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Improvement_with_AI.resx">
+      <DependentUpon>Improvement_with_AI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\inform.resx">
+      <DependentUpon>inform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\log_in.resx">
+      <DependentUpon>log_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Message_box.resx">
+      <DependentUpon>Message_box.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Podacha.resx">
+      <DependentUpon>Podacha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\sign_in.resx">
+      <DependentUpon>sign_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\UserVerification.resx">
+      <DependentUpon>UserVerification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Warning_message.resx">
+      <DependentUpon>Warning_message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Zayavki.resx">
+      <DependentUpon>Zayavki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-user-profile-3364044.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-user-profile-33640441.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\заявка.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\повідомлення.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\во весь экран.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\дщпщ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\дщпщ1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\повідомлення2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-user128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-user64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-cat-5772431.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\грустныйкот128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-munchkin-cat-6855253.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fullproof.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fullproof1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fullproof16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+</Project>

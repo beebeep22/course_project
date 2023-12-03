@@ -33,6 +33,7 @@
             this.surname = new System.Windows.Forms.TextBox();
             this.avatar_admin = new System.Windows.Forms.PictureBox();
             this.avatarka = new System.Windows.Forms.Button();
+            this.save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.avatar_admin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +73,7 @@
             this.avatar_admin.Location = new System.Drawing.Point(70, 26);
             this.avatar_admin.Name = "avatar_admin";
             this.avatar_admin.Size = new System.Drawing.Size(136, 145);
+            this.avatar_admin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.avatar_admin.TabIndex = 47;
             this.avatar_admin.TabStop = false;
             // 
@@ -89,11 +91,24 @@
             this.avatarka.UseVisualStyleBackColor = true;
             this.avatarka.Click += new System.EventHandler(this.avatarka_Click);
             // 
+            // save
+            // 
+            this.save.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.save.FlatAppearance.BorderSize = 0;
+            this.save.Location = new System.Drawing.Point(302, 384);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(120, 34);
+            this.save.TabIndex = 48;
+            this.save.Text = "Зберегти";
+            this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
+            // 
             // Account_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.save);
             this.Controls.Add(this.avatar_admin);
             this.Controls.Add(this.avatarka);
             this.Controls.Add(this.patronymic);
@@ -115,5 +130,6 @@
         private System.Windows.Forms.TextBox surname;
         private System.Windows.Forms.PictureBox avatar_admin;
         private System.Windows.Forms.Button avatarka;
+        private System.Windows.Forms.Button save;
     }
 }

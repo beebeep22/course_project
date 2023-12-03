@@ -28,7 +28,7 @@ namespace курсовая.classes
             _notificationsCollection = Database.GetCollection<Notification>("notification");
             AIService = new OpenAIService(new OpenAiOptions()
             {
-                ApiKey = "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"
+                ApiKey = " "
             });
 
         }

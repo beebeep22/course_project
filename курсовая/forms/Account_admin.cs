@@ -39,12 +39,18 @@ namespace курсовая.forms
                 {
                     imageLocation = openfile.FileName;
                     avatar_admin.ImageLocation = imageLocation;
+                    //add save Image
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

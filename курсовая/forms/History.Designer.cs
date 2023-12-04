@@ -50,6 +50,7 @@
             this.listOfRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.requestTopic,
             this.ResponseStatus});
+            this.listOfRequests.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listOfRequests.Location = new System.Drawing.Point(49, 50);
             this.listOfRequests.Margin = new System.Windows.Forms.Padding(4);
             this.listOfRequests.Name = "listOfRequests";

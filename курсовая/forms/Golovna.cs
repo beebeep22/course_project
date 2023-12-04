@@ -28,12 +28,10 @@ namespace курсовая.forms
         {
             InitializeComponent();
             this.AccountObj = AccountObj;
-            this.Text = string.Empty;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.Sizable;
             this.Size = new Size(919, 514);
             this.Text = "Облік тa розподіл державних та соціальних допомог";
-            IsMdiContainer = true;
             labeltitle.Location = new Point((Title.Width - labeltitle.Width) / 2, (Title.Height - labeltitle.Height) / 2);
         }
 
@@ -239,7 +237,6 @@ namespace курсовая.forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Облік та розподіл державних та соціальних допомог";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Golovna_FormClosing);
-            this.Load += new System.EventHandler(this.Golovna_Load);
             this.panelMenu.ResumeLayout(false);
             this.Title.ResumeLayout(false);
             this.Title.PerformLayout();
@@ -318,9 +315,5 @@ namespace курсовая.forms
             Application.Exit();
         }
 
-        private void Golovna_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

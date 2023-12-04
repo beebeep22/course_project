@@ -97,7 +97,6 @@ namespace курсовая.forms
             {
                 Warning_message warning_Message = new Warning_message();
                 warning_Message.Text = "Помилка даних";
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = "Некоректно введені дані";
                 return false;
             }
@@ -181,7 +180,6 @@ namespace курсовая.forms
                 this.UserOperations.UpdateUserDetails(this.AccountObj, this.AccountObj.UserDetails);
                 Warning_message warning_Message = new Warning_message();
                 warning_Message.Text = "Успіх!";
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = "Зміни збережено!";
                 warning_Message.pictureBox1.Image = Properties.Resources.free_icon_munchkin_cat_6855253;
                 warning_Message.ShowDialog();
@@ -189,7 +187,6 @@ namespace курсовая.forms
             else
             {
                 Warning_message warning_Message = new Warning_message();
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = "Зміни не збережено!";
                 warning_Message.pictureBox1.Image = Properties.Resources.free_icon_cat_5772431;
                 warning_Message.ShowDialog();
@@ -230,7 +227,6 @@ namespace курсовая.forms
             {
                 Warning_message warning_Message = new Warning_message();
                 warning_Message.Text = "Помилка";
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = "Виникла помилка";
                 warning_Message.pictureBox1.Image = Properties.Resources.free_icon_cat_5772431;
                 warning_Message.ShowDialog();

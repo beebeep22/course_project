@@ -22,11 +22,6 @@ namespace курсовая.forms
 
         }
 
-        private void surname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void avatarka_Click(object sender, EventArgs e)
         {
             string imageLocation = "";

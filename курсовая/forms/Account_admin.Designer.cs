@@ -63,7 +63,6 @@
             this.surname.Name = "surname";
             this.surname.Size = new System.Drawing.Size(151, 24);
             this.surname.TabIndex = 4;
-            this.surname.TextChanged += new System.EventHandler(this.surname_TextChanged);
             // 
             // avatar_admin
             // 

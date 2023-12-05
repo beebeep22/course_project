@@ -61,6 +61,10 @@ namespace курсовая.forms
             //алергії
             //алергии будут на что-то или виды?
             alergic.Items.Add("-");
+            alergic.Items.Add("Харчова алергія");
+            alergic.Items.Add("Контактна алергія");
+            alergic.Items.Add("Вдихальна алергія");
+            alergic.Items.Add("Сенсибілізація до отрути");
             alergic.Items.Add("на математику");
 
             //регіон

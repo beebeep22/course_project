@@ -55,6 +55,7 @@
             this.listOfRequests.Margin = new System.Windows.Forms.Padding(4);
             this.listOfRequests.Name = "listOfRequests";
             this.listOfRequests.RowHeadersWidth = 51;
+            this.listOfRequests.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.listOfRequests.Size = new System.Drawing.Size(535, 423);
             this.listOfRequests.TabIndex = 0;
             // 

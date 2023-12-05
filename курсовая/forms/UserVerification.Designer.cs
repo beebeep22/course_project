@@ -52,7 +52,7 @@
             this.userVerificationTable.Name = "userVerificationTable";
             this.userVerificationTable.RowHeadersWidth = 51;
             this.userVerificationTable.RowTemplate.Height = 24;
-            this.userVerificationTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.userVerificationTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.userVerificationTable.Size = new System.Drawing.Size(647, 434);
             this.userVerificationTable.TabIndex = 0;
             // 

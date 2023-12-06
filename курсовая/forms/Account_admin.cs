@@ -22,6 +22,7 @@ namespace курсовая.forms
             this.surname.Text = AccountObj.AdminDetails?.LastName ?? "";
             this.patronymic.Text = AccountObj.AdminDetails.MiddleName ?? "";
             UpdateProfilePicture();
+            examinationpermissions();
         }
 
         private void avatarka_Click(object sender, EventArgs e)
@@ -69,6 +70,55 @@ namespace курсовая.forms
             warning_Message.pictureBox1.Image = Properties.Resources.free_icon_munchkin_cat_6855253;
             warning_Message.ShowDialog();
 
+        }
+
+        private void examinationpermissions()
+        {
+            if (this.AccountObj.AdminDetails.CanRespondOnRequests)
+            {
+                ResponseTrue.Checked = true;
+                ResponseFalse.Checked = false;
+            }
+            else
+            {
+                ResponseTrue.Checked = false;
+                ResponseFalse.Checked = true;
+            }
+
+            if (this.AccountObj.AdminDetails.CanCreateNotifications)
+            {
+                NotificationTrue.Checked = true;
+                NotifacationFalse.Checked = false;
+            }
+            else
+            {
+                NotificationTrue.Checked = false;
+                NotifacationFalse.Checked = true;
+            }
+        }
+
+        private void ResponseTrue_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ResponseFalse.Checked)
+                ResponseTrue.Checked = false;
+        }
+
+        private void ResponseFalse_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ResponseTrue.Checked)
+                ResponseFalse.Checked = false; 
+        }
+
+        private void NotificationTrue_CheckedChanged(object sender, EventArgs e)
+        {
+            if (NotifacationFalse.Checked)
+                NotificationTrue.Checked = false;
+        }
+
+        private void NotifacationFalse_CheckedChanged(object sender, EventArgs e)
+        {
+            if (NotificationTrue.Checked)
+                NotifacationFalse.Checked = false;
         }
     }
 }

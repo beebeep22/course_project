@@ -1,5 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.IO;
+using System;
 
 namespace курсовая.classes
 {
@@ -11,6 +13,7 @@ namespace курсовая.classes
         public string Username { get; set; }
         public string Password { get; set; }
         public string Role { get; set; }
+        public byte[] ProfileImage { get; set; }
 
         public UserDetails UserDetails { get; set; }
         public AdminDetails AdminDetails { get; set; }
@@ -35,6 +38,11 @@ namespace курсовая.classes
         public void UpdateAdminDetails(AdminDetails NewAdminDetails)
         {
             this.AdminDetails = NewAdminDetails;
+        }
+
+        public void SetProfilePhoto(string imagePath)
+        {
+            this.ProfileImage = File.ReadAllBytes(imagePath);
         }
     }
 }

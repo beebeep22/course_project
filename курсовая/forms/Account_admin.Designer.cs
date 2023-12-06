@@ -40,28 +40,28 @@
             // patronymic
             // 
             this.patronymic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.patronymic.Location = new System.Drawing.Point(291, 133);
-            this.patronymic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.patronymic.Location = new System.Drawing.Point(218, 108);
+            this.patronymic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.patronymic.Name = "patronymic";
-            this.patronymic.Size = new System.Drawing.Size(151, 24);
+            this.patronymic.Size = new System.Drawing.Size(114, 21);
             this.patronymic.TabIndex = 6;
             // 
             // name
             // 
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name.Location = new System.Drawing.Point(291, 78);
-            this.name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.name.Location = new System.Drawing.Point(218, 63);
+            this.name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(151, 24);
+            this.name.Size = new System.Drawing.Size(114, 21);
             this.name.TabIndex = 5;
             // 
             // surname
             // 
             this.surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.surname.Location = new System.Drawing.Point(291, 26);
-            this.surname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.surname.Location = new System.Drawing.Point(218, 21);
+            this.surname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.surname.Name = "surname";
-            this.surname.Size = new System.Drawing.Size(151, 24);
+            this.surname.Size = new System.Drawing.Size(114, 21);
             this.surname.TabIndex = 4;
             // 
             // avatar_admin
@@ -69,9 +69,10 @@
             this.avatar_admin.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.avatar_admin.BackgroundImage = global::курсовая.Properties.Resources.user64;
             this.avatar_admin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.avatar_admin.Location = new System.Drawing.Point(70, 26);
+            this.avatar_admin.Location = new System.Drawing.Point(52, 21);
+            this.avatar_admin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.avatar_admin.Name = "avatar_admin";
-            this.avatar_admin.Size = new System.Drawing.Size(136, 145);
+            this.avatar_admin.Size = new System.Drawing.Size(102, 118);
             this.avatar_admin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.avatar_admin.TabIndex = 47;
             this.avatar_admin.TabStop = false;
@@ -82,9 +83,10 @@
             this.avatarka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.avatarka.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.avatarka.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.avatarka.Location = new System.Drawing.Point(70, 170);
+            this.avatarka.Location = new System.Drawing.Point(52, 138);
+            this.avatarka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.avatarka.Name = "avatarka";
-            this.avatarka.Size = new System.Drawing.Size(136, 28);
+            this.avatarka.Size = new System.Drawing.Size(107, 23);
             this.avatarka.TabIndex = 46;
             this.avatarka.Text = "Змінити фото";
             this.avatarka.UseVisualStyleBackColor = true;
@@ -94,9 +96,10 @@
             // 
             this.save.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.save.FlatAppearance.BorderSize = 0;
-            this.save.Location = new System.Drawing.Point(302, 384);
+            this.save.Location = new System.Drawing.Point(226, 312);
+            this.save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(120, 34);
+            this.save.Size = new System.Drawing.Size(90, 28);
             this.save.TabIndex = 48;
             this.save.Text = "Зберегти";
             this.save.UseVisualStyleBackColor = false;
@@ -104,16 +107,16 @@
             // 
             // Account_admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.save);
             this.Controls.Add(this.avatar_admin);
             this.Controls.Add(this.avatarka);
             this.Controls.Add(this.patronymic);
             this.Controls.Add(this.name);
             this.Controls.Add(this.surname);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Account_admin";
             this.Text = "Account_admin";
             ((System.ComponentModel.ISupportInitialize)(this.avatar_admin)).EndInit();

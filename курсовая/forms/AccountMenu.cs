@@ -10,6 +10,7 @@ namespace курсовая.forms
     {
         private Account AccountObj { get; set; }
         private DbUserOperations UserOperations { get; set; }
+        private DbAccountOperations AccountOperations { get; set; }
 
         private ComboBox[] comboBoxes;
         public AccountMenu(Account AccountObj)
@@ -17,6 +18,7 @@ namespace курсовая.forms
             InitializeComponent();
             this.AccountObj = AccountObj;
             this.UserOperations = new DbUserOperations();
+            this.AccountOperations = new DbAccountOperations();
             // Присвоення значень полям акаунту з Createaccount
             name.Text = AccountObj?.UserDetails?.FirstName ?? "";
             surname.Text = AccountObj?.UserDetails?.LastName ?? "";
@@ -199,7 +201,7 @@ namespace курсовая.forms
 
         private void UpdateProfilePicture()
         {
-            byte[] profileImage = this.AccountObj?.UserDetails?.ProfileImage;
+            byte[] profileImage = this.AccountObj?.ProfileImage;
             if (profileImage == null || profileImage.Length <= 0) return;
             Image image;
             using (MemoryStream ms = new MemoryStream(profileImage))
@@ -221,8 +223,7 @@ namespace курсовая.forms
                 if (openfile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     imageLocation = openfile.FileName;
-                    this.AccountObj.UserDetails.SetProfilePhoto(imageLocation);
-                    this.UserOperations.UpdateUserDetails(this.AccountObj, this.AccountObj.UserDetails);
+                    this.AccountOperations.UpdateAccountProfileImage(this.AccountObj, imageLocation);
                     UpdateProfilePicture(); 
                     //avatar.ImageLocation = imageLocation;
                 }

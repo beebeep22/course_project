@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.IO;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using курсовая.classes;                  
 
@@ -16,14 +11,17 @@ namespace курсовая.forms
     {
         private Account AccountObj { get; set; }
         private DbAdminOperations AdminOperations { get; set; }
+        private DbAccountOperations AccountOperations { get; set; }
         public Account_admin(Account AccountObj)
         {
             InitializeComponent();
             this.AccountObj = AccountObj;
             this.AdminOperations = new DbAdminOperations();
+            this.AccountOperations = new DbAccountOperations();
             this.name.Text = AccountObj.AdminDetails?.FirstName ?? "";
             this.surname.Text = AccountObj.AdminDetails?.LastName ?? "";
             this.patronymic.Text = AccountObj.AdminDetails.MiddleName ?? "";
+            UpdateProfilePicture();
         }
 
         private void avatarka_Click(object sender, EventArgs e)
@@ -37,7 +35,8 @@ namespace курсовая.forms
                 if (openfile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     imageLocation = openfile.FileName;
-                    avatar_admin.ImageLocation = imageLocation;
+                    this.AccountOperations.UpdateAccountProfileImage(this.AccountObj, imageLocation);
+                    UpdateProfilePicture();
                     //add save Image
                 }
             }
@@ -45,6 +44,17 @@ namespace курсовая.forms
             {
                 MessageBox.Show("Виникла помилка", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void UpdateProfilePicture()
+        {
+            byte[] profileImage = this.AccountObj?.ProfileImage;
+            if (profileImage == null || profileImage.Length <= 0) return;
+            Image image;
+            using (MemoryStream ms = new MemoryStream(profileImage))
+            {
+                image = Image.FromStream(ms);
+            }
+            avatar_admin.Image = image;
         }
 
         private void save_Click(object sender, EventArgs e)

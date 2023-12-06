@@ -14,6 +14,13 @@ namespace курсовая.classes
             _accountsCollection = Database.GetCollection<Account>("account");
         }
 
+        public void UpdateAccountProfileImage(Account AccountObj, string imagePath)
+        {
+            AccountObj.SetProfilePhoto(imagePath);
+            var filter = Builders<Account>.Filter.Eq("_id", AccountObj._id);
+            var update = Builders<Account>.Update.Set("ProfileImage", AccountObj.ProfileImage);
+            _accountsCollection.UpdateOne(filter, update);
+        }
 
         public Account GetAccountByUsernameAndPassword(LoginInput input)
         {

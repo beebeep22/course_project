@@ -63,6 +63,12 @@ namespace курсовая.forms
             this.AccountObj.AdminDetails.LastName = surname.Text;
             this.AccountObj.AdminDetails.MiddleName = patronymic.Text;
             this.AdminOperations.UpdateAdminDetails(this.AccountObj, this.AccountObj.AdminDetails);
+            Warning_message warning_Message = new Warning_message();
+            warning_Message.Text = "Успіх!";
+            warning_Message.outputText.Text = "Зміни збережено!";
+            warning_Message.pictureBox1.Image = Properties.Resources.free_icon_munchkin_cat_6855253;
+            warning_Message.ShowDialog();
+
         }
     }
 }

@@ -31,5 +31,10 @@ namespace курсовая.classes
         {
             this.UserDetails = NewUserDetails;
         }
+
+        public void UpdateAdminDetails(AdminDetails NewAdminDetails)
+        {
+            this.AdminDetails = NewAdminDetails;
+        }
     }
 }

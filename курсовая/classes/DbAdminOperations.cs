@@ -74,6 +74,14 @@ namespace курсовая.classes
             }
         }
 
+        public void UpdateAdminDetails(Account AccountObj, AdminDetails NewAdminDetails)
+        {
+            var filter = Builders<Account>.Filter.Eq("_id", AccountObj._id);
+            var update = Builders<Account>.Update.Set("AdminDetails", NewAdminDetails);
+
+            _accountsCollection.UpdateOne(filter, update);
+            AccountObj.UpdateAdminDetails(NewAdminDetails);
+        }
 
         public Account GetApplicantById(ObjectId ApplicantId)
         {

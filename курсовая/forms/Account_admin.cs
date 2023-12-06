@@ -15,11 +15,15 @@ namespace курсовая.forms
     public partial class Account_admin : Form
     {
         private Account AccountObj { get; set; }
+        private DbAdminOperations AdminOperations { get; set; }
         public Account_admin(Account AccountObj)
         {
             InitializeComponent();
             this.AccountObj = AccountObj;
-
+            this.AdminOperations = new DbAdminOperations();
+            this.name.Text = AccountObj.AdminDetails?.FirstName ?? "";
+            this.surname.Text = AccountObj.AdminDetails?.LastName ?? "";
+            this.patronymic.Text = AccountObj.AdminDetails.MiddleName ?? "";
         }
 
         private void avatarka_Click(object sender, EventArgs e)
@@ -45,7 +49,10 @@ namespace курсовая.forms
 
         private void save_Click(object sender, EventArgs e)
         {
-
+            this.AccountObj.AdminDetails.FirstName = name.Text;
+            this.AccountObj.AdminDetails.LastName = surname.Text;
+            this.AccountObj.AdminDetails.MiddleName = patronymic.Text;
+            this.AdminOperations.UpdateAdminDetails(this.AccountObj, this.AccountObj.AdminDetails);
         }
     }
 }

@@ -22,7 +22,6 @@ namespace курсовая.forms
             this.surname.Text = AccountObj.AdminDetails?.LastName ?? "";
             this.patronymic.Text = AccountObj.AdminDetails.MiddleName ?? "";
             UpdateProfilePicture();
-            examinationpermissions();
         }
 
         private void avatarka_Click(object sender, EventArgs e)
@@ -79,7 +78,7 @@ namespace курсовая.forms
                 ResponseTrue.Checked = true;
                 ResponseFalse.Checked = false;
             }
-            else
+            else if(!this.AccountObj.AdminDetails.CanRespondOnRequests)
             {
                 ResponseTrue.Checked = false;
                 ResponseFalse.Checked = true;
@@ -90,7 +89,7 @@ namespace курсовая.forms
                 NotificationTrue.Checked = true;
                 NotifacationFalse.Checked = false;
             }
-            else
+            else if (!this.AccountObj.AdminDetails.CanCreateNotifications)
             {
                 NotificationTrue.Checked = false;
                 NotifacationFalse.Checked = true;
@@ -99,26 +98,27 @@ namespace курсовая.forms
 
         private void ResponseTrue_CheckedChanged(object sender, EventArgs e)
         {
-            if (ResponseFalse.Checked)
-                ResponseTrue.Checked = false;
+            examinationpermissions(); 
         }
 
         private void ResponseFalse_CheckedChanged(object sender, EventArgs e)
         {
-            if (ResponseTrue.Checked)
-                ResponseFalse.Checked = false; 
+            examinationpermissions();
         }
 
         private void NotificationTrue_CheckedChanged(object sender, EventArgs e)
         {
-            if (NotifacationFalse.Checked)
-                NotificationTrue.Checked = false;
+            examinationpermissions();
         }
 
         private void NotifacationFalse_CheckedChanged(object sender, EventArgs e)
         {
-            if (NotificationTrue.Checked)
-                NotifacationFalse.Checked = false;
+            examinationpermissions();
+        }
+
+        private void Account_admin_Load(object sender, EventArgs e)
+        {
+            examinationpermissions();
         }
     }
 }

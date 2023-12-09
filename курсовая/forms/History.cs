@@ -104,14 +104,5 @@ namespace курсовая.forms
             }
         }
 
-        private void History_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtResponseContent_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

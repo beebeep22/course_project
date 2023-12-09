@@ -223,6 +223,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Account_admin";
             this.Text = "Account_admin";
+            this.Load += new System.EventHandler(this.Account_admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.avatar_admin)).EndInit();
             this.panelpermissions.ResumeLayout(false);
             this.panelpermissions.PerformLayout();

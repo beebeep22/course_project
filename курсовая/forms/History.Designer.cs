@@ -119,7 +119,6 @@
             this.txtResponseContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResponseContent.Size = new System.Drawing.Size(238, 159);
             this.txtResponseContent.TabIndex = 6;
-            this.txtResponseContent.TextChanged += new System.EventHandler(this.txtResponseContent_TextChanged);
             // 
             // textTResponseTopic
             // 
@@ -166,7 +165,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "History";
             this.Text = "History";
-            this.Load += new System.EventHandler(this.History_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listOfRequests)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

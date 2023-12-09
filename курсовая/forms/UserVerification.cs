@@ -34,7 +34,7 @@ namespace курсовая.forms
             userVerificationTable.Columns["password"].Visible = false;
             userVerificationTable.Columns["Role"].Visible = false;
             userVerificationTable.Columns["AdminDetails"].Visible = false;
-
+            userVerificationTable.Columns["profileImage"].Visible = false;
 
             userVerificationTable.CellDoubleClick += new DataGridViewCellEventHandler(this.userVerificationTable_CellDoubleClick);
             userVerificationTable.CellFormatting += userVerificationTable_CellFormatting;

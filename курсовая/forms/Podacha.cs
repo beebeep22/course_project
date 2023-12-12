@@ -49,7 +49,6 @@ namespace курсовая.forms
                 warning_Message.Text = "Помилка відправки";
                 warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = ex.Message;
-                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_munchkin_cat_6855253;
                 warning_Message.ShowDialog();
                 return false;
             }

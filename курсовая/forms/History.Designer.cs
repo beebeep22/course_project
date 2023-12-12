@@ -165,6 +165,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "History";
             this.Text = "History";
+            this.Load += new System.EventHandler(this.History_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listOfRequests)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

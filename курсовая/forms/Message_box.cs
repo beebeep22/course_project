@@ -136,7 +136,8 @@ namespace курсовая.forms
 
         private void Message_box_Load(object sender, EventArgs e)
         {
-
+            NotReadRespondedRequestsTable.DefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+            NotificationsTable.DefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
         }
     }
 }

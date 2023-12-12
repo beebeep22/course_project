@@ -114,5 +114,10 @@ namespace курсовая.forms
                 AdminOperations.DisapproveUser(selectedUser);
             }
         }
+
+        private void UserVerification_Load(object sender, EventArgs e)
+        {
+            userVerificationTable.DefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+        }
     }
 }

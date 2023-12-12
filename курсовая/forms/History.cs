@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using курсовая.classes;
 using System.Linq;
+using System.Drawing;
 
 
 namespace курсовая.forms
@@ -104,5 +105,9 @@ namespace курсовая.forms
             }
         }
 
+        private void History_Load(object sender, EventArgs e)
+        {
+           listOfRequests.DefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+        }
     }
 }

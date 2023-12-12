@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using курсовая.classes;
@@ -37,6 +38,7 @@ namespace курсовая.forms
             filterByRegion.Items.Add("Львівська область");
             filterByRegion.Items.Add("-");
             filterByRegion.SelectedIndex = filterByRegion.Items.Count - 1;
+            userRequestsTable.DefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
         }
 
 

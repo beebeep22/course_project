@@ -309,7 +309,7 @@ namespace курсовая.forms
             this.pathologicaldiseases.BackColor = System.Drawing.Color.Honeydew;
             this.pathologicaldiseases.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pathologicaldiseases.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pathologicaldiseases.Location = new System.Drawing.Point(251, 348);
+            this.pathologicaldiseases.Location = new System.Drawing.Point(251, 354);
             this.pathologicaldiseases.Multiline = true;
             this.pathologicaldiseases.Name = "pathologicaldiseases";
             this.pathologicaldiseases.Size = new System.Drawing.Size(295, 65);

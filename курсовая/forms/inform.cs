@@ -94,7 +94,6 @@ namespace курсовая.forms
 
         private void fullProof_Click(object sender, EventArgs e)
         {
-
             FullPhoto fullPhoto = new FullPhoto(imageBytes);
             fullPhoto.Show();
         }

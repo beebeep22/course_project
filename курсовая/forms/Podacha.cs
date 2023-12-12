@@ -30,13 +30,17 @@ namespace курсовая.forms
                 {
                     throw new Exceptions("Ви намагаєтесь відправити пусту заявку!");
                 }
+                else if (this.AccountObj.UserDetails.Region == "")
+                {
+                    throw new Exceptions("У вас відсутнє вказання регіону");
+                }
                 foreach (UserRequest existingRequest in this.UserOperations.GetUserRequests(this.AccountObj))
                 {
                     if (existingRequest.Topic == theme.Text && existingRequest.Content == description.Text)
                     {
                         throw new Exceptions("Така заявка вже існує!");
                     }
-                }
+                }           
                 return true;
             }
             catch(Exceptions ex)

@@ -47,7 +47,6 @@ namespace курсовая.forms
             {
                 Warning_message warning_Message = new Warning_message();
                 warning_Message.Text = "Помилка відправки";
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = ex.Message;
                 warning_Message.ShowDialog();
                 return false;

@@ -38,6 +38,7 @@
             this.paneltitle = new System.Windows.Forms.Panel();
             this.labeltitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.developers = new System.Windows.Forms.Button();
             this.panelmenu.SuspendLayout();
             this.paneltitle.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             // panelmenu
             // 
             this.panelmenu.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panelmenu.Controls.Add(this.developers);
             this.panelmenu.Controls.Add(this.exit);
             this.panelmenu.Controls.Add(this.Налаштування);
             this.panelmenu.Controls.Add(this.Заявки);
@@ -70,7 +72,7 @@
             this.exit.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.exit.Size = new System.Drawing.Size(220, 60);
             this.exit.TabIndex = 7;
-            this.exit.Text = "             Вихід";
+            this.exit.Text = "              Вихід";
             this.exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.exit.UseVisualStyleBackColor = true;
@@ -108,7 +110,7 @@
             this.Заявки.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.Заявки.Size = new System.Drawing.Size(220, 60);
             this.Заявки.TabIndex = 1;
-            this.Заявки.Text = "            Заявки";
+            this.Заявки.Text = "             Заявки";
             this.Заявки.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Заявки.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Заявки.UseVisualStyleBackColor = true;
@@ -148,7 +150,7 @@
             this.Акаунт.Name = "Акаунт";
             this.Акаунт.Size = new System.Drawing.Size(220, 80);
             this.Акаунт.TabIndex = 0;
-            this.Акаунт.Text = "     Акаунт";
+            this.Акаунт.Text = "      Акаунт";
             this.Акаунт.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Акаунт.UseVisualStyleBackColor = false;
             this.Акаунт.Click += new System.EventHandler(this.Account_Click);
@@ -184,6 +186,25 @@
             this.panelDesktop.Size = new System.Drawing.Size(681, 387);
             this.panelDesktop.TabIndex = 2;
             // 
+            // developers
+            // 
+            this.developers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.developers.FlatAppearance.BorderSize = 0;
+            this.developers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.developers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.developers.ForeColor = System.Drawing.Color.White;
+            this.developers.Image = global::курсовая.Properties.Resources.dev32;
+            this.developers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.developers.Location = new System.Drawing.Point(0, 274);
+            this.developers.Name = "developers";
+            this.developers.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.developers.Size = new System.Drawing.Size(220, 60);
+            this.developers.TabIndex = 9;
+            this.developers.Text = "         Розробники";
+            this.developers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.developers.UseVisualStyleBackColor = true;
+            this.developers.Click += new System.EventHandler(this.developers_Click);
+            // 
             // Golovna_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -216,5 +237,6 @@
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Label labeltitle;
         private System.Windows.Forms.Button userverificationbutton;
+        private System.Windows.Forms.Button developers;
     }
 }

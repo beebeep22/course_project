@@ -78,6 +78,12 @@ namespace курсовая.forms
             labeltitle.Text = "Налаштування";
         }
 
+        private void developers_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new forms.Developers_info(), sender);
+            labeltitle.Text = "Розробники";
+        }
+
         private void exit_Click(object sender, EventArgs e)
         {
             List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());

@@ -110,7 +110,7 @@
             this.region.Location = new System.Drawing.Point(64, 357);
             this.region.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.region.Name = "region";
-            this.region.Size = new System.Drawing.Size(151, 26);
+            this.region.Size = new System.Drawing.Size(183, 26);
             this.region.TabIndex = 9;
             // 
             // pers

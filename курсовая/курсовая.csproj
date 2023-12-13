@@ -210,6 +210,12 @@
     <Compile Include="forms\create_notification.Designer.cs">
       <DependentUpon>create_notification.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Developers_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Developers_info.Designer.cs">
+      <DependentUpon>Developers_info.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FullPhoto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\create_notification.resx">
       <DependentUpon>create_notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Developers_info.resx">
+      <DependentUpon>Developers_info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FullPhoto.resx">
       <DependentUpon>FullPhoto.cs</DependentUpon>
@@ -468,6 +477,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fullproof16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dev32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dev64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

@@ -42,7 +42,6 @@
             this.label1.Size = new System.Drawing.Size(193, 90);
             this.label1.TabIndex = 0;
             this.label1.Text = "Розробники цієї програми:\r\n\r\nКНТ-122\r\nЖиволуп Б. О.\r\nГончаренко К. С.\r\n";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -54,7 +53,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Якщо виникли питання з приводу роботи з програмою є змога отримати більше інформа" +
     "ції за цим посиланням:\r\n\r\n\r\n";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // link
             // 

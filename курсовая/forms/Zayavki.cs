@@ -101,7 +101,6 @@ namespace курсовая.forms
             if (e.ColumnIndex == userRequestsTable.Columns["responseStatus"].Index)
             {
                 // Format the "responseStatusColumn" to display "No response" if Response is null
-                //e.Value = (e.Value as UserRequestResponse)?.Status ?? "Не переглянуто";
                 UserRequestResponse response = e.Value as UserRequestResponse;
                 e.Value = response?.Status ?? "Не переглянуто";
                 e.FormattingApplied = true;

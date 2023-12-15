@@ -24,9 +24,14 @@ namespace курсовая.forms
             InitializeComponent();
 
             this.Notifications = UserOperations.GetNotifications(this.AccountObj);
-            this.NotReadRespondedRequests = UserOperations.GetRequestsWithUnreadResponses(this.AccountObj);
             InitializeNotReadRespondedRequests();
             InitializeNotifications();
+        }
+
+        private void UpdateTableContent()
+        {
+            this.NotReadRespondedRequests = UserOperations.GetRequestsWithUnreadResponses(this.AccountObj);
+            NotReadRespondedRequestsTable.DataSource = this.NotReadRespondedRequests;
         }
 
         private void markRequestAsRead(UserRequest Request)
@@ -36,24 +41,22 @@ namespace курсовая.forms
 
         private void InitializeNotReadRespondedRequests()
         {
-
-            NotReadRespondedRequestsTable.DataSource = this.NotReadRespondedRequests;
-
+            UpdateTableContent();
             NotReadRespondedRequestsTable.Columns["_id"].Visible = false;
             NotReadRespondedRequestsTable.Columns["ApplicantId"].Visible = false;
-            NotReadRespondedRequestsTable.Columns["Response"].Visible = false;
+            //NotReadRespondedRequestsTable.Columns["Response"].Visible = false;
             NotReadRespondedRequestsTable.Columns["ApplicantObj"].Visible = false;
             NotReadRespondedRequestsTable.Columns["ProofImageData"].Visible = false;
             NotReadRespondedRequestsTable.Columns["Content"].Visible = false;
 
-            NotReadRespondedRequestsTable.Columns["Topic"].HeaderText = "Тема";
+            //NotReadRespondedRequestsTable.Columns["Topic"].HeaderText = "Тема";
             NotReadRespondedRequestsTable.Columns["Topic"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-            int columnIndex = NotReadRespondedRequestsTable.Columns["Topic"].Index;
-            DataGridViewTextBoxColumn statusColumn = new DataGridViewTextBoxColumn();
-            statusColumn.Name = "Status";
-            statusColumn.HeaderText = "Статус";
-            NotReadRespondedRequestsTable.Columns.Insert(columnIndex + 1, statusColumn);
+            //int columnIndex = NotReadRespondedRequestsTable.Columns["Topic"].Index;
+            //DataGridViewTextBoxColumn statusColumn = new DataGridViewTextBoxColumn();
+            //statusColumn.Name = "Status";
+            //statusColumn.HeaderText = "Статус";
+            //NotReadRespondedRequestsTable.Columns.Insert(columnIndex + 1, statusColumn);
 
             NotReadRespondedRequestsTable.CellFormatting += NotReadRespondedRequestsTable_CellFormatting;
             NotReadRespondedRequestsTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -63,7 +66,7 @@ namespace курсовая.forms
 
         private void NotReadRespondedRequestsTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == NotReadRespondedRequestsTable.Columns["Status"].Index)
+            if (e.ColumnIndex == NotReadRespondedRequestsTable.Columns["responseStatus"].Index)
             {
                 UserRequestResponse response = e.Value as UserRequestResponse;
                 e.Value = response?.Status ?? "Не переглянуто";
@@ -78,6 +81,7 @@ namespace курсовая.forms
                 DataGridViewRow clickedRow = NotReadRespondedRequestsTable.Rows[e.RowIndex];
                 UserRequest selectedRequest = (UserRequest)clickedRow?.DataBoundItem;
                 markRequestAsRead(selectedRequest);
+                UpdateTableContent();
             }
         }
 

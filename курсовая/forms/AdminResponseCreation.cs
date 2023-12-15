@@ -13,11 +13,17 @@ namespace курсовая.forms
 
         private DbAdminOperations AdminOperations { get; set; }
         private UserRequest Request { get; set; }
-        public AdminResponseCreation(UserRequest Request)
+
+        private Account AccountObj { get; set; }
+
+        private Golovna_Admin parentForm;
+        public AdminResponseCreation(UserRequest Request, Account AccountObj, Golovna_Admin parentForm)
         {
             InitializeComponent();
+            this.AccountObj = AccountObj;
             this.AdminOperations = new DbAdminOperations();
             this.Request = Request;
+            this.parentForm = parentForm;
         }
 
         private bool ResponseInputValid()
@@ -44,6 +50,7 @@ namespace курсовая.forms
             catch (Exceptions ex)
             {
                 Warning_message warning_Message = new Warning_message();
+                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_munchkin_cat_6855253;
                 warning_Message.Text = "Помилка";
                 warning_Message.outputText.Text = ex.Message;
                 warning_Message.ShowDialog();
@@ -74,7 +81,7 @@ namespace курсовая.forms
                 UserRequestObj: this.Request
                 );
             AdminOperations.CreateUserRequestResponse(response);
-            this.Hide();
+            this.parentForm.OpenChildForm(new forms.Zayavki(this.AccountObj,this.parentForm), sender);
         }
 
         private async void askAIAndSetResponse(string theme_request,int tokens, string inputStatus)

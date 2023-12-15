@@ -65,7 +65,7 @@ namespace курсовая.classes
             try
             {
                 var completionResult = await AIService.Completions.CreateCompletion(complectionRequest);
-                return completionResult.Choices[0].Text;
+                return completionResult?.Choices?[0]?.Text ?? "Помилка при отриманні відповіді від AI";
             }
             catch (Exception ex)
             {

@@ -60,9 +60,9 @@
             this.link.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.link.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.link.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.link.Location = new System.Drawing.Point(22, 227);
+            this.link.Location = new System.Drawing.Point(36, 227);
             this.link.Name = "link";
-            this.link.Size = new System.Drawing.Size(325, 35);
+            this.link.Size = new System.Drawing.Size(340, 35);
             this.link.TabIndex = 2;
             this.link.Text = "https://www.peremogabudeludonki.com/uk/\r\n";
             this.link.UseVisualStyleBackColor = true;

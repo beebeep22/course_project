@@ -159,7 +159,6 @@ namespace курсовая.forms
             
         }
 
-
         private void createnotif_Click(object sender, EventArgs e)
         {
             if (this.AccountObj?.AdminDetails?.CanCreateNotifications != true)
@@ -184,7 +183,7 @@ namespace курсовая.forms
                 int selectedRowIndex = userRequestsTable.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = userRequestsTable.Rows[selectedRowIndex];
                 UserRequest selectedUserRequest = (UserRequest)selectedRow.DataBoundItem;
-                parentForm.OpenChildForm(new forms.AdminResponseCreation(selectedUserRequest), sender);
+                parentForm.OpenChildForm(new forms.AdminResponseCreation(selectedUserRequest, this.AccountObj, this.parentForm), sender);
             }
         }
 

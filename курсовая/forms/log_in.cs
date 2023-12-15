@@ -39,7 +39,6 @@ namespace курсовая.forms
             else if (input.Password == "")
             {
                 Warning_message warning_Message = new Warning_message();
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = "Поле пароля незаповнене";
                 warning_Message.ShowDialog();
                 return false;

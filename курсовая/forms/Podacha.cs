@@ -66,6 +66,13 @@ namespace курсовая.forms
             if (proof.ImageLocation != null) request.LoadProofImage(proof.ImageLocation);
 
             this.UserOperations.SendUserRequest(request);
+
+            Warning_message warning_Message = new Warning_message();
+            warning_Message.Text = "Успіх!";
+            warning_Message.outputText.Text = "Заявка подана";
+            warning_Message.ShowDialog();
+            theme.Clear();
+            description.Clear();
         }
 
         private void addproof_Click(object sender, EventArgs e)

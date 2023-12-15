@@ -106,7 +106,8 @@
             this.txtRequestContent.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequestContent.Multiline = true;
             this.txtRequestContent.Name = "txtRequestContent";
-            this.txtRequestContent.Size = new System.Drawing.Size(238, 51);
+            this.txtRequestContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtRequestContent.Size = new System.Drawing.Size(238, 66);
             this.txtRequestContent.TabIndex = 4;
             // 
             // txtResponseContent
@@ -126,7 +127,8 @@
             this.textTResponseTopic.Location = new System.Drawing.Point(595, 230);
             this.textTResponseTopic.Multiline = true;
             this.textTResponseTopic.Name = "textTResponseTopic";
-            this.textTResponseTopic.Size = new System.Drawing.Size(238, 46);
+            this.textTResponseTopic.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textTResponseTopic.Size = new System.Drawing.Size(238, 45);
             this.textTResponseTopic.TabIndex = 7;
             // 
             // label2

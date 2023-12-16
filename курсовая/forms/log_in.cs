@@ -28,22 +28,25 @@ namespace курсовая.forms
 
         private bool isInputValid(LoginInput input)
         {
-            if (input.Username == "")
+            try
+            {
+                if (input.Username == "")
+                {
+                    throw new Exceptions("Поле логіна незаповнене");
+                }
+                else if (input.Password == "")
+                {
+                    throw new Exceptions("Поле пароля незаповнене");
+                }
+                return true;
+            }
+            catch (Exceptions ex)
             {
                 Warning_message warning_Message = new Warning_message();
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
-                warning_Message.outputText.Text = "Поле логіна незаповнене";
+                warning_Message.outputText.Text = ex.Message;
                 warning_Message.ShowDialog();
                 return false;
             }
-            else if (input.Password == "")
-            {
-                Warning_message warning_Message = new Warning_message();
-                warning_Message.outputText.Text = "Поле пароля незаповнене";
-                warning_Message.ShowDialog();
-                return false;
-            }
-            return true;
         }
 
         private void entrance_Click(object sender, EventArgs e)
@@ -91,7 +94,6 @@ namespace курсовая.forms
             {
                 Warning_message warning_Message = new Warning_message();
                 warning_Message.pictureBox1.Image = Properties.Resources.free_icon_cat_5772431;
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = ex.Message;
                 warning_Message.ShowDialog();
                 return;

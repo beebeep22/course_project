@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using курсовая.classes;
 
@@ -17,32 +18,68 @@ namespace курсовая.forms
 
         private bool isNotificationInputValid()
         {
-            if (themenotification.Text == "")
+            try
             {
-                MessageBox.Show("Тема повідомлення не введена.");
-                return false;
-            }
-            else if (content_notification.Text == "")
-            {
-                MessageBox.Show("Опис повідомлення не введен.");
-                return false;
-            }
-            else if (agefrom.SelectedItem != null && ageupto.SelectedItem != null)
-            {
-                int selectedValue1 = Convert.ToInt32(agefrom.SelectedItem);
-                int selectedValue2 = Convert.ToInt32(ageupto.SelectedItem);
+                List<string> errorMessages = new List<string>();
+                if (themenotification.Text == "")
+                {
+                    errorMessages.Add("Тема повідомлення не введена.");
+                }
+                if (content_notification.Text == "")
+                {
+                    errorMessages.Add("Опис повідомлення не введен.");
+                }
+                if (!int.TryParse(agefrom.Text, out int ageValue) || !int.TryParse(ageupto.Text, out int age2Value))
+                {
+                    errorMessages.Add("Поле віку має бути числовим значенням");
+                }
+                else if (agefrom.SelectedItem != null && ageupto.SelectedItem != null)
+                {
+                    int selectedValue1 = Convert.ToInt32(agefrom.SelectedItem);
+                    int selectedValue2 = Convert.ToInt32(ageupto.SelectedItem);
 
-                if (selectedValue1 == selectedValue2)
-                {
-                    MessageBox.Show("Некорректно обраний вік.");
-                    return false;
+                    if (selectedValue1 == selectedValue2)
+                    {
+                        errorMessages.Add("Некорректно обраний вік.");
+                    }
+                    else if (selectedValue1 > selectedValue2)
+                    {
+                        errorMessages.Add("Некорректно обраний вік.");
+                    }
                 }
-                else if (selectedValue1 > selectedValue2)
+                if (!ContainsDigit(region.Text) || !ContainsDigit(pathdiseas.Text)|| !ContainsDigit(alergic.Text)) 
                 {
-                    MessageBox.Show("Некорректно обраний вік.");
+                    errorMessages.Add("Некоректно введений фільтр");
+                }
+                if (errorMessages.Count > 0)
+                {
+                    string errorMessage = string.Join("\r\n", errorMessages);
+                    throw new Exceptions(errorMessage);
+                }
+
+                return true;
+            }
+            catch (Exceptions ex)
+            {
+                Warning_message warning_Message = new Warning_message();
+                warning_Message.Text = "Помилка створення загального повідомлення";
+                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_cat_5772431;
+                warning_Message.outputText.Text = ex.Message;
+                warning_Message.ShowDialog();
+                return false;
+            }
+        }
+
+        public bool ContainsDigit(string input)
+        {
+            foreach (char c in input)
+            {
+                if (char.IsDigit(c))
+                {
                     return false;
                 }
             }
+
             return true;
         }
 

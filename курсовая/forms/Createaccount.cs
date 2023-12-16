@@ -90,7 +90,6 @@ namespace курсовая.forms
                 Warning_message warning_Message = new Warning_message();
                 warning_Message.Text = "Помилка створення облікового запису";
                 warning_Message.pictureBox1.Image = Properties.Resources.free_icon_cat_5772431;
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = ex.Message;
                 warning_Message.ShowDialog();
                 return false;

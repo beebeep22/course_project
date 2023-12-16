@@ -133,8 +133,6 @@ namespace курсовая.forms
                 if (!string.IsNullOrEmpty(selectedValue) && !flag)
                 {
                     Warning_message warning_Message = new Warning_message();
-                    warning_Message.Text = "Попередження";
-                    warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                     warning_Message.outputText.Text = "Після внесення змін верефікація спаде!";
                     flag = true;
                     if (warning_Message.ShowDialog() == DialogResult.OK)

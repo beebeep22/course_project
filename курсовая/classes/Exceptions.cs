@@ -4,7 +4,7 @@ namespace курсовая
 {
     internal class Exceptions : Exception
     {
-        public Exceptions(string message) : base(message)
+        public Exceptions(string message)
         { }
     }
 }

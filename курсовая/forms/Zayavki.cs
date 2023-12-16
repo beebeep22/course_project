@@ -176,7 +176,6 @@ namespace курсовая.forms
                 MessageBox.Show("У вас нема права відповідати на повідомлення");
                 return;
             }
-            //нужно же сделать проверку не "прийнято" или не "відхилено" ли заявка,чтоб не отвечать на нее по новой, не могу придумать проверку
             if (userRequestsTable.SelectedCells.Count > 0)
             {
                 int selectedRowIndex = userRequestsTable.SelectedCells[0].RowIndex;

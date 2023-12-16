@@ -12,7 +12,6 @@ namespace курсовая.forms
 {
     public partial class Warning_message : Form
     {
-        public bool Agreed { get; private set; }
 
         public Warning_message()
         {

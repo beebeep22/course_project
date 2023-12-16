@@ -70,6 +70,7 @@ namespace курсовая.forms
             Warning_message warning_Message = new Warning_message();
             warning_Message.Text = "Успіх!";
             warning_Message.outputText.Text = "Заявка подана";
+            warning_Message.pictureBox1.Image = Properties.Resources.free_icon_munchkin_cat_6855253;
             warning_Message.ShowDialog();
             theme.Clear();
             description.Clear();
@@ -96,9 +97,8 @@ namespace курсовая.forms
             {
                 Warning_message warning_Message = new Warning_message();
                 warning_Message.Text = "Помилка";
-                warning_Message.outputText.TextAlign = HorizontalAlignment.Center;
                 warning_Message.outputText.Text = "Виникла помилка";
-                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_munchkin_cat_6855253;
+                warning_Message.pictureBox1.Image = Properties.Resources.free_icon_cat_5772431;
                 warning_Message.ShowDialog();
             }
         }

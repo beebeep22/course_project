@@ -84,7 +84,7 @@ namespace курсовая.forms
                 {
                     Golovna_Admin golovna_Admin = new Golovna_Admin(accountObj);
                     golovna_Admin.Show();
-                    this.Close();
+                    this.Hide();
 
                     Account_admin account_Admin = new Account_admin(accountObj);
                     golovna_Admin.OpenChildForm(account_Admin, sender);
